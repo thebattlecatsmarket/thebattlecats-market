@@ -1,751 +1,388 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Official website and legal documents for TheBattleCats.Market." />
-  <title>TheBattleCats.Market</title>
-
-  <style>
-    :root {
-      --bg: #09070f;
-      --bg-soft: #12101c;
-      --card: rgba(23, 18, 38, 0.88);
-      --text: #f8f4ff;
-      --muted: #bdb2cf;
-      --accent: #9c5cff;
-      --accent-2: #d7b6ff;
-      --accent-3: #6f2ed0;
-      --border: rgba(156, 92, 255, 0.28);
-      --header: rgba(9, 7, 15, 0.82);
-      --shadow: 0 24px 70px rgba(88, 34, 160, 0.28);
-    }
-
-    body.light {
-      --bg: #f7f3ff;
-      --bg-soft: #eee8ff;
-      --card: rgba(255, 255, 255, 0.94);
-      --text: #1e1732;
-      --muted: #665b78;
-      --accent: #793cdb;
-      --accent-2: #4f247f;
-      --accent-3: #6f2ed0;
-      --border: rgba(122, 63, 227, 0.22);
-      --header: rgba(247, 243, 255, 0.9);
-      --shadow: 0 24px 70px rgba(88, 46, 150, 0.14);
-    }
-
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    html {
-      scroll-padding-top: 88px;
-    }
-
-    body {
-      margin: 0;
-      font-family: Inter, Arial, Helvetica, sans-serif;
-      color: var(--text);
-      line-height: 1.65;
-      background:
-        radial-gradient(circle at top right, rgba(156, 92, 255, 0.19), transparent 30%),
-        radial-gradient(circle at bottom left, rgba(93, 43, 166, 0.16), transparent 35%),
-        var(--bg);
-      transition: 0.25s ease;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .container {
-      width: min(1120px, calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(16px);
-      background: var(--header);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav {
-      min-height: 74px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .brand {
-      font-weight: 950;
-      letter-spacing: 0.2px;
-      font-size: 1.05rem;
-      white-space: nowrap;
-    }
-
-    .brand span {
-      color: var(--accent);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      font-size: 0.94rem;
-      font-weight: 800;
-    }
-
-    .nav-links a:hover {
-      color: var(--accent-2);
-    }
-
-    .theme-toggle,
-    .menu-toggle {
-      border: 1px solid var(--border);
-      background: var(--card);
-      color: var(--text);
-      border-radius: 999px;
-      padding: 10px 14px;
-      cursor: pointer;
-      font-weight: 850;
-      box-shadow: var(--shadow);
-    }
-
-    .menu-toggle {
-      display: none;
-      border-radius: 12px;
-    }
-
-    .hero {
-      padding: 110px 0 78px;
-      text-align: center;
-    }
-
-    .badge {
-      display: inline-flex;
-      padding: 8px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: var(--card);
-      color: var(--accent-2);
-      font-size: 0.85rem;
-      font-weight: 850;
-    }
-
-    h1 {
-      margin: 22px auto 16px;
-      max-width: 900px;
-      font-size: clamp(2.5rem, 7vw, 5.5rem);
-      line-height: 1.02;
-      letter-spacing: -2px;
-    }
-
-    h1 span {
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero p {
-      max-width: 740px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 1.08rem;
-    }
-
-    .buttons {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      padding: 13px 20px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      font-weight: 900;
-      transition: 0.2s ease;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-3));
-      color: white;
-      box-shadow: var(--shadow);
-    }
-
-    .btn-secondary {
-      background: var(--card);
-      color: var(--text);
-    }
-
-    section {
-      padding: 72px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 34px;
-    }
-
-    .section-title h2 {
-      margin: 0 0 10px;
-      font-size: clamp(1.9rem, 4vw, 2.8rem);
-    }
-
-    .section-title p {
-      max-width: 690px;
-      margin: 0 auto;
-      color: var(--muted);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .service-card {
-      transition: 0.2s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(156, 92, 255, 0.55);
-    }
-
-    .card h3 {
-      margin: 0 0 8px;
-    }
-
-    .card p,
-    .card li {
-      color: var(--muted);
-    }
-
-    .card p {
-      margin: 0;
-    }
-
-    .icon {
-      font-size: 1.9rem;
-      margin-bottom: 14px;
-    }
-
-    .mini-link {
-      display: inline-flex;
-      margin-top: 18px;
-      color: var(--accent-2);
-      font-weight: 900;
-    }
-
-    .why-list {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-
-    .why-item {
-      text-align: center;
-      padding: 22px 16px;
-    }
-
-    .faq {
-      display: grid;
-      gap: 12px;
-      max-width: 850px;
-      margin: 0 auto;
-    }
-
-    details {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 17px 19px;
-      box-shadow: var(--shadow);
-    }
-
-    summary {
-      cursor: pointer;
-      font-weight: 900;
-    }
-
-    details p {
-      color: var(--muted);
-      margin-bottom: 0;
-    }
-
-    .contact-card {
-      display: flex;
-      flex-direction: column;
-      min-height: 220px;
-    }
-
-    .contact-card .btn {
-      margin-top: auto;
-      width: 100%;
-    }
-
-    .legal {
-      display: grid;
-      gap: 20px;
-    }
-
-    .legal p,
-    .legal li {
-      color: var(--muted);
-    }
-
-    .legal ul {
-      padding-left: 20px;
-    }
-
-    .disclaimer {
-      margin-top: 28px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      text-align: center;
-    }
-
-    footer {
-      padding: 34px 0;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      text-align: center;
-    }
-
-    .floating-wa {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 999;
-      width: 58px;
-      height: 58px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: #25d366;
-      color: white;
-      font-size: 1.7rem;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.32);
-      border: 3px solid rgba(255, 255, 255, 0.85);
-    }
-
-    @media (max-width: 880px) {
-      .grid,
-      .why-list {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .menu-toggle {
-        display: inline-flex;
-      }
-
-      .nav-links {
-        position: absolute;
-        top: 74px;
-        left: 16px;
-        right: 16px;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        padding: 16px;
-        background: var(--bg-soft);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        box-shadow: var(--shadow);
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-links a,
-      .theme-toggle {
-        width: 100%;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 620px) {
-      .grid,
-      .why-list {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 76px;
-      }
-
-      h1 {
-        letter-spacing: -1px;
-      }
-
-      .floating-wa {
-        right: 15px;
-        bottom: 15px;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="TheBattleCats.Market — Cat Food, VIP Deals, and Stage Progression with direct WhatsApp ordering.">
+<meta property="og:title" content="TheBattleCats.Market">
+<meta property="og:description" content="Cat Food, VIP Deals, and Stage Progression offers with one-click WhatsApp ordering.">
+<meta property="og:image" content="assets/battle-cats-logo.png">
+<title>TheBattleCats.Market</title>
+<style>
+:root {
+  --bg:#07050d; --bg2:#0f0818; --surface:rgba(18,12,31,.86); --surface2:rgba(27,17,48,.9);
+  --text:#f8f5ff; --muted:#bfb2d0; --purple:#a64dff; --purple2:#6f24d9; --soft:#dbb7ff;
+  --green:#9cff31; --gold:#ffd84d; --orange:#ffb64d; --border:rgba(178,93,255,.28); --border2:rgba(196,116,255,.6);
+  --radius:22px; --shadow:0 22px 70px rgba(0,0,0,.38); --max:1180px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;color:var(--text);font-family:Inter,system-ui,Segoe UI,sans-serif;
+background:radial-gradient(circle at 80% 4%, rgba(149,42,255,.22), transparent 25rem),radial-gradient(circle at 15% 22%, rgba(91,35,171,.18), transparent 22rem),linear-gradient(180deg,var(--bg),var(--bg2) 45%,var(--bg));min-height:100vh;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.14;background-image:linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom, black, transparent 85%)}
+a{color:inherit;text-decoration:none} img{max-width:100%;display:block} .container{width:min(var(--max), calc(100% - 36px));margin:0 auto}
+.section{padding:82px 0;position:relative} .section.compact{padding-top:56px} .eyebrow{margin:0 0 8px;color:var(--soft);font-size:.78rem;text-transform:uppercase;letter-spacing:.16em;font-weight:950} .eyebrow.left{text-align:left} h1,h2,h3,p{margin-top:0}
+.site-header{position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(255,255,255,.06);background:rgba(7,5,13,.78);backdrop-filter:blur(18px)}
+.nav{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:14px;font-weight:950} .brand img{height:42px;width:auto} .brand small{display:block;color:var(--soft);font-weight:800;letter-spacing:.08em}
+.nav-links{display:flex;align-items:center;gap:6px} .nav-links a{padding:10px 12px;border-radius:11px;color:var(--muted);font-weight:750;font-size:.94rem} .nav-links a:hover,.nav-links a:focus-visible{color:white;background:rgba(255,255,255,.06);outline:none}
+.menu-button{display:none;border:1px solid var(--border);color:white;background:var(--surface);border-radius:12px;padding:10px 12px;font-weight:800}
+.hero{padding:90px 0 72px;text-align:center;position:relative} .hero::after{content:"";position:absolute;width:560px;height:560px;border-radius:50%;left:50%;top:35%;transform:translate(-50%,-50%);z-index:-1;background:radial-gradient(circle, rgba(151,49,255,.2), transparent 66%);filter:blur(12px)}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid var(--border);border-radius:999px;background:rgba(117,43,199,.14);color:var(--soft);font-weight:850;font-size:.9rem}
+.badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 14px var(--green)}
+.hero-logo{max-width:360px;margin:24px auto 10px} h1{font-size:clamp(2.8rem,7vw,5.8rem);line-height:.95;margin:8px auto 16px;max-width:980px;letter-spacing:-.06em} h1 span{display:block;color:transparent;background:linear-gradient(180deg,#f4d9ff 0%,#b85cff 43%,#6e21cf 100%);-webkit-background-clip:text;background-clip:text;text-shadow:0 18px 60px rgba(154,51,255,.25)}
+.hero-copy{max-width:790px;margin:0 auto;color:var(--muted);font-size:clamp(1rem,1.9vw,1.12rem);line-height:1.75} .hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 20px;border-radius:14px;border:1px solid var(--border);font-weight:900;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease} .btn:hover{transform:translateY(-2px)} .btn-primary{background:linear-gradient(135deg,var(--purple),var(--purple2));box-shadow:0 16px 38px rgba(116,36,214,.36);border-color:transparent} .btn-secondary{background:rgba(255,255,255,.045)} .btn.full{width:100%}
+.trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:1040px;margin:44px auto 0} .trust-item{display:flex;gap:12px;align-items:center;text-align:left;padding:15px 16px;border:1px solid var(--border);border-radius:16px;background:rgba(17,10,29,.62)} .icon-svg{width:38px;height:38px;display:grid;place-items:center;flex:0 0 auto;color:var(--soft)} .icon-svg svg{width:28px;height:28px;display:block} .icon-svg img{width:28px;height:28px;object-fit:contain}
+.trust-item strong{display:block;font-size:.94rem} .trust-item small{color:var(--muted)}
+.section-heading{text-align:center;max-width:780px;margin:0 auto 36px} .section-heading h2{margin:0;font-size:clamp(2.1rem,5vw,3.4rem);letter-spacing:-.045em} .section-heading p{color:var(--muted);line-height:1.7;margin:14px 0 0}
+.quick-links{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px} .quick-card{padding:18px;border-radius:18px;border:1px solid var(--border);background:linear-gradient(145deg,rgba(31,18,52,.92),rgba(12,8,21,.96));text-align:left} .quick-card h3{margin:14px 0 8px;font-size:1.2rem} .quick-card p{color:var(--muted);margin-bottom:0;line-height:1.6}
+.payment-row,.social-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center} .pay-pill,.social-pill{display:inline-flex;align-items:center;gap:10px;padding:12px 15px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.03);font-weight:850;color:var(--text)} .pay-pill .icon-svg,.social-pill .icon-svg{width:22px;height:22px;color:var(--soft)} .pay-pill .icon-svg svg,.social-pill .icon-svg svg{width:20px;height:20px}
+.bonus-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px} .bonus-card{padding:18px 16px;border-radius:18px;border:1px solid var(--border);background:linear-gradient(180deg, rgba(34,18,58,.86), rgba(16,10,27,.92));box-shadow:0 14px 36px rgba(0,0,0,.16)} .bonus-art{width:76px;height:58px;display:grid;place-items:center;border-radius:14px;background:rgba(255,255,255,.045);margin-bottom:12px} .bonus-art img{max-height:46px;width:auto;object-fit:contain} .bonus-art.legend{background:linear-gradient(145deg, rgba(158,74,255,.25), rgba(75,22,140,.25));color:#ffe48e;font-size:1.6rem;font-weight:950} .bonus-card strong{display:block;font-size:1rem;line-height:1.35} .bonus-card small{display:block;color:var(--gold);margin-top:7px;line-height:1.35;font-weight:800}
+.offer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px} .offer-grid.four{grid-template-columns:repeat(4,minmax(0,1fr))} .offer-grid.five{grid-template-columns:repeat(5,minmax(0,1fr))}
+.offer-card{position:relative;overflow:hidden;border-radius:var(--radius);padding:21px;background:linear-gradient(145deg,rgba(31,18,52,.92),rgba(12,8,21,.96));border:1px solid var(--border);box-shadow:0 18px 55px rgba(0,0,0,.23)} .offer-card::before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-70px;top:-70px;background:radial-gradient(circle, rgba(168,75,255,.22), transparent 70%)} .offer-card.featured{border-color:var(--border2);box-shadow:0 18px 70px rgba(104,30,189,.22)} .featured-ribbon{position:absolute;top:13px;right:-34px;transform:rotate(35deg);width:150px;text-align:center;background:linear-gradient(90deg,#8d35eb,#bc67ff);padding:5px 0;font-size:.67rem;font-weight:950;text-transform:uppercase;letter-spacing:.08em}
+.offer-top{display:grid;grid-template-columns:124px minmax(0,1fr);gap:16px;align-items:center;margin-bottom:18px} .thumb-box{aspect-ratio:1/.78;border-radius:18px;overflow:hidden;background:rgba(255,255,255,.06);display:grid;place-items:center;border:1px solid rgba(255,255,255,.08);padding:8px} .thumb-box img{width:100%;height:100%;object-fit:contain}
+.offer-card h3{margin:0;font-size:1.4rem;letter-spacing:-.02em} .subline{margin:4px 0 0;color:var(--muted)} .option-list{display:grid;gap:10px} .option-card{min-height:84px;padding:12px;border-radius:16px;display:grid;gap:10px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.075);transition:transform .18s ease,border-color .18s ease,background .18s ease} .option-card:hover{transform:translateY(-2px);border-color:var(--border2);background:rgba(157,73,255,.1)} .option-main{display:grid;grid-template-columns:44px 1fr auto;gap:10px;align-items:center} .mult-pill{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:rgba(169,85,255,.14);color:var(--soft);font-weight:950} .option-main strong{display:block;font-size:1rem} .option-main small,.micro-copy{color:var(--muted)} .price-green{color:var(--green);font-weight:950;font-size:1.08rem} .micro-copy{font-size:.82rem;line-height:1.45}
+.poster-preview{border-radius:24px;overflow:hidden;border:1px solid var(--border);background:rgba(20,12,34,.72);box-shadow:var(--shadow);padding:10px;margin-bottom:24px} .poster-preview img{border-radius:16px} .poster-preview + .offer-grid{margin-top:8px}
+.service-icon{width:54px;height:54px;display:grid;place-items:center;border-radius:16px;background:rgba(164,74,255,.14);color:var(--gold);margin-bottom:14px} .service-icon svg{width:30px;height:30px} .tag-badge{display:inline-flex;margin-bottom:12px;padding:7px 10px;border-radius:999px;background:rgba(255,216,77,.12);border:1px solid rgba(255,216,77,.18);color:var(--gold);font-size:.78rem;font-weight:900}
+.feature-list{margin:0;padding-left:18px;color:var(--muted);line-height:1.65;min-height:168px} .big-price{font-size:2rem;line-height:1;margin:16px 0 18px;color:var(--green);font-weight:950;letter-spacing:-.04em} .stage-desc{color:var(--muted);line-height:1.7;min-height:76px}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px} .info-card{padding:24px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow)} .info-card .icon-svg{margin-bottom:16px} .info-card h3{margin:0 0 9px;font-size:1.3rem} .info-card p{margin:0;color:var(--muted);line-height:1.65}
+.faq{max-width:880px;margin:0 auto;display:grid;gap:11px} details{border:1px solid var(--border);border-radius:16px;background:var(--surface);padding:17px 19px} summary{cursor:pointer;font-weight:900} details p{color:var(--muted);line-height:1.7;margin-bottom:0}
+.legal-layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;align-items:start} .legal-nav{position:sticky;top:98px;display:grid;gap:8px} .legal-nav a{padding:11px 13px;border-radius:12px;color:var(--muted);border:1px solid transparent} .legal-nav a:hover{color:white;border-color:var(--border);background:var(--surface)} .legal-copy{display:grid;gap:16px} .legal-copy article{scroll-margin-top:94px} .legal-copy h3{margin-top:0} .legal-copy h4{margin-bottom:7px} .legal-copy p,.legal-copy li{color:var(--muted);line-height:1.72}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px} .contact-card{display:flex;flex-direction:column;min-height:240px;padding:24px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow)} .contact-card .btn{margin-top:auto;width:100%}
+.floating-wa{position:fixed;z-index:45;right:20px;bottom:20px;width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(145deg,#35d56f,#17a64d);color:#fff;box-shadow:0 18px 38px rgba(12,123,57,.36);border:1px solid rgba(255,255,255,.2)} .floating-wa .icon-svg{width:28px;height:28px;color:#fff} .floating-wa .icon-svg svg{width:26px;height:26px}
+footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(--muted);text-align:center;font-size:.9rem}
+@media (max-width:1100px){ .offer-grid.four{grid-template-columns:repeat(2,minmax(0,1fr))} .offer-grid.five{grid-template-columns:repeat(3,minmax(0,1fr))} }
+@media (max-width:980px){ .trust-row{grid-template-columns:repeat(2,1fr)} .bonus-grid{grid-template-columns:repeat(2,1fr)} .card-grid,.contact-grid{grid-template-columns:1fr 1fr} }
+@media (max-width:760px){ .menu-button{display:inline-flex} .nav-links{position:absolute;top:72px;left:18px;right:18px;display:none;flex-direction:column;align-items:stretch;padding:12px;border-radius:16px;background:rgba(12,8,21,.98);border:1px solid var(--border);box-shadow:var(--shadow)} .nav-links.open{display:flex} .nav-links a{padding:12px 13px} .hero{padding-top:72px} .quick-links,.card-grid,.contact-grid,.offer-grid,.offer-grid.four,.offer-grid.five{grid-template-columns:1fr} .legal-layout{grid-template-columns:1fr} .legal-nav{position:static;grid-template-columns:repeat(3,1fr)} .legal-nav a{text-align:center;font-size:.86rem} }
+@media (max-width:560px){ .container{width:min(100% - 24px, var(--max))} .section{padding:66px 0} .trust-row{grid-template-columns:1fr} .bonus-grid{grid-template-columns:1fr} .offer-top{grid-template-columns:1fr} .thumb-box{max-width:210px;margin:0 auto} .option-main{grid-template-columns:38px 1fr auto} .hero-logo{max-width:300px} }
+</style>
 </head>
-
 <body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#home">TheBattleCats<span>.Market</span></a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="TheBattleCats.Market home">
+      <img src="assets/battle-cats-logo.png" alt="The Battle Cats logo">
+      <span><strong>TheBattleCats.Market</strong><small>Premium Game Services</small></span>
+    </a>
+    <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="navLinks">☰ Menu</button>
+    <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+      <a href="#catfood">Cat Food</a>
+      <a href="#vip">VIP Deals</a>
+      <a href="#stage">Stage Skipping</a>
+      <a href="#faq">FAQ</a>
+      <a href="#legal">Policies</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-      <button class="menu-toggle" id="menuToggle" type="button">☰ Menu</button>
-
-      <nav class="nav-links" id="navLinks">
-        <a href="#services">Services</a>
-        <a href="#why">Why Us</a>
-        <a href="#faq">FAQ</a>
-        <a href="#privacy">Privacy</a>
-        <a href="#terms">Terms</a>
-        <a href="#refund">Refund</a>
-        <a href="#contact">Contact</a>
-        <button class="theme-toggle" id="themeToggle" type="button">☀️ Light</button>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero" id="home">
-      <div class="container">
-        <span class="badge">Trusted Battle Cats Services</span>
-        <h1>Premium services for <span>The Battle Cats</span></h1>
-        <p>
-          Cat Food, VIP Deals, and Stage Progression services with a fast process,
-          clear communication, and dedicated customer support.
-        </p>
-
-        <div class="buttons">
-          <a class="btn btn-primary"
-             href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20place%20an%20order."
-             target="_blank" rel="noopener noreferrer">
-            💬 Order via WhatsApp
-          </a>
-
-          <a class="btn btn-secondary" href="#contact">Contact Us</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="services">
-      <div class="container">
-        <div class="section-title">
-          <h2>Our Services</h2>
-          <p>Choose a service, then contact us directly to ask about availability and pricing.</p>
-        </div>
-
-        <div class="grid">
-          <article class="card service-card">
-            <div class="icon">🐱</div>
-            <h3>Cat Food</h3>
-            <p>Affordable packages with an organized and easy order process.</p>
-            <a class="mini-link"
-               href="https://wa.me/6281355696447?text=Hello%2C%20I%20am%20interested%20in%20the%20Cat%20Food%20service."
-               target="_blank" rel="noopener noreferrer">Ask about Cat Food →</a>
-          </article>
-
-          <article class="card service-card">
-            <div class="icon">💎</div>
-            <h3>VIP Deals</h3>
-            <p>Special bundles and premium packages for players seeking extra value.</p>
-            <a class="mini-link"
-               href="https://wa.me/6281355696447?text=Hello%2C%20I%20am%20interested%20in%20the%20VIP%20Deals."
-               target="_blank" rel="noopener noreferrer">Ask about VIP Deals →</a>
-          </article>
-
-          <article class="card service-card">
-            <div class="icon">🚩</div>
-            <h3>Stage Progression</h3>
-            <p>Progression services with clear communication and progress updates.</p>
-            <a class="mini-link"
-               href="https://wa.me/6281355696447?text=Hello%2C%20I%20am%20interested%20in%20Stage%20Progression."
-               target="_blank" rel="noopener noreferrer">Ask about Progression →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="why">
-      <div class="container">
-        <div class="section-title">
-          <h2>Why Choose Us?</h2>
-          <p>A straightforward service experience from first message to completion.</p>
-        </div>
-
-        <div class="why-list">
-          <article class="card why-item">
-            <div class="icon">⚡</div>
-            <h3>Fast Process</h3>
-          </article>
-          <article class="card why-item">
-            <div class="icon">🔒</div>
-            <h3>Secure Handling</h3>
-          </article>
-          <article class="card why-item">
-            <div class="icon">💬</div>
-            <h3>Responsive Support</h3>
-          </article>
-          <article class="card why-item">
-            <div class="icon">🌍</div>
-            <h3>Global Service</h3>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq">
-      <div class="container">
-        <div class="section-title">
-          <h2>Frequently Asked Questions</h2>
-          <p>Click a question to view the answer.</p>
-        </div>
-
-        <div class="faq">
-          <details>
-            <summary>How do I place an order?</summary>
-            <p>Click any WhatsApp order button, tell us which service you need, and wait for confirmation before making payment.</p>
-          </details>
-
-          <details>
-            <summary>How long does the process take?</summary>
-            <p>Processing time depends on the selected service, current order volume, and how quickly required information is provided.</p>
-          </details>
-
-          <details>
-            <summary>What payment methods are available?</summary>
-            <p>Available payment methods may vary. Contact us before ordering to confirm the currently supported methods.</p>
-          </details>
-
-          <details>
-            <summary>Where can I see updates and offers?</summary>
-            <p>Follow our Instagram and Facebook Page for the latest offers, announcements, and service updates.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section id="privacy">
-      <div class="container legal">
-        <div class="section-title">
-          <h2>Privacy Policy</h2>
-          <p>Last updated: July 2026</p>
-        </div>
-
-        <article class="card">
-          <h3>1. Information We Collect</h3>
-          <p>
-            We may collect information voluntarily provided by customers, including names,
-            social media usernames, contact details, order information, payment confirmation,
-            and information required to perform a selected service.
-          </p>
-
-          <h3>2. How We Use Information</h3>
-          <p>
-            Information is used to process orders, provide customer support, maintain transaction
-            records, prevent fraud, resolve disputes, and improve our services.
-          </p>
-
-          <h3>3. Data Sharing</h3>
-          <p>
-            We do not sell or rent personal information. Information may be shared only when
-            necessary to complete a transaction, comply with applicable law, or protect customers
-            and our business.
-          </p>
-
-          <h3>4. Data Security</h3>
-          <p>
-            We take reasonable steps to protect information, although no online system can guarantee
-            absolute security.
-          </p>
-
-          <h3>5. Data Requests</h3>
-          <p>
-            Customers may contact us to request access, correction, or deletion of their personal
-            information, subject to legal and record-keeping obligations.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section id="terms">
-      <div class="container legal">
-        <div class="section-title">
-          <h2>Terms of Service</h2>
-          <p>Please review these terms before placing an order.</p>
-        </div>
-
-        <article class="card">
-          <h3>1. Agreement</h3>
-          <p>By placing an order, you confirm that the information supplied is accurate and that you understand the selected service.</p>
-
-          <h3>2. Customer Responsibilities</h3>
-          <ul>
-            <li>Provide accurate and complete order information.</li>
-            <li>Follow all instructions provided during processing.</li>
-            <li>Do not submit duplicate or conflicting orders.</li>
-            <li>Confirm the service, price, and payment method before paying.</li>
-          </ul>
-
-          <h3>3. Processing Time</h3>
-          <p>Processing times may vary based on order volume, technical conditions, service type, and customer response time.</p>
-
-          <h3>4. Service Availability</h3>
-          <p>We may refuse, delay, or cancel an order that cannot be completed safely or where required information is incomplete.</p>
-
-          <h3>5. Independent Service</h3>
-          <p>TheBattleCats.Market is an independent service and is not affiliated with or endorsed by PONOS Corporation.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="refund">
-      <div class="container legal">
-        <div class="section-title">
-          <h2>Refund Policy</h2>
-          <p>Refund eligibility depends on the order status and circumstances.</p>
-        </div>
-
-        <article class="card">
-          <h3>Eligible Refunds</h3>
-          <ul>
-            <li>The order cannot be completed by us.</li>
-            <li>A verified duplicate payment was made.</li>
-            <li>The service has not started and cancellation is approved.</li>
-          </ul>
-
-          <h3>Non-Refundable Situations</h3>
-          <ul>
-            <li>The service has already been completed.</li>
-            <li>Incorrect or incomplete information was provided by the customer.</li>
-            <li>The customer changes their mind after processing begins.</li>
-            <li>A delay is caused by missing responses or required information.</li>
-          </ul>
-
-          <h3>Refund Processing</h3>
-          <p>Approved refunds are returned through an available payment method. Processing time may vary depending on the payment provider.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="section-title">
-          <h2>Contact Us</h2>
-          <p>Use one of our official channels below for orders, support, or privacy requests.</p>
-        </div>
-
-        <div class="grid">
-          <article class="card contact-card">
-            <div class="icon">💬</div>
-            <h3>WhatsApp</h3>
-            <p>Fastest option for orders and direct support.</p>
-            <a class="btn btn-primary"
-               href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20need%20assistance."
-               target="_blank" rel="noopener noreferrer">Open WhatsApp</a>
-          </article>
-
-          <article class="card contact-card">
-            <div class="icon">📷</div>
-            <h3>Instagram</h3>
-            <p>@thebattlecats.market</p>
-            <a class="btn btn-secondary"
-               href="https://www.instagram.com/thebattlecats.market/"
-               target="_blank" rel="noopener noreferrer">Open Instagram</a>
-          </article>
-
-          <article class="card contact-card">
-            <div class="icon">📘</div>
-            <h3>Facebook</h3>
-            <p>Official TheBattleCats.Market Facebook Page.</p>
-            <a class="btn btn-secondary"
-               href="https://www.facebook.com/profile.php?id=61592145140048"
-               target="_blank" rel="noopener noreferrer">Open Facebook</a>
-          </article>
-        </div>
-
-        <p class="disclaimer">
-          Please verify that you are communicating with our official accounts before making any payment.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <a class="floating-wa"
-     href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20place%20an%20order."
-     target="_blank" rel="noopener noreferrer"
-     aria-label="Order through WhatsApp">💬</a>
-
-  <footer>
+<main>
+  <section class="hero" id="home">
     <div class="container">
-      © 2026 TheBattleCats.Market. All rights reserved.
+      <span class="badge">Direct WhatsApp Ordering</span>
+      <img class="hero-logo" src="assets/battle-cats-logo.png" alt="The Battle Cats logo">
+      <h1>Official-looking offers for <span>The Battle Cats</span></h1>
+      <p class="hero-copy">The website now uses real-looking logos instead of emoji, adds proper payment and social icons, and includes full offer sections for Cat Food, VIP Deals, and Stage Progression with one-click WhatsApp ordering.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#catfood">View Offers ↓</a>
+        <a class="btn btn-secondary" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20ask%20about%20your%20offers." target="_blank" rel="noopener noreferrer">Open WhatsApp</a>
+      </div>
+      <div class="trust-row">
+        <div class="trust-item"><span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong>Guaranteed 100%</strong><small>Handled directly</small></span></div>
+        <div class="trust-item"><span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" fill="currentColor"/></svg></span><span><strong>Fast Process</strong><small>Quick confirmation</small></span></div>
+        <div class="trust-item"><span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7a4 4 0 118 0v3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span><span><strong>Secure Process</strong><small>Order checked first</small></span></div>
+        <div class="trust-item"><span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3a15 15 0 010 18M12 3a15 15 0 000 18" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span><span><strong>Worldwide Support</strong><small>Crypto and QRIS</small></span></div>
+      </div>
+      <div class="quick-links">
+        <a class="quick-card" href="#catfood"><span class="icon-svg"><img src="assets/menu-1.webp" alt="Cat Food icon"></span><h3>Cat Food</h3><p>4 menu tiers, cumulative bonuses, and direct order buttons.</p></a>
+        <a class="quick-card" href="#vip"><span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8l3 3 5-6 5 6 3-3-2 11H6L4 8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="11" r="1.5" fill="currentColor"/></svg></span><h3>VIP Deals</h3><p>One-time purchase offers like the sample VIP poster.</p></a>
+        <a class="quick-card" href="#stage"><span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18l5-5 3 3 6-8 2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 8h6v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>Stage Progression</h3><p>EoC, ITF, CoTC, SoL, and Aku Realms offers.</p></a>
+      </div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    const themeToggle = document.getElementById("themeToggle");
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
-    const savedTheme = localStorage.getItem("theme");
+  <section class="section compact" id="catfood">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Cat Food Offers</p>
+        <h2>Choose your Cat Food menu</h2>
+        <p>The Cat Food section keeps your actual menu images and lets users click any option to go straight to WhatsApp with a ready-made order message.</p>
+      </div>
+      <div class="payment-row" style="margin-bottom:18px">
+        <span class="pay-pill"><span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.2 6.8h3.1c1.6 0 2.6.8 2.6 2.1 0 1-.6 1.7-1.5 2 1.2.3 1.9 1.1 1.9 2.3 0 1.7-1.4 2.8-3.4 2.8h-2.7M11 5v14M13.2 5v14M9.5 10.9h4.2M9.5 14.8h4.7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Bitcoin</span>
+        <span class="pay-pill"><span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l5 8-5 3-5-3 5-8zm0 11l5 3-5 6-5-6 5-3z" fill="currentColor"/></svg></span>Ethereum</span>
+        <span class="pay-pill"><span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6h13l-2 2H3l2-2zm3 5h13l-2 2H6l2-2zm-3 5h13l-2 2H3l2-2z" fill="currentColor"/></svg></span>Solana</span>
+        <span class="pay-pill"><span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7 7h10M12 7v10M8 10.5c1.2.5 2.5.7 4 .7s2.8-.2 4-.7M8.8 13c1 .3 2.1.5 3.2.5s2.2-.2 3.2-.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>USDT</span>
+      </div>
+      <div class="bonus-grid">
+        <article class="bonus-card"><div class="bonus-art"><img src="assets/rare-ticket.webp" alt="Rare Ticket"></div><strong>Every 1,100 Cat Food</strong><small>+1 Rare Ticket</small></article>
+        <article class="bonus-card"><div class="bonus-art"><img src="assets/leadership-flag.webp" alt="Leadership Flag"></div><strong>Every 3,200 Cat Food</strong><small>+1 Leadership Flag</small></article>
+        <article class="bonus-card"><div class="bonus-art"><img src="assets/platinum-ticket.webp" alt="Platinum Ticket"></div><strong>Every 18,600 Cat Food</strong><small>+1 Platinum Ticket</small></article>
+        <article class="bonus-card"><div class="bonus-art legend">✦</div><strong>Every 39,000 Cat Food</strong><small>Unlock 1 specific legend unit (can request)</small></article>
+      </div>
+      <div class="offer-grid">
+    <article class="offer-card">
+      
+      <div class="offer-top">
+        <div class="thumb-box"><img src="assets/menu-1.webp" alt="Menu 1 icon"></div>
+        <div>
+          <p class="eyebrow left">Starter Pick</p>
+          <h3>Menu 1</h3>
+          <p class="subline">+10,800 Cat Food</p>
+        </div>
+      </div>
+      <div class="option-list">
+        <a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%201%0AQuantity%3A%201%C3%97%20package%0ATotal%20Cat%20Food%3A%2010%2C800%0APrice%3A%20%241.60%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x9%20%C2%B7%20Leadership%20Flag%20x3%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." target="_blank" rel="noopener noreferrer">
+          <div class="option-main"><span class="mult-pill">1×</span><div><strong>10,800</strong><small>Total Cat Food</small></div><span class="price-green">$1.60</span></div>
+          <div class="micro-copy">Rare Ticket x9 · Leadership Flag x3</div>
+        </a>
+        <a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%201%0AQuantity%3A%202%C3%97%20package%0ATotal%20Cat%20Food%3A%2021%2C600%0APrice%3A%20%243.20%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x19%20%C2%B7%20Leadership%20Flag%20x6%20%C2%B7%20Platinum%20Ticket%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." target="_blank" rel="noopener noreferrer">
+          <div class="option-main"><span class="mult-pill">2×</span><div><strong>21,600</strong><small>Total Cat Food</small></div><span class="price-green">$3.20</span></div>
+          <div class="micro-copy">Rare Ticket x19 · Leadership Flag x6 · Platinum Ticket x1</div>
+        </a>
+        <a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%201%0AQuantity%3A%203%C3%97%20package%0ATotal%20Cat%20Food%3A%2032%2C400%0APrice%3A%20%244.80%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x29%20%C2%B7%20Leadership%20Flag%20x10%20%C2%B7%20Platinum%20Ticket%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." target="_blank" rel="noopener noreferrer">
+          <div class="option-main"><span class="mult-pill">3×</span><div><strong>32,400</strong><small>Total Cat Food</small></div><span class="price-green">$4.80</span></div>
+          <div class="micro-copy">Rare Ticket x29 · Leadership Flag x10 · Platinum Ticket x1</div>
+        </a></div>
+    </article>
+    <article class="offer-card">
+      
+      <div class="offer-top">
+        <div class="thumb-box"><img src="assets/menu-2.webp" alt="Menu 2 icon"></div>
+        <div>
+          <p class="eyebrow left">Popular</p>
+          <h3>Menu 2</h3>
+          <p class="subline">+18,600 Cat Food</p>
+        </div>
+      </div>
+      <div class="option-list">
+        <a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%202%0AQuantity%3A%201%C3%97%20package%0ATotal%20Cat%20Food%3A%2018%2C600%0APrice%3A%20%242.60%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x16%20%C2%B7%20Leadership%20Flag%20x5%20%C2%B7%20Platinum%20Ticket%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." target="_blank" rel="noopener noreferrer">
+          <div class="option-main"><span class="mult-pill">1×</span><div><strong>18,600</strong><small>Total Cat Food</small></div><span class="price-green">$2.60</span></div>
+          <div class="micro-copy">Rare Ticket x16 · Leadership Flag x5 · Platinum Ticket x1</div>
+        </a>
+        <a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%202%0AQuantity%3A%202%C3%97%20package%0ATotal%20Cat%20Food%3A%2037%2C200%0APrice%3A%20%245.20%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x33%20%C2%B7%20Leadership%20Flag%20x11%20%C2%B7%20Platinum%20Ticket%20x2%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." target="_blank" rel="noopener noreferrer">
+          <div class="option-main"><span class="mult-pill">2×</span><div><strong>37,200</strong><small>Total Cat Food</small></div><span class="price-green">$5.20</span></div>
+          <div class="micro-copy">Rare Ticket x33 · Leadership Flag x11 · Platinum Ticket x2</div>
+        </a>
+        <a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%202%0AQuantity%3A%203%C3%97%20package%0ATotal%20Cat%20Food%3A%2055%2C800%0APrice%3A%20%247.80%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x50%20%C2%B7%20Leadership%20Flag%20x17%20%C2%B7%20Platinum%20Ticket%20x3%20%C2%B7%20Legend%20Unlock%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." target="_blank" rel="noopener noreferrer">
+          <div class="option-main"><span class="mult-pill">3×</span><div><strong>55,800</strong><small>Total Cat Food</small></div><span class="price-green">$7.80</span></div>
+          <div class="micro-copy">Rare Ticket x50 · Leadership Flag x17 · Platinum Ticket x3 · Legend Unlock x1</div>
+        </a></div>
+    </article>
+    <article class="offer-card featured">
+      <span class="featured-ribbon">Recommended</span>
+      <div class="offer-top">
+        <div class="thumb-box"><img src="assets/menu-3.webp" alt="Menu 3 icon"></div>
+        <div>
+          <p class="eyebrow left">Best Value</p>
+          <h3>Menu 3</h3>
+          <p class="subline">+39,000 Cat Food</p>
+        </div>
+      </div>
+      <div class="option-list">
+        <a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%203%0AQuantity%3A%201%C3%97%20package%0ATotal%20Cat%20Food%3A%2039%2C000%0APrice%3A%20%245.20%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x35%20%C2%B7%20Leadership%20Flag%20x12%20%C2%B7%20Platinum%20Ticket%20x2%20%C2%B7%20Legend%20Unlock%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." target="_blank" rel="noopener noreferrer">
+          <div class="option-main"><span class="mult-pill">1×</span><div><strong>39,000</strong><small>Total Cat Food</small></div><span class="price-green">$5.20</span></div>
+          <div class="micro-copy">Rare Ticket x35 · Leadership Flag x12 · Platinum Ticket x2 · Legend Unlock x1</div>
+        </a>
+        <a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%203%0AQuantity%3A%202%C3%97%20package%0ATotal%20Cat%20Food%3A%2078%2C000%0APrice%3A%20%2410.40%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x70%20%C2%B7%20Leadership%20Flag%20x24%20%C2%B7%20Platinum%20Ticket%20x4%20%C2%B7%20Legend%20Unlock%20x2%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." target="_blank" rel="noopener noreferrer">
+          <div class="option-main"><span class="mult-pill">2×</span><div><strong>78,000</strong><small>Total Cat Food</small></div><span class="price-green">$10.40</span></div>
+          <div class="micro-copy">Rare Ticket x70 · Leadership Flag x24 · Platinum Ticket x4 · Legend Unlock x2</div>
+        </a>
+        <a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%203%0AQuantity%3A%203%C3%97%20package%0ATotal%20Cat%20Food%3A%20117%2C000%0APrice%3A%20%2415.60%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x106%20%C2%B7%20Leadership%20Flag%20x36%20%C2%B7%20Platinum%20Ticket%20x6%20%C2%B7%20Legend%20Unlock%20x3%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." target="_blank" rel="noopener noreferrer">
+          <div class="option-main"><span class="mult-pill">3×</span><div><strong>117,000</strong><small>Total Cat Food</small></div><span class="price-green">$15.60</span></div>
+          <div class="micro-copy">Rare Ticket x106 · Leadership Flag x36 · Platinum Ticket x6 · Legend Unlock x3</div>
+        </a></div>
+    </article>
+    <article class="offer-card">
+      
+      <div class="offer-top">
+        <div class="thumb-box"><img src="assets/menu-4.webp" alt="Menu 4 icon"></div>
+        <div>
+          <p class="eyebrow left">High Volume</p>
+          <h3>Menu 4</h3>
+          <p class="subline">+99,000 Cat Food</p>
+        </div>
+      </div>
+      <div class="option-list">
+        <a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%204%0AQuantity%3A%201%C3%97%20package%0ATotal%20Cat%20Food%3A%2099%2C000%0APrice%3A%20%2413.20%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x90%20%C2%B7%20Leadership%20Flag%20x30%20%C2%B7%20Platinum%20Ticket%20x5%20%C2%B7%20Legend%20Unlock%20x2%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." target="_blank" rel="noopener noreferrer">
+          <div class="option-main"><span class="mult-pill">1×</span><div><strong>99,000</strong><small>Total Cat Food</small></div><span class="price-green">$13.20</span></div>
+          <div class="micro-copy">Rare Ticket x90 · Leadership Flag x30 · Platinum Ticket x5 · Legend Unlock x2</div>
+        </a>
+        <a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%204%0AQuantity%3A%202%C3%97%20package%0ATotal%20Cat%20Food%3A%20198%2C000%0APrice%3A%20%2426.40%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x180%20%C2%B7%20Leadership%20Flag%20x61%20%C2%B7%20Platinum%20Ticket%20x10%20%C2%B7%20Legend%20Unlock%20x5%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." target="_blank" rel="noopener noreferrer">
+          <div class="option-main"><span class="mult-pill">2×</span><div><strong>198,000</strong><small>Total Cat Food</small></div><span class="price-green">$26.40</span></div>
+          <div class="micro-copy">Rare Ticket x180 · Leadership Flag x61 · Platinum Ticket x10 · Legend Unlock x5</div>
+        </a>
+        <a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%204%0AQuantity%3A%203%C3%97%20package%0ATotal%20Cat%20Food%3A%20297%2C000%0APrice%3A%20%2439.60%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x270%20%C2%B7%20Leadership%20Flag%20x92%20%C2%B7%20Platinum%20Ticket%20x15%20%C2%B7%20Legend%20Unlock%20x7%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." target="_blank" rel="noopener noreferrer">
+          <div class="option-main"><span class="mult-pill">3×</span><div><strong>297,000</strong><small>Total Cat Food</small></div><span class="price-green">$39.60</span></div>
+          <div class="micro-copy">Rare Ticket x270 · Leadership Flag x92 · Platinum Ticket x15 · Legend Unlock x7</div>
+        </a></div>
+    </article></div>
+    </div>
+  </section>
 
-    if (savedTheme === "light") {
-      document.body.classList.add("light");
-      themeToggle.textContent = "🌙 Dark";
-    }
+  <section class="section" id="vip">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">VIP Deals</p>
+        <h2>One-time purchase offers</h2>
+        <p>Added a dedicated VIP Deals section based on your example poster. Customers can review each offer and tap to order directly in WhatsApp.</p>
+      </div>
+      <div class="poster-preview"><img src="assets/vip-poster.png" alt="VIP Deals poster preview"></div>
+      <div class="offer-grid four">
+    <article class="offer-card vip-card">
+      <div class="tag-badge">Entry VIP Deal</div>
+      <div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8l3 3 5-6 5 6 3-3-2 11H6L4 8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="11" r="1.5" fill="currentColor"/></svg></div>
+      <h3>VIP Plus</h3>
+      <ul class="feature-list"><li>18,600 Cat Food</li><li>Rare Ticket x20</li><li>Platinum Ticket x1</li></ul>
+      <div class="big-price">US$ 2.99</div>
+      <a class="btn btn-primary full" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20VIP%20Plus%0APrice%3A%20US%24%202.99%0AIncluded%20items%3A%2018%2C600%20Cat%20Food%2C%20Rare%20Ticket%20x20%2C%20Platinum%20Ticket%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." target="_blank" rel="noopener noreferrer">Order via WhatsApp</a>
+    </article>
+    <article class="offer-card vip-card">
+      <div class="tag-badge">Most Popular</div>
+      <div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8l3 3 5-6 5 6 3-3-2 11H6L4 8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="11" r="1.5" fill="currentColor"/></svg></div>
+      <h3>VIP Elite</h3>
+      <ul class="feature-list"><li>39,000 Cat Food</li><li>Rare Ticket x50</li><li>Platinum Ticket x1</li><li>Dark Catseye x20</li></ul>
+      <div class="big-price">US$ 5.99</div>
+      <a class="btn btn-primary full" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20VIP%20Elite%0APrice%3A%20US%24%205.99%0AIncluded%20items%3A%2039%2C000%20Cat%20Food%2C%20Rare%20Ticket%20x50%2C%20Platinum%20Ticket%20x1%2C%20Dark%20Catseye%20x20%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." target="_blank" rel="noopener noreferrer">Order via WhatsApp</a>
+    </article>
+    <article class="offer-card vip-card">
+      <div class="tag-badge">Ultimate Value</div>
+      <div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8l3 3 5-6 5 6 3-3-2 11H6L4 8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="11" r="1.5" fill="currentColor"/></svg></div>
+      <h3>VIP Ultimate</h3>
+      <ul class="feature-list"><li>54,000 Cat Food</li><li>Rare Ticket x100</li><li>Platinum Ticket x2</li><li>Dark Catseye x40</li><li>11,000,000 XP</li></ul>
+      <div class="big-price">US$ 8.99</div>
+      <a class="btn btn-primary full" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20VIP%20Ultimate%0APrice%3A%20US%24%208.99%0AIncluded%20items%3A%2054%2C000%20Cat%20Food%2C%20Rare%20Ticket%20x100%2C%20Platinum%20Ticket%20x2%2C%20Dark%20Catseye%20x40%2C%2011%2C000%2C000%20XP%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." target="_blank" rel="noopener noreferrer">Order via WhatsApp</a>
+    </article>
+    <article class="offer-card vip-card">
+      <div class="tag-badge">For Advanced Players</div>
+      <div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8l3 3 5-6 5 6 3-3-2 11H6L4 8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="11" r="1.5" fill="currentColor"/></svg></div>
+      <h3>Collector Bundle</h3>
+      <ul class="feature-list"><li>Epic Catfruit x50</li><li>Aku Catfruit x30</li><li>Relic Catfruit x30</li><li>Golden Catfruit x30</li><li>Catfruit x30</li><li>Dark Catseye x30</li><li>NP x1111</li></ul>
+      <div class="big-price">US$ 11.9</div>
+      <a class="btn btn-primary full" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20Collector%20Bundle%0APrice%3A%20US%24%2011.9%0AIncluded%20items%3A%20Epic%20Catfruit%20x50%2C%20Aku%20Catfruit%20x30%2C%20Relic%20Catfruit%20x30%2C%20Golden%20Catfruit%20x30%2C%20Catfruit%20x30%2C%20Dark%20Catseye%20x30%2C%20NP%20x1111%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." target="_blank" rel="noopener noreferrer">Order via WhatsApp</a>
+    </article></div>
+    </div>
+  </section>
 
-    themeToggle.addEventListener("click", () => {
-      document.body.classList.toggle("light");
-      const isLight = document.body.classList.contains("light");
-      themeToggle.textContent = isLight ? "🌙 Dark" : "☀️ Light";
-      localStorage.setItem("theme", isLight ? "light" : "dark");
-    });
+  <section class="section compact" id="stage">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Stage Progression</p>
+        <h2>Stage skipping service</h2>
+        <p>Added a stage progression offer section based on your sample pricing: EoC, ITF, CoTC, Stories of Legend, and The Aku Realms.</p>
+      </div>
+      <div class="poster-preview"><img src="assets/stage-poster.png" alt="Stage progression poster preview"></div>
+      <div class="offer-grid five">
+    <article class="offer-card stage-card">
+      <div class="tag-badge">Stage 1</div>
+      <div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18l5-5 3 3 6-8 2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 8h6v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>Empire of Cats</h3>
+      <p class="stage-desc">All chapters completed · Bonus: + Treasure</p>
+      <div class="big-price">$1.7</div>
+      <a class="btn btn-primary full" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20Stage%20Progression%20service.%0A%0ASelected%20service%3A%20Empire%20of%20Cats%0APrice%3A%20%241.7%0ADetails%3A%20All%20chapters%20completed%20%C2%B7%20Bonus%3A%20%2B%20Treasure%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." target="_blank" rel="noopener noreferrer">Order via WhatsApp</a>
+    </article>
+    <article class="offer-card stage-card">
+      <div class="tag-badge">Stage 2</div>
+      <div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18l5-5 3 3 6-8 2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 8h6v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>Into The Future</h3>
+      <p class="stage-desc">All chapters completed · Bonus: + Treasure</p>
+      <div class="big-price">$2.2</div>
+      <a class="btn btn-primary full" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20Stage%20Progression%20service.%0A%0ASelected%20service%3A%20Into%20The%20Future%0APrice%3A%20%242.2%0ADetails%3A%20All%20chapters%20completed%20%C2%B7%20Bonus%3A%20%2B%20Treasure%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." target="_blank" rel="noopener noreferrer">Order via WhatsApp</a>
+    </article>
+    <article class="offer-card stage-card">
+      <div class="tag-badge">Stage 3</div>
+      <div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18l5-5 3 3 6-8 2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 8h6v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>Cats of the Cosmos</h3>
+      <p class="stage-desc">All chapters completed · Bonus: + Treasure</p>
+      <div class="big-price">$3</div>
+      <a class="btn btn-primary full" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20Stage%20Progression%20service.%0A%0ASelected%20service%3A%20Cats%20of%20the%20Cosmos%0APrice%3A%20%243%0ADetails%3A%20All%20chapters%20completed%20%C2%B7%20Bonus%3A%20%2B%20Treasure%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." target="_blank" rel="noopener noreferrer">Order via WhatsApp</a>
+    </article>
+    <article class="offer-card stage-card">
+      <div class="tag-badge">Legend Stages</div>
+      <div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18l5-5 3 3 6-8 2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 8h6v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>Stories of Legend</h3>
+      <p class="stage-desc">All chapters completed · Bonus: + Treasure</p>
+      <div class="big-price">$4.2</div>
+      <a class="btn btn-primary full" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20Stage%20Progression%20service.%0A%0ASelected%20service%3A%20Stories%20of%20Legend%0APrice%3A%20%244.2%0ADetails%3A%20All%20chapters%20completed%20%C2%B7%20Bonus%3A%20%2B%20Treasure%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." target="_blank" rel="noopener noreferrer">Order via WhatsApp</a>
+    </article>
+    <article class="offer-card stage-card">
+      <div class="tag-badge">Stage 5</div>
+      <div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18l5-5 3 3 6-8 2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 8h6v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>The Aku Realms</h3>
+      <p class="stage-desc">All chapters completed · Bonus: + Treasure</p>
+      <div class="big-price">$3.4</div>
+      <a class="btn btn-primary full" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20Stage%20Progression%20service.%0A%0ASelected%20service%3A%20The%20Aku%20Realms%0APrice%3A%20%243.4%0ADetails%3A%20All%20chapters%20completed%20%C2%B7%20Bonus%3A%20%2B%20Treasure%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." target="_blank" rel="noopener noreferrer">Order via WhatsApp</a>
+    </article></div>
+    </div>
+  </section>
 
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("open");
-    });
+  <section class="section" id="payments-social">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Icons Updated</p>
+        <h2>Social media and payment methods</h2>
+        <p>All key website icons are now represented with proper-style icons instead of emoji.</p>
+      </div>
+      <div class="payment-row" style="margin-bottom:16px">
+        <span class="pay-pill"><span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.2 6.8h3.1c1.6 0 2.6.8 2.6 2.1 0 1-.6 1.7-1.5 2 1.2.3 1.9 1.1 1.9 2.3 0 1.7-1.4 2.8-3.4 2.8h-2.7M11 5v14M13.2 5v14M9.5 10.9h4.2M9.5 14.8h4.7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>BTC</span>
+        <span class="pay-pill"><span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l5 8-5 3-5-3 5-8zm0 11l5 3-5 6-5-6 5-3z" fill="currentColor"/></svg></span>ETH</span>
+        <span class="pay-pill"><span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6h13l-2 2H3l2-2zm3 5h13l-2 2H6l2-2zm-3 5h13l-2 2H3l2-2z" fill="currentColor"/></svg></span>SOL</span>
+        <span class="pay-pill"><span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7 7h10M12 7v10M8 10.5c1.2.5 2.5.7 4 .7s2.8-.2 4-.7M8.8 13c1 .3 2.1.5 3.2.5s2.2-.2 3.2-.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>USDT</span>
+        <span class="pay-pill"><span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M7 7h4v4H7zM13 7h4v4h-4zM7 13h4v4H7z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M13 13h1v1h-1zm3 0h1v1h-1zm-2 2h3v2h-1v-1h-2z" fill="currentColor"/></svg></span>QRIS</span>
+      </div>
+      <div class="social-row">
+        <a class="social-pill" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20ask%20about%20your%20services." target="_blank" rel="noopener noreferrer"><span class="icon-svg"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M19.11 17.35c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.13-.18.27-.69.87-.85 1.05-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.3-.79-.7-1.33-1.56-1.48-1.82-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.44-.82-1.98-.21-.5-.42-.43-.58-.44h-.49c-.18 0-.47.07-.71.34-.24.27-.93.91-.93 2.22 0 1.3.95 2.57 1.08 2.75.13.18 1.86 2.84 4.5 3.98.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.08 1.58-.64 1.8-1.26.22-.61.22-1.14.16-1.26-.07-.11-.24-.18-.51-.31z"/><path fill="currentColor" d="M16.03 3.2c-6.97 0-12.63 5.62-12.63 12.55 0 2.22.59 4.39 1.71 6.29L3.2 28.8l6.96-1.82a12.67 12.67 0 005.87 1.49h.01c6.97 0 12.63-5.62 12.63-12.55S23 3.2 16.03 3.2zm0 22.98h-.01a10.5 10.5 0 01-5.35-1.47l-.38-.23-4.13 1.08 1.1-4.01-.25-.41a10.22 10.22 0 01-1.57-5.42c0-5.65 4.64-10.25 10.35-10.25 2.77 0 5.37 1.07 7.33 3.01a10.16 10.16 0 013.03 7.24c0 5.65-4.64 10.26-10.35 10.26z"/></svg></span>WhatsApp</a>
+        <a class="social-pill" href="https://www.instagram.com/thebattlecats.market/" target="_blank" rel="noopener noreferrer"><span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg></span>Instagram</a>
+        <a class="social-pill" href="https://www.facebook.com/people/The-Battle-Cats-Market/61577816481801/" target="_blank" rel="noopener noreferrer"><span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.5-1.5h1.7V4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.4V10H7v3h3v8h3.5z" fill="currentColor"/></svg></span>Facebook</a>
+      </div>
+    </div>
+  </section>
 
-    document.querySelectorAll(".nav-links a").forEach((link) => {
-      link.addEventListener("click", () => navLinks.classList.remove("open"));
-    });
-  </script>
+  <section class="section compact" id="faq">
+    <div class="container">
+      <div class="section-heading"><p class="eyebrow">Frequently Asked Questions</p><h2>Before you order</h2></div>
+      <div class="faq">
+        <details open><summary>How do customers order from the website?</summary><p>Every Cat Food, VIP Deal, and Stage Progression card includes a direct WhatsApp order button. The selected package information is already written automatically in the message.</p></details>
+        <details><summary>What payments are shown on the website now?</summary><p>The website now shows crypto icons for BTC, ETH, SOL, and USDT, plus QRIS as an additional payment icon for offers that support it.</p></details>
+        <details><summary>Can the customer order VIP Deals and Stage Progression from the website too?</summary><p>Yes. Dedicated sections for VIP Deals and Stage Progression were added, each with its own WhatsApp order action.</p></details>
+        <details><summary>Are the Cat Food bonuses cumulative?</summary><p>Yes. Bonus thresholds are based on the total Cat Food purchased in one order and are confirmed again in WhatsApp before payment.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="legal">
+    <div class="container">
+      <div class="section-heading"><p class="eyebrow">Official Documents</p><h2>Policies and terms</h2><p>Last updated: July 2026</p></div>
+      <div class="legal-layout">
+        <nav class="legal-nav" aria-label="Policy navigation"><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#refund">Refunds</a></nav>
+        <div class="legal-copy">
+          <article class="offer-card" id="privacy"><h3>Privacy Policy</h3><h4>1. Information We Collect</h4><p>We may collect information voluntarily provided by customers, including names, social media usernames, contact details, order information, payment confirmation, and information required to perform a selected service.</p><h4>2. How We Use Information</h4><p>Information is used to process orders, provide customer support, maintain transaction records, prevent fraud, resolve disputes, and improve our services.</p><h4>3. Data Sharing</h4><p>We do not sell or rent personal information. Information may be shared only when necessary to complete a transaction, comply with applicable law, or protect customers and our business.</p></article>
+          <article class="offer-card" id="terms"><h3>Terms of Service</h3><h4>1. Agreement</h4><p>By placing an order, you confirm that the information supplied is accurate and that you understand the selected service.</p><h4>2. Customer Responsibilities</h4><ul><li>Provide accurate and complete order information.</li><li>Follow instructions provided during processing.</li><li>Confirm the service, price, bonuses, and payment method before paying.</li><li>Do not submit duplicate or conflicting orders.</li></ul><h4>3. Independent Service</h4><p>TheBattleCats.Market is an independent service and is not affiliated with or endorsed by PONOS Corporation.</p></article>
+          <article class="offer-card" id="refund"><h3>Refund Policy</h3><h4>Eligible Refunds</h4><ul><li>The order cannot be completed by us.</li><li>A verified duplicate payment was made.</li><li>The service has not started and cancellation is approved.</li></ul><h4>Non-Refundable Situations</h4><ul><li>The service has already been completed.</li><li>Incorrect or incomplete information was provided by the customer.</li><li>The customer changes their mind after processing begins.</li></ul></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section compact" id="contact">
+    <div class="container">
+      <div class="section-heading"><p class="eyebrow">Official Contact</p><h2>Order and support channels</h2><p>Please verify that you are communicating with your official accounts before making any payment.</p></div>
+      <div class="contact-grid">
+        <article class="contact-card"><span class="icon-svg"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M19.11 17.35c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.13-.18.27-.69.87-.85 1.05-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.3-.79-.7-1.33-1.56-1.48-1.82-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.44-.82-1.98-.21-.5-.42-.43-.58-.44h-.49c-.18 0-.47.07-.71.34-.24.27-.93.91-.93 2.22 0 1.3.95 2.57 1.08 2.75.13.18 1.86 2.84 4.5 3.98.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.08 1.58-.64 1.8-1.26.22-.61.22-1.14.16-1.26-.07-.11-.24-.18-.51-.31z"/><path fill="currentColor" d="M16.03 3.2c-6.97 0-12.63 5.62-12.63 12.55 0 2.22.59 4.39 1.71 6.29L3.2 28.8l6.96-1.82a12.67 12.67 0 005.87 1.49h.01c6.97 0 12.63-5.62 12.63-12.55S23 3.2 16.03 3.2zm0 22.98h-.01a10.5 10.5 0 01-5.35-1.47l-.38-.23-4.13 1.08 1.1-4.01-.25-.41a10.22 10.22 0 01-1.57-5.42c0-5.65 4.64-10.25 10.35-10.25 2.77 0 5.37 1.07 7.33 3.01a10.16 10.16 0 013.03 7.24c0 5.65-4.64 10.26-10.35 10.26z"/></svg></span><h3>WhatsApp</h3><p>Fastest channel for orders, package confirmation, bonuses, and direct support.</p><a class="btn btn-primary" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener noreferrer">Open WhatsApp</a></article>
+        <article class="contact-card"><span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg></span><h3>Instagram</h3><p>@thebattlecats.market — offers, testimonials, announcements, and updates.</p><a class="btn btn-secondary" href="https://www.instagram.com/thebattlecats.market/" target="_blank" rel="noopener noreferrer">Open Instagram</a></article>
+        <article class="contact-card"><span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.5-1.5h1.7V4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.4V10H7v3h3v8h3.5z" fill="currentColor"/></svg></span><h3>Facebook</h3><p>Official TheBattleCats.Market page and community updates.</p><a class="btn btn-secondary" href="https://www.facebook.com/people/The-Battle-Cats-Market/61577816481801/" target="_blank" rel="noopener noreferrer">Open Facebook</a></article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<a class="floating-wa" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><span class="icon-svg"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M19.11 17.35c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.13-.18.27-.69.87-.85 1.05-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.3-.79-.7-1.33-1.56-1.48-1.82-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.44-.82-1.98-.21-.5-.42-.43-.58-.44h-.49c-.18 0-.47.07-.71.34-.24.27-.93.91-.93 2.22 0 1.3.95 2.57 1.08 2.75.13.18 1.86 2.84 4.5 3.98.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.08 1.58-.64 1.8-1.26.22-.61.22-1.14.16-1.26-.07-.11-.24-.18-.51-.31z"/><path fill="currentColor" d="M16.03 3.2c-6.97 0-12.63 5.62-12.63 12.55 0 2.22.59 4.39 1.71 6.29L3.2 28.8l6.96-1.82a12.67 12.67 0 005.87 1.49h.01c6.97 0 12.63-5.62 12.63-12.55S23 3.2 16.03 3.2zm0 22.98h-.01a10.5 10.5 0 01-5.35-1.47l-.38-.23-4.13 1.08 1.1-4.01-.25-.41a10.22 10.22 0 01-1.57-5.42c0-5.65 4.64-10.25 10.35-10.25 2.77 0 5.37 1.07 7.33 3.01a10.16 10.16 0 013.03 7.24c0 5.65-4.64 10.26-10.35 10.26z"/></svg></span></a>
+<footer><div class="container">© 2026 TheBattleCats.Market. All rights reserved. Independent service; not affiliated with or endorsed by PONOS Corporation.</div></footer>
+<script>
+const menuButton = document.getElementById('menuButton');
+const navLinks = document.getElementById('navLinks');
+menuButton.addEventListener('click', () => { const isOpen = navLinks.classList.toggle('open'); menuButton.setAttribute('aria-expanded', String(isOpen)); });
+navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { navLinks.classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false'); }));
+document.addEventListener('click', event => { if (window.innerWidth <= 760 && !navLinks.contains(event.target) && !menuButton.contains(event.target)) { navLinks.classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false'); } });
+</script>
 </body>
 </html>
