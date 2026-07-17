@@ -1,0 +1,32 @@
+CLEAN FINAL REPOSITORY FILES
+
+Upload every file in this folder directly to the ROOT of the GitHub repository.
+Do not place them inside another folder.
+
+Required website files:
+index.html
+battle-cats-logo-glow.png
+site-avatar.png
+catfood-can.png
+menu-1.png
+menu-2.png
+menu-3.png
+menu-4.png
+platinum-ticket.png
+leadership-flag.webp
+rare-ticket.webp
+stage-poster.png
+vip-poster.png
+
+Old files safe to delete after the new site deploys:
+battle-cats-logo-glow.png.png
+menu-1.webp
+menu-2.webp
+menu-3.webp
+menu-4.webp
+platinum-ticket.webp
+README-INSTALL.txt
+README-UPGRADE-V3.txt
+README.txt
+
+Keep LICENSE and README.md if desired.
