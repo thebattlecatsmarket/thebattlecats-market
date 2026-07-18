@@ -87,11 +87,15 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
 
 
 /* Stage Progression upgrade */
+
+.legend-shared-banner{margin:6px 0 18px;border:1px solid var(--border);border-radius:24px;padding:10px;background:linear-gradient(155deg,rgba(31,18,52,.96),rgba(10,7,18,.98));box-shadow:0 18px 55px rgba(0,0,0,.28)}
+.legend-shared-banner img{width:100%;height:185px;display:block;object-fit:cover;object-position:center;border-radius:18px;box-shadow:0 0 0 1px rgba(255,162,51,.18),0 0 34px rgba(171,55,255,.28)}
+
 .stage-primary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-bottom:22px}
 .stage-campaign-card,.legend-campaign-card{position:relative;overflow:hidden;border:1px solid var(--border);border-radius:22px;background:linear-gradient(155deg,rgba(31,18,52,.96),rgba(10,7,18,.98));box-shadow:0 18px 55px rgba(0,0,0,.28)}
 .stage-campaign-card{display:flex;flex-direction:column;padding:14px}
-.stage-image{height:146px;overflow:hidden;border-radius:16px;border:1px solid rgba(255,255,255,.1);background:#09060f}
-.stage-image img{width:100%;height:100%;object-fit:cover;transition:transform .28s ease}
+.stage-image{height:150px;overflow:hidden;border-radius:16px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(180deg,rgba(17,10,28,.95),rgba(8,6,14,.98));padding:8px;display:flex;align-items:center;justify-content:center}
+.stage-image img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;border-radius:12px;transition:transform .28s ease}
 .stage-campaign-card:hover .stage-image img,.legend-campaign-card:hover .stage-image img{transform:scale(1.045)}
 .stage-campaign-card[data-tone="gold"] .stage-image{box-shadow:0 0 0 1px rgba(255,210,62,.25),0 0 25px rgba(255,180,25,.35)}
 .stage-campaign-card[data-tone="cyan"] .stage-image{box-shadow:0 0 0 1px rgba(54,230,255,.25),0 0 25px rgba(26,190,255,.34)}
@@ -107,12 +111,12 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
 .legend-heading{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:32px 0 16px}.legend-heading h3{margin:0;font-size:1.55rem}.legend-heading p{margin:0;color:var(--muted);font-size:.9rem}
 .discount-legend{display:flex;gap:8px;flex-wrap:wrap}.discount-legend span{padding:7px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(166,77,255,.08);font-size:.75rem;font-weight:900}
 .legend-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.legend-campaign-card{padding:14px}.legend-campaign-card .stage-image{height:154px;position:relative}
+.legend-campaign-card{padding:14px}.legend-campaign-card .stage-image{height:138px;position:relative}
 .legend-campaign-card[data-tone="sol"] .stage-image{box-shadow:0 0 0 1px rgba(255,142,28,.26),0 0 28px rgba(255,99,22,.36)}
 .legend-campaign-card[data-tone="ul"] .stage-image{box-shadow:0 0 0 1px rgba(178,93,255,.3),0 0 28px rgba(136,55,255,.4)}
 .legend-campaign-card[data-tone="zl"] .stage-image{box-shadow:0 0 0 1px rgba(66,225,255,.28),0 0 28px rgba(31,140,255,.4)}
-.legend-campaign-card[data-tone="ul"] .stage-image img{filter:hue-rotate(245deg) saturate(1.18)}
-.legend-campaign-card[data-tone="zl"] .stage-image img{filter:hue-rotate(155deg) saturate(1.2) brightness(.9)}
+
+
 .legend-header{padding:16px 4px 11px}.legend-header h3{margin:0 0 5px;font-size:1.36rem}.legend-header p{margin:0;color:var(--gold);font-size:.84rem;font-weight:900}
 .crown-list{display:grid;gap:8px}.crown-option{display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;padding:11px 12px;border:1px solid rgba(255,255,255,.075);border-radius:14px;background:rgba(255,255,255,.035);transition:transform .18s ease,border-color .18s ease,background .18s ease}
 .crown-option:hover{transform:translateY(-2px);border-color:var(--border2);background:rgba(157,73,255,.1)}
@@ -125,7 +129,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
 <style>
 @media (max-width:1100px){.stage-primary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.legend-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.unit-price-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:980px){.quick-links{grid-template-columns:repeat(2,1fr)}.unit-builder{grid-template-columns:1fr}}
-@media (max-width:700px){.stage-primary-grid,.legend-grid{grid-template-columns:1fr}.legend-heading{align-items:flex-start;flex-direction:column}.stage-image,.legend-campaign-card .stage-image{height:auto;aspect-ratio:16/9}}
+@media (max-width:700px){.stage-primary-grid,.legend-grid{grid-template-columns:1fr}.legend-heading{align-items:flex-start;flex-direction:column}.stage-image,.legend-campaign-card .stage-image,.legend-shared-banner img{height:auto;aspect-ratio:16/9}}
 @media (max-width:560px){.unit-price-grid{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.form-field.full{grid-column:auto}.unit-form,.unit-summary{padding:19px}.restore-guarantee{grid-template-columns:1fr}}
 </style>
 
@@ -392,7 +396,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
       <div class="section-heading">
         <p class="eyebrow">Stage Progression Service</p>
         <h2>Choose your progression route</h2>
-        <p>Manual stage progression with clear order scope, progress updates, and direct WhatsApp confirmation. Campaign artwork uses the official in-game visual identity with a subtle card glow.</p>
+        <p>Manual stage progression with clear order scope, progress updates, and direct WhatsApp confirmation. Campaign banners are styled to match the in-game identity with a cleaner, more polished layout.</p>
       </div>
 
       <div class="stage-primary-grid">
@@ -459,6 +463,11 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
         <div class="discount-legend"><span>2-Crown · 20% OFF</span><span>3-Crown · 25% OFF</span><span>4-Crown · 30% OFF</span></div>
       </div>
 
+      
+      <div class="legend-shared-banner">
+        <img src="legendstages.webp" alt="Legend Stages banner">
+      </div>
+
       <div class="legend-grid">
         <article class="legend-campaign-card" data-tone="sol">
           <div class="stage-image"><img src="legendstages.webp" alt="Stories of Legend artwork"></div>
@@ -482,9 +491,9 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
   <section class="section" id="payments-social">
     <div class="container">
       <div class="section-heading">
-        <p class="eyebrow">Icons Updated</p>
-        <h2>Social media and payment methods</h2>
-        <p>All key website icons are now represented with proper-style icons instead of emoji.</p>
+        <p class="eyebrow">Connect & Pay</p>
+        <h2>Payment methods & social media</h2>
+        <p>Choose your preferred payment method and contact platform for fast, secure ordering.</p>
       </div>
       <div class="payment-row" style="margin-bottom:16px">
         <span class="pay-pill"><span class="icon-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.2 6.8h3.1c1.6 0 2.6.8 2.6 2.1 0 1-.6 1.7-1.5 2 1.2.3 1.9 1.1 1.9 2.3 0 1.7-1.4 2.8-3.4 2.8h-2.7M11 5v14M13.2 5v14M9.5 10.9h4.2M9.5 14.8h4.7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>BTC</span>
