@@ -414,6 +414,25 @@ body.local-pricing-active #summaryPrice{
 @media (max-width:980px){.quick-links{grid-template-columns:repeat(2,1fr)}.unit-builder{grid-template-columns:1fr}}
 @media (max-width:700px){.stage-primary-grid,.legend-grid{grid-template-columns:1fr}.legend-heading{align-items:flex-start;flex-direction:column}.stage-image,.legend-campaign-card .stage-image,}
 @media (max-width:560px){.unit-price-grid{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.form-field.full{grid-column:auto}.unit-form,.unit-summary{padding:19px}.restore-guarantee{grid-template-columns:1fr}}
+
+/* Cleaner per-menu guarantee badge */
+.order-guarantee-badge{
+  width:max-content;
+  max-width:100%;
+  margin:8px 0;
+  padding:5px 8px;
+  gap:5px;
+  border-radius:999px;
+  font-size:.64rem;
+  letter-spacing:.01em;
+}
+.order-guarantee-badge svg{
+  width:14px;
+  height:14px;
+}
+.unit-global-guarantee{
+  margin:0 0 12px;
+}
 </style>
 </head>
 <body>
@@ -493,7 +512,6 @@ body.local-pricing-active #summaryPrice{
 </div>
 </div>
 </section>
-
 <section class="section compact" id="catfood">
 <div class="container">
 <div class="section-heading">
@@ -536,13 +554,12 @@ body.local-pricing-active #summaryPrice{
 <div class="option-main"><span class="mult-pill">3×</span><div><strong>32,400</strong><small>Total Cat Food</small></div><span class="price-green" data-global-price="$4.32" data-usd-price="4.32">$4.32</span></div>
 <div class="micro-copy"><span class="quantity-save">10% OFF</span> Rare Ticket x29 · Leadership Flag x10 · Platinum Ticket x1</div>
 </a></div>
-
-<div class="order-guarantee-badge" title="Included with every purchase">
+<div aria-label="100% Account Protection Guarantee included" class="order-guarantee-badge" title="100% Account Protection Guarantee included">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
 <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
 </svg>
-<span>100% Account Guarantee Included</span>
+<span>Account Protected</span>
 </div>
 </article>
 <article class="offer-card">
@@ -567,13 +584,12 @@ body.local-pricing-active #summaryPrice{
 <div class="option-main"><span class="mult-pill">3×</span><div><strong>55,800</strong><small>Total Cat Food</small></div><span class="price-green" data-global-price="$7.02" data-usd-price="7.02">$7.02</span></div>
 <div class="micro-copy"><span class="quantity-save">10% OFF</span> Rare Ticket x50 · Leadership Flag x17 · Platinum Ticket x3 · Legend Unlock x1</div>
 </a></div>
-
-<div class="order-guarantee-badge" title="Included with every purchase">
+<div aria-label="100% Account Protection Guarantee included" class="order-guarantee-badge" title="100% Account Protection Guarantee included">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
 <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
 </svg>
-<span>100% Account Guarantee Included</span>
+<span>Account Protected</span>
 </div>
 </article>
 <article class="offer-card featured">
@@ -599,13 +615,12 @@ body.local-pricing-active #summaryPrice{
 <div class="option-main"><span class="mult-pill">3×</span><div><strong>117,000</strong><small>Total Cat Food</small></div><span class="price-green" data-global-price="$14.04" data-usd-price="14.04">$14.04</span></div>
 <div class="micro-copy"><span class="quantity-save">10% OFF</span> Rare Ticket x106 · Leadership Flag x36 · Platinum Ticket x6 · Legend Unlock x3</div>
 </a></div>
-
-<div class="order-guarantee-badge" title="Included with every purchase">
+<div aria-label="100% Account Protection Guarantee included" class="order-guarantee-badge" title="100% Account Protection Guarantee included">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
 <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
 </svg>
-<span>100% Account Guarantee Included</span>
+<span>Account Protected</span>
 </div>
 </article>
 <article class="offer-card">
@@ -630,13 +645,12 @@ body.local-pricing-active #summaryPrice{
 <div class="option-main"><span class="mult-pill">3×</span><div><strong>297,000</strong><small>Total Cat Food</small></div><span class="price-green" data-global-price="$35.64" data-usd-price="35.64">$35.64</span></div>
 <div class="micro-copy"><span class="quantity-save">10% OFF</span> Rare Ticket x270 · Leadership Flag x92 · Platinum Ticket x15 · Legend Unlock x7</div>
 </a></div>
-
-<div class="order-guarantee-badge" title="Included with every purchase">
+<div aria-label="100% Account Protection Guarantee included" class="order-guarantee-badge" title="100% Account Protection Guarantee included">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
 <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
 </svg>
-<span>100% Account Guarantee Included</span>
+<span>Account Protected</span>
 </div>
 </article></div>
 </div>
@@ -656,13 +670,12 @@ body.local-pricing-active #summaryPrice{
 <article class="unit-price-card"><div class="unit-rarity-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2l2.4 6.1L21 9l-5 4.2 1.5 6.4L12 16.2l-5.5 3.4L8 13.2 3 9l6.6-.9L12 2z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><path d="M8 4l1.3 2.2M16 4l-1.3 2.2" stroke="currentColor" stroke-linecap="round" stroke-width="1.6"></path></svg></div><strong>Uber Rare Collab</strong><small>Starting price</small><span class="price-green" data-global-price="$0.40" data-usd-price="0.40">$0.40</span></article>
 <article class="unit-price-card legend-tier"><div class="unit-rarity-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 8l3 3 5-6 5 6 3-3-2 11H6L4 8z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><circle cx="12" cy="11" fill="currentColor" r="1.5"></circle></svg></div><strong>Legend Rare</strong><small>Limited quantity discounts</small><span class="price-green" data-global-price="$0.56" data-usd-price="0.56">$0.56</span></article>
 </div>
-
-<div class="unit-global-guarantee order-guarantee-badge">
+<div aria-label="100% Account Protection Guarantee included" class="unit-global-guarantee order-guarantee-badge" title="100% Account Protection Guarantee included">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
 <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
 </svg>
-<span>100% Account Guarantee Included</span>
+<span>Account Protected</span>
 </div>
 <div class="unit-builder">
 <div class="unit-form">
@@ -689,7 +702,7 @@ body.local-pricing-active #summaryPrice{
 <p class="unit-rule" id="unitRule">Quantity may unlock different requested Uber Rare units or be applied to one specific Uber Rare as enhancement, up to +60.</p>
 </aside>
 </div>
-<div class="restore-guarantee"><div class="service-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.9"></path><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9"></path></svg></div><div><h3>100% Account Protection Guarantee</h3><p>This protection is included with every order—not only Specific Unit services. Your account condition and important in-game details are documented before processing. If a verified service-related issue occurs, we will assist with restoration to the documented pre-service condition.</p></div></div>
+
 </div>
 </section>
 <section class="section" id="vip">
@@ -697,9 +710,9 @@ body.local-pricing-active #summaryPrice{
 <div class="section-heading">
 <p class="eyebrow">VIP Deals</p>
 <h2>One-time purchase offers</h2>
-<p>Added a dedicated VIP Deals section based on your example poster. Customers can review each offer and tap to order directly in WhatsApp.</p>
+<p>Exclusive one-time purchase packages for different progression needs. Choose a bundle and order directly through WhatsApp.</p>
 </div>
-<div class="poster-preview"><img alt="VIP Deals poster preview" src="vip-poster.png"/></div>
+
 <div class="offer-grid four">
 <article class="offer-card vip-card">
 <div class="tag-badge">Entry VIP Deal</div>
@@ -707,13 +720,12 @@ body.local-pricing-active #summaryPrice{
 <h3>VIP Plus</h3>
 <ul class="feature-list"><li>18,600 Cat Food</li><li>Rare Ticket x20</li><li>Platinum Ticket x1</li></ul>
 <div class="big-price" data-global-price="US$ 2.99" data-usd-price="2.99">US$ 2.99</div>
-
-<div class="order-guarantee-badge" title="Included with every purchase">
+<div aria-label="100% Account Protection Guarantee included" class="order-guarantee-badge" title="100% Account Protection Guarantee included">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
 <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
 </svg>
-<span>100% Account Guarantee Included</span>
+<span>Account Protected</span>
 </div>
 <a aria-label="Order via WhatsApp" class="btn btn-primary full btn-icon-only" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20VIP%20Plus%0APrice%3A%20US%24%202.99%0AIncluded%20items%3A%2018%2C600%20Cat%20Food%2C%20Rare%20Ticket%20x20%2C%20Platinum%20Ticket%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20VIP%20Plus%0APrice%3A%20US%24%202.99%0AIncluded%20items%3A%2018%2C600%20Cat%20Food%2C%20Rare%20Ticket%20x20%2C%20Platinum%20Ticket%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Order via WhatsApp</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg></a>
 </article>
@@ -723,13 +735,12 @@ body.local-pricing-active #summaryPrice{
 <h3>VIP Elite</h3>
 <ul class="feature-list"><li>39,000 Cat Food</li><li>Rare Ticket x50</li><li>Platinum Ticket x1</li><li>Dark Catseye x20</li></ul>
 <div class="big-price" data-global-price="US$ 5.99" data-usd-price="5.99">US$ 5.99</div>
-
-<div class="order-guarantee-badge" title="Included with every purchase">
+<div aria-label="100% Account Protection Guarantee included" class="order-guarantee-badge" title="100% Account Protection Guarantee included">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
 <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
 </svg>
-<span>100% Account Guarantee Included</span>
+<span>Account Protected</span>
 </div>
 <a aria-label="Order via WhatsApp" class="btn btn-primary full btn-icon-only" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20VIP%20Elite%0APrice%3A%20US%24%205.99%0AIncluded%20items%3A%2039%2C000%20Cat%20Food%2C%20Rare%20Ticket%20x50%2C%20Platinum%20Ticket%20x1%2C%20Dark%20Catseye%20x20%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20VIP%20Elite%0APrice%3A%20US%24%205.99%0AIncluded%20items%3A%2039%2C000%20Cat%20Food%2C%20Rare%20Ticket%20x50%2C%20Platinum%20Ticket%20x1%2C%20Dark%20Catseye%20x20%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Order via WhatsApp</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg></a>
 </article>
@@ -739,13 +750,12 @@ body.local-pricing-active #summaryPrice{
 <h3>VIP Ultimate</h3>
 <ul class="feature-list"><li>54,000 Cat Food</li><li>Rare Ticket x100</li><li>Platinum Ticket x2</li><li>Dark Catseye x40</li><li>11,000,000 XP</li></ul>
 <div class="big-price" data-global-price="US$ 8.99" data-usd-price="8.99">US$ 8.99</div>
-
-<div class="order-guarantee-badge" title="Included with every purchase">
+<div aria-label="100% Account Protection Guarantee included" class="order-guarantee-badge" title="100% Account Protection Guarantee included">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
 <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
 </svg>
-<span>100% Account Guarantee Included</span>
+<span>Account Protected</span>
 </div>
 <a aria-label="Order via WhatsApp" class="btn btn-primary full btn-icon-only" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20VIP%20Ultimate%0APrice%3A%20US%24%208.99%0AIncluded%20items%3A%2054%2C000%20Cat%20Food%2C%20Rare%20Ticket%20x100%2C%20Platinum%20Ticket%20x2%2C%20Dark%20Catseye%20x40%2C%2011%2C000%2C000%20XP%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20VIP%20Ultimate%0APrice%3A%20US%24%208.99%0AIncluded%20items%3A%2054%2C000%20Cat%20Food%2C%20Rare%20Ticket%20x100%2C%20Platinum%20Ticket%20x2%2C%20Dark%20Catseye%20x40%2C%2011%2C000%2C000%20XP%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Order via WhatsApp</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg></a>
 </article>
@@ -755,13 +765,12 @@ body.local-pricing-active #summaryPrice{
 <h3>Collector Bundle</h3>
 <ul class="feature-list"><li>Epic Catfruit x50</li><li>Aku Catfruit x30</li><li>Relic Catfruit x30</li><li>Golden Catfruit x30</li><li>Catfruit x30</li><li>Dark Catseye x30</li><li>NP x1111</li></ul>
 <div class="big-price" data-global-price="US$ 11.9" data-usd-price="11.9">US$ 11.9</div>
-
-<div class="order-guarantee-badge" title="Included with every purchase">
+<div aria-label="100% Account Protection Guarantee included" class="order-guarantee-badge" title="100% Account Protection Guarantee included">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
 <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
 </svg>
-<span>100% Account Guarantee Included</span>
+<span>Account Protected</span>
 </div>
 <a aria-label="Order via WhatsApp" class="btn btn-primary full btn-icon-only" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20Collector%20Bundle%0APrice%3A%20US%24%2011.9%0AIncluded%20items%3A%20Epic%20Catfruit%20x50%2C%20Aku%20Catfruit%20x30%2C%20Relic%20Catfruit%20x30%2C%20Golden%20Catfruit%20x30%2C%20Catfruit%20x30%2C%20Dark%20Catseye%20x30%2C%20NP%20x1111%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20Collector%20Bundle%0APrice%3A%20US%24%2011.9%0AIncluded%20items%3A%20Epic%20Catfruit%20x50%2C%20Aku%20Catfruit%20x30%2C%20Relic%20Catfruit%20x30%2C%20Golden%20Catfruit%20x30%2C%20Catfruit%20x30%2C%20Dark%20Catseye%20x30%2C%20NP%20x1111%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Order via WhatsApp</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg></a>
 </article></div>
@@ -782,13 +791,12 @@ body.local-pricing-active #summaryPrice{
 <h3>Empire of Cats</h3>
 <p class="stage-benefit">Complete the main chapters at the lowest starting price.</p>
 <div class="stage-meta"><span>All Chapters</span><span>Treasures Included</span></div>
-
-<div class="order-guarantee-badge" title="Included with every purchase">
+<div aria-label="100% Account Protection Guarantee included" class="order-guarantee-badge" title="100% Account Protection Guarantee included">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
 <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
 </svg>
-<span>100% Account Guarantee Included</span>
+<span>Account Protected</span>
 </div>
 <div class="stage-footer">
 <div class="stage-price"><small>Starting price</small><strong data-global-price="$0.99" data-usd-price="0.99">$0.99</strong></div>
@@ -803,13 +811,12 @@ body.local-pricing-active #summaryPrice{
 <h3>Into The Future</h3>
 <p class="stage-benefit">Continue the story progression with treasure collection included.</p>
 <div class="stage-meta"><span>All Chapters</span><span>Treasures Included</span></div>
-
-<div class="order-guarantee-badge" title="Included with every purchase">
+<div aria-label="100% Account Protection Guarantee included" class="order-guarantee-badge" title="100% Account Protection Guarantee included">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
 <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
 </svg>
-<span>100% Account Guarantee Included</span>
+<span>Account Protected</span>
 </div>
 <div class="stage-footer">
 <div class="stage-price"><small>Starting price</small><strong data-global-price="$1.79" data-usd-price="1.79">$1.79</strong></div>
@@ -824,13 +831,12 @@ body.local-pricing-active #summaryPrice{
 <h3>Cats of the Cosmos</h3>
 <p class="stage-benefit">Complete the cosmic campaign with a clear, fixed order scope.</p>
 <div class="stage-meta"><span>All Chapters</span><span>Treasures Included</span></div>
-
-<div class="order-guarantee-badge" title="Included with every purchase">
+<div aria-label="100% Account Protection Guarantee included" class="order-guarantee-badge" title="100% Account Protection Guarantee included">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
 <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
 </svg>
-<span>100% Account Guarantee Included</span>
+<span>Account Protected</span>
 </div>
 <div class="stage-footer">
 <div class="stage-price"><small>Starting price</small><strong data-global-price="$2.49" data-usd-price="2.49">$2.49</strong></div>
@@ -845,13 +851,12 @@ body.local-pricing-active #summaryPrice{
 <h3>The Aku Realms</h3>
 <p class="stage-benefit">Progress through The Aku Realms with manual handling and updates.</p>
 <div class="stage-meta"><span>Full Progression</span><span>Manual Service</span></div>
-
-<div class="order-guarantee-badge" title="Included with every purchase">
+<div aria-label="100% Account Protection Guarantee included" class="order-guarantee-badge" title="100% Account Protection Guarantee included">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
 <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
 </svg>
-<span>100% Account Guarantee Included</span>
+<span>Account Protected</span>
 </div>
 <div class="stage-footer">
 <div class="stage-price"><small>Starting price</small><strong data-global-price="$2.99" data-usd-price="2.99">$2.99</strong></div>
@@ -867,37 +872,34 @@ body.local-pricing-active #summaryPrice{
 <div class="legend-grid">
 <article class="legend-campaign-card" data-tone="sol">
 <div class="legend-header"><h3>Stories of Legend</h3><p>UNLOCKS: UNCANNY LEGENDS</p></div>
-
-<div class="order-guarantee-badge" title="Included with every purchase">
+<div aria-label="100% Account Protection Guarantee included" class="order-guarantee-badge" title="100% Account Protection Guarantee included">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
 <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
 </svg>
-<span>100% Account Guarantee Included</span>
+<span>Account Protected</span>
 </div>
 <div class="crown-list"><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Stories%20of%20Legend%0ASelected%20completion%3A%201-Crown%0ABundle%20discount%3A%20Standard%20price%0ATotal%20price%3A%20%243.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Stories%20of%20Legend%0ASelected%20completion%3A%201-Crown%0ABundle%20discount%3A%20Standard%20price%0ATotal%20price%3A%20%243.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>1-Crown</strong><small>Standard completion</small></span><span class="crown-price" data-global-price="$3.99" data-usd-price="3.99">$3.99</span></a><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Stories%20of%20Legend%0ASelected%20completion%3A%20Up%20to%202-Crown%0ABundle%20discount%3A%2020%25%20OFF%0ATotal%20price%3A%20%246.39%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Stories%20of%20Legend%0ASelected%20completion%3A%20Up%20to%202-Crown%0ABundle%20discount%3A%2020%25%20OFF%0ATotal%20price%3A%20%246.39%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Up to 2-Crown<span class="discount-badge">20% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price" data-global-price="$6.39" data-usd-price="6.39">$6.39</span></a><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Stories%20of%20Legend%0ASelected%20completion%3A%20Up%20to%203-Crown%0ABundle%20discount%3A%2025%25%20OFF%0ATotal%20price%3A%20%248.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Stories%20of%20Legend%0ASelected%20completion%3A%20Up%20to%203-Crown%0ABundle%20discount%3A%2025%25%20OFF%0ATotal%20price%3A%20%248.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Up to 3-Crown<span class="discount-badge">25% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price" data-global-price="$8.99" data-usd-price="8.99">$8.99</span></a><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Stories%20of%20Legend%0ASelected%20completion%3A%20Full%204-Crown%0ABundle%20discount%3A%2030%25%20OFF%0ATotal%20price%3A%20%2411.19%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Stories%20of%20Legend%0ASelected%20completion%3A%20Full%204-Crown%0ABundle%20discount%3A%2030%25%20OFF%0ATotal%20price%3A%20%2411.19%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Full 4-Crown<span class="discount-badge">30% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price" data-global-price="$11.19" data-usd-price="11.19">$11.19</span></a></div>
 </article>
 <article class="legend-campaign-card" data-tone="ul">
 <div class="legend-header"><h3>Uncanny Legends</h3><p>UNLOCKS: ZERO LEGENDS</p></div>
-
-<div class="order-guarantee-badge" title="Included with every purchase">
+<div aria-label="100% Account Protection Guarantee included" class="order-guarantee-badge" title="100% Account Protection Guarantee included">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
 <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
 </svg>
-<span>100% Account Guarantee Included</span>
+<span>Account Protected</span>
 </div>
 <div class="crown-list"><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Uncanny%20Legends%0ASelected%20completion%3A%201-Crown%0ABundle%20discount%3A%20Standard%20price%0ATotal%20price%3A%20%244.49%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Uncanny%20Legends%0ASelected%20completion%3A%201-Crown%0ABundle%20discount%3A%20Standard%20price%0ATotal%20price%3A%20%244.49%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>1-Crown</strong><small>Standard completion</small></span><span class="crown-price" data-global-price="$4.49" data-usd-price="4.49">$4.49</span></a><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Uncanny%20Legends%0ASelected%20completion%3A%20Up%20to%202-Crown%0ABundle%20discount%3A%2020%25%20OFF%0ATotal%20price%3A%20%247.19%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Uncanny%20Legends%0ASelected%20completion%3A%20Up%20to%202-Crown%0ABundle%20discount%3A%2020%25%20OFF%0ATotal%20price%3A%20%247.19%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Up to 2-Crown<span class="discount-badge">20% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price" data-global-price="$7.19" data-usd-price="7.19">$7.19</span></a><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Uncanny%20Legends%0ASelected%20completion%3A%20Up%20to%203-Crown%0ABundle%20discount%3A%2025%25%20OFF%0ATotal%20price%3A%20%2410.09%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Uncanny%20Legends%0ASelected%20completion%3A%20Up%20to%203-Crown%0ABundle%20discount%3A%2025%25%20OFF%0ATotal%20price%3A%20%2410.09%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Up to 3-Crown<span class="discount-badge">25% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price" data-global-price="$10.09" data-usd-price="10.09">$10.09</span></a><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Uncanny%20Legends%0ASelected%20completion%3A%20Full%204-Crown%0ABundle%20discount%3A%2030%25%20OFF%0ATotal%20price%3A%20%2412.59%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Uncanny%20Legends%0ASelected%20completion%3A%20Full%204-Crown%0ABundle%20discount%3A%2030%25%20OFF%0ATotal%20price%3A%20%2412.59%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Full 4-Crown<span class="discount-badge">30% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price" data-global-price="$12.59" data-usd-price="12.59">$12.59</span></a></div>
 </article>
 <article class="legend-campaign-card" data-tone="zl">
 <div class="legend-header"><h3>Zero Legends</h3><p>ADVANCED LEGEND PROGRESSION</p></div>
-
-<div class="order-guarantee-badge" title="Included with every purchase">
+<div aria-label="100% Account Protection Guarantee included" class="order-guarantee-badge" title="100% Account Protection Guarantee included">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
 <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
 </svg>
-<span>100% Account Guarantee Included</span>
+<span>Account Protected</span>
 </div>
 <div class="crown-list"><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Zero%20Legends%0ASelected%20completion%3A%201-Crown%0ABundle%20discount%3A%20Standard%20price%0ATotal%20price%3A%20%244.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Zero%20Legends%0ASelected%20completion%3A%201-Crown%0ABundle%20discount%3A%20Standard%20price%0ATotal%20price%3A%20%244.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>1-Crown</strong><small>Standard completion</small></span><span class="crown-price" data-global-price="$4.99" data-usd-price="4.99">$4.99</span></a><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Zero%20Legends%0ASelected%20completion%3A%20Up%20to%202-Crown%0ABundle%20discount%3A%2020%25%20OFF%0ATotal%20price%3A%20%247.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Zero%20Legends%0ASelected%20completion%3A%20Up%20to%202-Crown%0ABundle%20discount%3A%2020%25%20OFF%0ATotal%20price%3A%20%247.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Up to 2-Crown<span class="discount-badge">20% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price" data-global-price="$7.99" data-usd-price="7.99">$7.99</span></a><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Zero%20Legends%0ASelected%20completion%3A%20Up%20to%203-Crown%0ABundle%20discount%3A%2025%25%20OFF%0ATotal%20price%3A%20%2411.19%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Zero%20Legends%0ASelected%20completion%3A%20Up%20to%203-Crown%0ABundle%20discount%3A%2025%25%20OFF%0ATotal%20price%3A%20%2411.19%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Up to 3-Crown<span class="discount-badge">25% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price" data-global-price="$11.19" data-usd-price="11.19">$11.19</span></a><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Zero%20Legends%0ASelected%20completion%3A%20Full%204-Crown%0ABundle%20discount%3A%2030%25%20OFF%0ATotal%20price%3A%20%2413.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Zero%20Legends%0ASelected%20completion%3A%20Full%204-Crown%0ABundle%20discount%3A%2030%25%20OFF%0ATotal%20price%3A%20%2413.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Full 4-Crown<span class="discount-badge">30% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price" data-global-price="$13.99" data-usd-price="13.99">$13.99</span></a></div>
 </article></div>
@@ -938,7 +940,6 @@ body.local-pricing-active #summaryPrice{
             during our service process.
           </p>
 </details>
-
 <details open=""><summary>How do customers order from the website?</summary><p>Every Cat Food, Specific Unit, VIP Deal, and Stage Progression offer includes a direct WhatsApp order button. The selected package information is already written automatically in the message.</p></details>
 <details><summary>What payments are shown on the website now?</summary><p>The website now shows crypto icons for BTC, ETH, SOL, and USDT, plus QRIS as an additional payment icon for offers that support it.</p></details>
 <details><summary>How do Crown Completion discounts work?</summary><p>Stories of Legend, Uncanny Legends, and Zero Legends offer discounted total bundles: 20% off up to 2-Crown, 25% off up to 3-Crown, and 30% off for full 4-Crown completion. Availability and scope are confirmed before payment.</p></details>
