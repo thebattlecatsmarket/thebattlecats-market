@@ -49,6 +49,32 @@ a{color:inherit;text-decoration:none} img{max-width:100%;display:block} .contain
 .poster-preview{border-radius:24px;overflow:hidden;border:1px solid var(--border);background:rgba(20,12,34,.72);box-shadow:var(--shadow);padding:10px;margin-bottom:24px} .poster-preview img{border-radius:16px} .poster-preview + .offer-grid{margin-top:8px}
 .service-icon{width:54px;height:54px;display:grid;place-items:center;border-radius:16px;background:rgba(164,74,255,.14);color:var(--gold);margin-bottom:14px} .service-icon svg{width:30px;height:30px} .tag-badge{display:inline-flex;margin-bottom:12px;padding:7px 10px;border-radius:999px;background:rgba(255,216,77,.12);border:1px solid rgba(255,216,77,.18);color:var(--gold);font-size:.78rem;font-weight:900}
 .feature-list{margin:0;padding-left:18px;color:var(--muted);line-height:1.65;min-height:168px} .big-price{font-size:2rem;line-height:1;margin:16px 0 18px;color:var(--green);font-weight:950;letter-spacing:-.04em} .stage-desc{color:var(--muted);line-height:1.7;min-height:76px}
+.vip-card{display:flex;flex-direction:column;isolation:isolate;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+.vip-card:hover{transform:translateY(-5px);border-color:var(--border2);box-shadow:0 24px 72px rgba(104,30,189,.3)}
+.vip-card[data-tier="essential"]{border-color:rgba(72,214,255,.32)}
+.vip-card[data-tier="elite"]{border-color:rgba(183,102,255,.42)}
+.vip-card[data-tier="ultimate"]{border-color:rgba(255,216,77,.5);box-shadow:0 20px 70px rgba(177,117,16,.16)}
+.vip-card[data-tier="collector"]{border-color:rgba(255,117,206,.46);box-shadow:0 20px 70px rgba(153,44,129,.18)}
+.vip-card[data-tier="essential"]::before{background:radial-gradient(circle,rgba(72,214,255,.24),transparent 70%)}
+.vip-card[data-tier="elite"]::before{background:radial-gradient(circle,rgba(183,102,255,.28),transparent 70%)}
+.vip-card[data-tier="ultimate"]::before{background:radial-gradient(circle,rgba(255,216,77,.24),transparent 70%)}
+.vip-card[data-tier="collector"]::before{background:radial-gradient(circle,rgba(255,117,206,.24),transparent 70%)}
+.vip-menu-icon{position:relative;z-index:1;width:64px;height:64px;margin:2px 0 16px;border-radius:19px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(174,83,255,.22),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.12);color:var(--soft);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 12px 30px rgba(0,0,0,.24)}
+.vip-menu-icon svg{width:35px;height:35px;filter:drop-shadow(0 0 10px currentColor)}
+.vip-card[data-tier="essential"] .vip-menu-icon{color:#62dcff;background:linear-gradient(145deg,rgba(59,200,255,.2),rgba(255,255,255,.035))}
+.vip-card[data-tier="elite"] .vip-menu-icon{color:#d3a0ff}
+.vip-card[data-tier="ultimate"] .vip-menu-icon{color:var(--gold);background:linear-gradient(145deg,rgba(255,216,77,.18),rgba(255,255,255,.035))}
+.vip-card[data-tier="collector"] .vip-menu-icon{color:#ff95db;background:linear-gradient(145deg,rgba(255,96,202,.18),rgba(255,216,77,.06))}
+.vip-card h3{position:relative;z-index:1;margin-bottom:13px}
+.vip-card .tag-badge{position:relative;z-index:1;align-self:flex-start}
+.vip-card .feature-list{position:relative;z-index:1;flex:1;display:grid;align-content:start;gap:8px;min-height:0;margin:0;padding:0;list-style:none;font-size:.88rem;line-height:1.42}
+.vip-card .feature-list li{position:relative;padding:8px 9px 8px 29px;border:1px solid rgba(255,255,255,.065);border-radius:11px;background:rgba(255,255,255,.027)}
+.vip-card .feature-list li::before{content:"✦";position:absolute;left:10px;top:8px;color:var(--soft);font-size:.74rem;text-shadow:0 0 9px rgba(188,106,255,.8)}
+.vip-card .feature-list strong{color:var(--text)}
+.vip-card .big-price{position:relative;z-index:1;margin-top:21px;margin-bottom:15px}
+.vip-card .btn{position:relative;z-index:1}
+.vip-note{display:flex;align-items:flex-start;gap:12px;margin-top:18px;padding:16px 18px;border:1px solid rgba(255,216,77,.22);border-radius:16px;background:linear-gradient(135deg,rgba(255,216,77,.07),rgba(25,14,42,.9));color:var(--muted);line-height:1.58;font-size:.9rem}
+.vip-note svg{width:23px;height:23px;flex:0 0 auto;color:var(--gold)}
 .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px} .info-card{padding:24px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow)} .info-card .icon-svg{margin-bottom:16px} .info-card h3{margin:0 0 9px;font-size:1.3rem} .info-card p{margin:0;color:var(--muted);line-height:1.65}
 .faq{max-width:880px;margin:0 auto;display:grid;gap:11px} details{border:1px solid var(--border);border-radius:16px;background:var(--surface);padding:17px 19px} summary{cursor:pointer;font-weight:900} details p{color:var(--muted);line-height:1.7;margin-bottom:0}
 .legal-layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;align-items:start} .legal-nav{position:sticky;top:98px;display:grid;gap:8px} .legal-nav a{padding:11px 13px;border-radius:12px;color:var(--muted);border:1px solid transparent} .legal-nav a:hover{color:white;border-color:var(--border);background:var(--surface)} .legal-copy{display:grid;gap:16px} .legal-copy article{scroll-margin-top:94px} .legal-copy h3{margin-top:0} .legal-copy h4{margin-bottom:7px} .legal-copy p,.legal-copy li{color:var(--muted);line-height:1.72}
@@ -188,7 +214,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
 <div class="quick-links">
 <a class="quick-card" href="#catfood"><span class="icon-svg catfood-mini"><img alt="Cat Food icon" src="catfood-can.png"/></span><h3>Cat Food</h3><p>4 menu tiers, cumulative bonuses, and direct order buttons.</p></a>
 <a class="quick-card" href="#units"><span class="icon-svg"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3l2.1 4.3 4.7.7-3.4 3.3.8 4.7-4.2-2.2L7.8 16l.8-4.7L5.2 8l4.7-.7L12 3z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><path d="M18.5 15.5v5M16 18h5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path></svg></span><h3>Specific Units</h3><p>Request exact collab, Uber Rare, or Legend Rare units with quantity discounts.</p></a>
-<a class="quick-card" href="#vip"><span class="icon-svg"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 8l3 3 5-6 5 6 3-3-2 11H6L4 8z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><circle cx="12" cy="11" fill="currentColor" r="1.5"></circle></svg></span><h3>VIP Deals</h3><p>One-time purchase offers like the sample VIP poster.</p></a>
+<a class="quick-card" href="#vip"><span class="icon-svg"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 8l3 3 5-6 5 6 3-3-2 11H6L4 8z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><circle cx="12" cy="11" fill="currentColor" r="1.5"></circle></svg></span><h3>VIP Deals</h3><p>Four exclusive one-time bundles with premium account resources.</p></a>
 <a class="quick-card" href="#stage"><span class="icon-svg"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 18l5-5 3 3 6-8 2 2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path><path d="M14 8h6v6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></span><h3>Stage Progression</h3><p>EoC, ITF, CoTC, Aku Realms, SoL, Uncanny Legends, and Zero Legends.</p></a>
 </div>
 </div>
@@ -356,42 +382,81 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
 <div class="section-heading">
 <p class="eyebrow">VIP Deals</p>
 <h2>One-time purchase offers</h2>
-<p>Added a dedicated VIP Deals section based on your example poster. Customers can review each offer and tap to order directly in WhatsApp.</p>
+<p>Four exclusive bundles with Cat Food, NP, requestable Talent Orbs, upgrade resources, and more. Each offer is available once per customer.</p>
 </div>
-<div class="poster-preview"><img alt="VIP Deals poster preview" src="vip-poster.png"/></div>
 <div class="offer-grid four">
-<article class="offer-card vip-card">
-<div class="tag-badge">Entry VIP Deal</div>
-<div class="service-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 8l3 3 5-6 5 6 3-3-2 11H6L4 8z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><circle cx="12" cy="11" fill="currentColor" r="1.5"></circle></svg></div>
-<h3>VIP Plus</h3>
-<ul class="feature-list"><li>18,600 Cat Food</li><li>Rare Ticket x20</li><li>Platinum Ticket x1</li></ul>
-<div class="big-price">US$ 2.99</div>
-<a aria-label="Order via WhatsApp" class="btn btn-primary full btn-icon-only" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20VIP%20Plus%0APrice%3A%20US%24%202.99%0AIncluded%20items%3A%2018%2C600%20Cat%20Food%2C%20Rare%20Ticket%20x20%2C%20Platinum%20Ticket%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><span class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Order via WhatsApp</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg></a>
+<article class="offer-card vip-card" data-tier="essential">
+<div class="tag-badge">First VIP Deal</div>
+<div class="vip-menu-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3l2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5-3.6-3.5 5-.7L12 3z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><circle cx="12" cy="11" fill="currentColor" r="1.4"></circle></svg></div>
+<h3>VIP Essential</h3>
+<ul class="feature-list">
+<li><strong>5,900 Cat Food</strong></li>
+<li><strong>2,222 NP</strong></li>
+<li><strong>5×</strong> Requestable Talent Orbs</li>
+<li><strong>15× Each</strong> Standard Catfruit</li>
+<li><strong>5× Each</strong> Premium Catfruit</li>
+<li><strong>20× Each</strong> Battle Item</li>
+</ul>
+<div class="big-price">US$ 1.99</div>
+<a class="btn btn-primary full" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20a%20VIP%20Deal.%0A%0ASelected%20offer%3A%20VIP%20Essential%0APrice%3A%20US%24%201.99%0AIncluded%20items%3A%205%2C900%20Cat%20Food%2C%202%2C222%20NP%2C%205x%20Requestable%20Talent%20Orbs%2C%2015x%20Each%20Standard%20Catfruit%2C%205x%20Each%20Premium%20Catfruit%2C%2020x%20Each%20Battle%20Item%0AOne-time%20purchase%3A%20Yes%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg>Order Essential</a>
 </article>
-<article class="offer-card vip-card">
+<article class="offer-card vip-card" data-tier="elite">
 <div class="tag-badge">Most Popular</div>
-<div class="service-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 8l3 3 5-6 5 6 3-3-2 11H6L4 8z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><circle cx="12" cy="11" fill="currentColor" r="1.5"></circle></svg></div>
+<div class="vip-menu-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3l7 6-7 12L5 9l7-6zM5 9h14M9 3l-2 6 5 12 5-12-2-6" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.7"></path></svg></div>
 <h3>VIP Elite</h3>
-<ul class="feature-list"><li>39,000 Cat Food</li><li>Rare Ticket x50</li><li>Platinum Ticket x1</li><li>Dark Catseye x20</li></ul>
-<div class="big-price">US$ 5.99</div>
-<a aria-label="Order via WhatsApp" class="btn btn-primary full btn-icon-only" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20VIP%20Elite%0APrice%3A%20US%24%205.99%0AIncluded%20items%3A%2039%2C000%20Cat%20Food%2C%20Rare%20Ticket%20x50%2C%20Platinum%20Ticket%20x1%2C%20Dark%20Catseye%20x20%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><span class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Order via WhatsApp</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg></a>
+<ul class="feature-list">
+<li><strong>10,800 Cat Food</strong></li>
+<li><strong>3,333 NP</strong></li>
+<li><strong>10×</strong> Requestable Talent Orbs</li>
+<li><strong>20× Each</strong> Standard Catfruit</li>
+<li><strong>30× Each</strong> Battle Item</li>
+<li><strong>20×</strong> Special Tickets</li>
+</ul>
+<div class="big-price">US$ 3.49</div>
+<a class="btn btn-primary full" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20a%20VIP%20Deal.%0A%0ASelected%20offer%3A%20VIP%20Elite%0APrice%3A%20US%24%203.49%0AIncluded%20items%3A%2010%2C800%20Cat%20Food%2C%203%2C333%20NP%2C%2010x%20Requestable%20Talent%20Orbs%2C%2020x%20Each%20Standard%20Catfruit%2C%2030x%20Each%20Battle%20Item%2C%2020x%20Special%20Tickets%0AOne-time%20purchase%3A%20Yes%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg>Order Elite</a>
 </article>
-<article class="offer-card vip-card">
-<div class="tag-badge">Ultimate Value</div>
-<div class="service-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 8l3 3 5-6 5 6 3-3-2 11H6L4 8z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><circle cx="12" cy="11" fill="currentColor" r="1.5"></circle></svg></div>
+<article class="offer-card vip-card" data-tier="ultimate">
+<div class="tag-badge">Best Value</div>
+<div class="vip-menu-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 8l3 3 5-6 5 6 3-3-2 11H6L4 8z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><path d="M13 9l-3 5h3l-1 4 4-6h-3V9z" fill="currentColor"></path></svg></div>
 <h3>VIP Ultimate</h3>
-<ul class="feature-list"><li>54,000 Cat Food</li><li>Rare Ticket x100</li><li>Platinum Ticket x2</li><li>Dark Catseye x40</li><li>11,000,000 XP</li></ul>
-<div class="big-price">US$ 8.99</div>
-<a aria-label="Order via WhatsApp" class="btn btn-primary full btn-icon-only" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20VIP%20Ultimate%0APrice%3A%20US%24%208.99%0AIncluded%20items%3A%2054%2C000%20Cat%20Food%2C%20Rare%20Ticket%20x100%2C%20Platinum%20Ticket%20x2%2C%20Dark%20Catseye%20x40%2C%2011%2C000%2C000%20XP%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><span class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Order via WhatsApp</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg></a>
+<ul class="feature-list">
+<li><strong>18,600 Cat Food</strong></li>
+<li><strong>4,444 NP</strong></li>
+<li><strong>15×</strong> Requestable Talent Orbs</li>
+<li><strong>30× Each</strong> Standard Catfruit</li>
+<li><strong>15× Each</strong> Premium Catfruit</li>
+<li><strong>10× Each</strong> Behemoth Stone</li>
+<li><strong>50× Each</strong> Battle Item</li>
+<li><strong>50× Each</strong> Ototo Material</li>
+<li><strong>30×</strong> Special Tickets</li>
+<li><strong>+3</strong> GAMATOTO Levels</li>
+</ul>
+<div class="big-price">US$ 4.99</div>
+<a class="btn btn-primary full" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20a%20VIP%20Deal.%0A%0ASelected%20offer%3A%20VIP%20Ultimate%0APrice%3A%20US%24%204.99%0AIncluded%20items%3A%2018%2C600%20Cat%20Food%2C%204%2C444%20NP%2C%2015x%20Requestable%20Talent%20Orbs%2C%2030x%20Each%20Standard%20Catfruit%2C%2015x%20Each%20Premium%20Catfruit%2C%2010x%20Each%20Behemoth%20Stone%2C%2050x%20Each%20Battle%20Item%2C%2050x%20Each%20Ototo%20Material%2C%2030x%20Special%20Tickets%2C%20%2B3%20GAMATOTO%20Levels%0AOne-time%20purchase%3A%20Yes%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg>Order Ultimate</a>
 </article>
-<article class="offer-card vip-card">
-<div class="tag-badge">For Advanced Players</div>
-<div class="service-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 8l3 3 5-6 5 6 3-3-2 11H6L4 8z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><circle cx="12" cy="11" fill="currentColor" r="1.5"></circle></svg></div>
+<article class="offer-card vip-card" data-tier="collector">
+<div class="tag-badge">Most Complete</div>
+<div class="vip-menu-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 8h16v11H4V8zm-1 0l2-4h14l2 4H3z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><path d="M9 8v4h6V8M10 15h4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path><path d="M12 9l.7 1.4 1.6.2-1.2 1.1.3 1.6-1.4-.8-1.4.8.3-1.6-1.2-1.1 1.6-.2L12 9z" fill="currentColor"></path></svg></div>
 <h3>Collector Bundle</h3>
-<ul class="feature-list"><li>Epic Catfruit x50</li><li>Aku Catfruit x30</li><li>Relic Catfruit x30</li><li>Golden Catfruit x30</li><li>Catfruit x30</li><li>Dark Catseye x30</li><li>NP x1111</li></ul>
-<div class="big-price">US$ 11.9</div>
-<a aria-label="Order via WhatsApp" class="btn btn-primary full btn-icon-only" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20Collector%20Bundle%0APrice%3A%20US%24%2011.9%0AIncluded%20items%3A%20Epic%20Catfruit%20x50%2C%20Aku%20Catfruit%20x30%2C%20Relic%20Catfruit%20x30%2C%20Golden%20Catfruit%20x30%2C%20Catfruit%20x30%2C%20Dark%20Catseye%20x30%2C%20NP%20x1111%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><span class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Order via WhatsApp</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg></a>
-</article></div>
+<ul class="feature-list">
+<li><strong>23,600 Cat Food</strong></li>
+<li><strong>5,555 NP</strong></li>
+<li><strong>25×</strong> Requestable Talent Orbs</li>
+<li><strong>50× Each</strong> Standard Catfruit</li>
+<li><strong>Epic Catfruit ×50</strong></li>
+<li><strong>Aku &amp; Relic Catfruit ×30 Each</strong></li>
+<li><strong>Golden Catfruit ×20</strong></li>
+<li><strong>25× Each</strong> Behemoth Stone</li>
+<li><strong>75× Each</strong> Battle Item</li>
+<li><strong>100× Each</strong> Ototo Material</li>
+<li><strong>50×</strong> Special Tickets</li>
+<li><strong>+5</strong> GAMATOTO Levels</li>
+</ul>
+<div class="big-price">US$ 6.99</div>
+<a class="btn btn-primary full" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20a%20VIP%20Deal.%0A%0ASelected%20offer%3A%20VIP%20Collector%20Bundle%0APrice%3A%20US%24%206.99%0AIncluded%20items%3A%2023%2C600%20Cat%20Food%2C%205%2C555%20NP%2C%2025x%20Requestable%20Talent%20Orbs%2C%2050x%20Each%20Standard%20Catfruit%2C%20Epic%20Catfruit%20x50%2C%20Aku%20%26%20Relic%20Catfruit%20x30%20each%2C%20Golden%20Catfruit%20x20%2C%2025x%20Each%20Behemoth%20Stone%2C%2075x%20Each%20Battle%20Item%2C%20100x%20Each%20Ototo%20Material%2C%2050x%20Special%20Tickets%2C%20%2B5%20GAMATOTO%20Levels%0AOne-time%20purchase%3A%20Yes%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg>Order Collector</a>
+</article>
+</div>
+<div class="vip-note"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3l7 3v5c0 4.8-3.2 8.1-7 10-3.8-1.9-7-5.2-7-10V6l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg><span><strong>One-time purchase:</strong> each VIP offer may only be claimed once per customer. Talent Orb types are fully requestable. Premium Catfruit includes Epic, Aku, Relic, and Golden Catfruit. Special Tickets are used for the Li’l Cats Capsule.</span></div>
 </div>
 </section>
 <section class="section compact" id="stage">
