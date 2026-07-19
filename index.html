@@ -49,32 +49,6 @@ a{color:inherit;text-decoration:none} img{max-width:100%;display:block} .contain
 .poster-preview{border-radius:24px;overflow:hidden;border:1px solid var(--border);background:rgba(20,12,34,.72);box-shadow:var(--shadow);padding:10px;margin-bottom:24px} .poster-preview img{border-radius:16px} .poster-preview + .offer-grid{margin-top:8px}
 .service-icon{width:54px;height:54px;display:grid;place-items:center;border-radius:16px;background:rgba(164,74,255,.14);color:var(--gold);margin-bottom:14px} .service-icon svg{width:30px;height:30px} .tag-badge{display:inline-flex;margin-bottom:12px;padding:7px 10px;border-radius:999px;background:rgba(255,216,77,.12);border:1px solid rgba(255,216,77,.18);color:var(--gold);font-size:.78rem;font-weight:900}
 .feature-list{margin:0;padding-left:18px;color:var(--muted);line-height:1.65;min-height:168px} .big-price{font-size:2rem;line-height:1;margin:16px 0 18px;color:var(--green);font-weight:950;letter-spacing:-.04em} .stage-desc{color:var(--muted);line-height:1.7;min-height:76px}
-.vip-card{display:flex;flex-direction:column;isolation:isolate;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
-.vip-card:hover{transform:translateY(-5px);border-color:var(--border2);box-shadow:0 24px 72px rgba(104,30,189,.3)}
-.vip-card[data-tier="essential"]{border-color:rgba(72,214,255,.32)}
-.vip-card[data-tier="elite"]{border-color:rgba(183,102,255,.42)}
-.vip-card[data-tier="ultimate"]{border-color:rgba(255,216,77,.5);box-shadow:0 20px 70px rgba(177,117,16,.16)}
-.vip-card[data-tier="collector"]{border-color:rgba(255,117,206,.46);box-shadow:0 20px 70px rgba(153,44,129,.18)}
-.vip-card[data-tier="essential"]::before{background:radial-gradient(circle,rgba(72,214,255,.24),transparent 70%)}
-.vip-card[data-tier="elite"]::before{background:radial-gradient(circle,rgba(183,102,255,.28),transparent 70%)}
-.vip-card[data-tier="ultimate"]::before{background:radial-gradient(circle,rgba(255,216,77,.24),transparent 70%)}
-.vip-card[data-tier="collector"]::before{background:radial-gradient(circle,rgba(255,117,206,.24),transparent 70%)}
-.vip-menu-icon{position:relative;z-index:1;width:64px;height:64px;margin:2px 0 16px;border-radius:19px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(174,83,255,.22),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.12);color:var(--soft);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 12px 30px rgba(0,0,0,.24)}
-.vip-menu-icon svg{width:35px;height:35px;filter:drop-shadow(0 0 10px currentColor)}
-.vip-card[data-tier="essential"] .vip-menu-icon{color:#62dcff;background:linear-gradient(145deg,rgba(59,200,255,.2),rgba(255,255,255,.035))}
-.vip-card[data-tier="elite"] .vip-menu-icon{color:#d3a0ff}
-.vip-card[data-tier="ultimate"] .vip-menu-icon{color:var(--gold);background:linear-gradient(145deg,rgba(255,216,77,.18),rgba(255,255,255,.035))}
-.vip-card[data-tier="collector"] .vip-menu-icon{color:#ff95db;background:linear-gradient(145deg,rgba(255,96,202,.18),rgba(255,216,77,.06))}
-.vip-card h3{position:relative;z-index:1;margin-bottom:13px}
-.vip-card .tag-badge{position:relative;z-index:1;align-self:flex-start}
-.vip-card .feature-list{position:relative;z-index:1;flex:1;display:grid;align-content:start;gap:8px;min-height:0;margin:0;padding:0;list-style:none;font-size:.88rem;line-height:1.42}
-.vip-card .feature-list li{position:relative;padding:8px 9px 8px 29px;border:1px solid rgba(255,255,255,.065);border-radius:11px;background:rgba(255,255,255,.027)}
-.vip-card .feature-list li::before{content:"✦";position:absolute;left:10px;top:8px;color:var(--soft);font-size:.74rem;text-shadow:0 0 9px rgba(188,106,255,.8)}
-.vip-card .feature-list strong{color:var(--text)}
-.vip-card .big-price{position:relative;z-index:1;margin-top:21px;margin-bottom:15px}
-.vip-card .btn{position:relative;z-index:1}
-.vip-note{display:flex;align-items:flex-start;gap:12px;margin-top:18px;padding:16px 18px;border:1px solid rgba(255,216,77,.22);border-radius:16px;background:linear-gradient(135deg,rgba(255,216,77,.07),rgba(25,14,42,.9));color:var(--muted);line-height:1.58;font-size:.9rem}
-.vip-note svg{width:23px;height:23px;flex:0 0 auto;color:var(--gold)}
 .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px} .info-card{padding:24px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow)} .info-card .icon-svg{margin-bottom:16px} .info-card h3{margin:0 0 9px;font-size:1.3rem} .info-card p{margin:0;color:var(--muted);line-height:1.65}
 .faq{max-width:880px;margin:0 auto;display:grid;gap:11px} details{border:1px solid var(--border);border-radius:16px;background:var(--surface);padding:17px 19px} summary{cursor:pointer;font-weight:900} details p{color:var(--muted);line-height:1.7;margin-bottom:0}
 .legal-layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;align-items:start} .legal-nav{position:sticky;top:98px;display:grid;gap:8px} .legal-nav a{padding:11px 13px;border-radius:12px;color:var(--muted);border:1px solid transparent} .legal-nav a:hover{color:white;border-color:var(--border);background:var(--surface)} .legal-copy{display:grid;gap:16px} .legal-copy article{scroll-margin-top:94px} .legal-copy h3{margin-top:0} .legal-copy h4{margin-bottom:7px} .legal-copy p,.legal-copy li{color:var(--muted);line-height:1.72}
@@ -167,6 +141,273 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
   line-height:1.2;
   white-space:nowrap;
 }
+
+/* Indonesia local customer pricing */
+.local-access{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:16px;
+}
+.local-code-button,.local-exit-button{
+  min-height:42px;
+  padding:0 15px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.045);
+  color:var(--text);
+  font:inherit;
+  font-size:.83rem;
+  font-weight:900;
+  cursor:pointer;
+}
+.local-code-button:hover,.local-exit-button:hover{
+  border-color:var(--border2);
+  background:rgba(166,77,255,.1);
+}
+.local-pricing-badge{
+  display:inline-flex;
+  align-items:center;
+  min-height:42px;
+  padding:0 15px;
+  border-radius:999px;
+  border:1px solid rgba(156,255,49,.28);
+  background:rgba(156,255,49,.09);
+  color:var(--green);
+  font-size:.83rem;
+  font-weight:950;
+  box-shadow:0 0 22px rgba(156,255,49,.09);
+}
+.local-pricing-badge[hidden],.local-exit-button[hidden],.local-modal[hidden]{display:none!important}
+body.local-pricing-active .price-green,
+body.local-pricing-active .big-price,
+body.local-pricing-active .stage-price strong,
+body.local-pricing-active .crown-price,
+body.local-pricing-active #summaryPrice{
+  color:#7dffb0;
+  text-shadow:0 0 16px rgba(70,255,141,.18);
+}
+.local-modal{
+  position:fixed;
+  inset:0;
+  z-index:120;
+  display:grid;
+  place-items:center;
+  padding:18px;
+}
+.local-modal-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(5,3,10,.82);
+  backdrop-filter:blur(10px);
+}
+.local-modal-card{
+  position:relative;
+  z-index:1;
+  width:min(460px,100%);
+  padding:27px;
+  border:1px solid var(--border2);
+  border-radius:24px;
+  background:linear-gradient(155deg,rgba(31,18,52,.99),rgba(10,7,18,.99));
+  box-shadow:0 30px 90px rgba(0,0,0,.58);
+}
+.local-modal-card h2{margin:0 0 10px;font-size:2rem;letter-spacing:-.04em}
+.local-modal-copy{color:var(--muted);line-height:1.65;margin-bottom:20px}
+.local-modal-close{
+  position:absolute;
+  top:13px;
+  right:14px;
+  width:36px;
+  height:36px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:12px;
+  background:rgba(255,255,255,.045);
+  color:white;
+  font-size:1.35rem;
+  cursor:pointer;
+}
+#localCodeForm{display:grid;gap:11px}
+#localCodeForm label{
+  color:var(--soft);
+  font-size:.8rem;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+#localCodeInput{
+  width:100%;
+  min-height:52px;
+  padding:0 14px;
+  border:1px solid rgba(196,116,255,.32);
+  border-radius:14px;
+  background:#10091d;
+  color:white;
+  font:inherit;
+  font-weight:850;
+  outline:none;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+#localCodeInput:focus{
+  border-color:var(--border2);
+  box-shadow:0 0 0 3px rgba(166,77,255,.12);
+}
+.local-code-error{margin:0;color:#ff8f9f;font-size:.84rem;font-weight:800}
+.local-modal-note{margin:15px 0 0;color:var(--muted);font-size:.79rem;text-align:center}
+.local-payment-logo{
+  width:21px;
+  height:21px;
+  display:grid;
+  place-items:center;
+  color:var(--soft);
+}
+.local-payment-logo svg{width:20px;height:20px}
+.local-price-note{
+  display:block;
+  margin-top:4px;
+  color:var(--green);
+  font-size:.66rem;
+  font-weight:950;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+@media (max-width:560px){
+  .local-access{flex-direction:column}
+  .local-code-button,.local-pricing-badge,.local-exit-button{width:min(300px,100%);justify-content:center}
+  .local-modal-card{padding:23px 19px}
+}
+
+/* Premium account guarantee branding */
+.premium-guarantee-section{
+  position:relative;
+  padding:20px 0 10px;
+}
+.premium-guarantee-card{
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:86px 1fr;
+  gap:22px;
+  padding:28px;
+  border:1px solid rgba(156,255,49,.28);
+  border-radius:26px;
+  background:
+    radial-gradient(circle at 8% 30%,rgba(156,255,49,.13),transparent 32%),
+    linear-gradient(145deg,rgba(24,18,40,.98),rgba(9,7,16,.99));
+  box-shadow:
+    0 22px 70px rgba(0,0,0,.36),
+    0 0 38px rgba(156,255,49,.08);
+}
+.premium-guarantee-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.035),transparent 55%);
+}
+.premium-guarantee-icon{
+  position:relative;
+  z-index:1;
+  width:78px;
+  height:78px;
+  display:grid;
+  place-items:center;
+  border-radius:23px;
+  color:var(--green);
+  background:rgba(156,255,49,.09);
+  border:1px solid rgba(156,255,49,.25);
+  box-shadow:0 0 28px rgba(156,255,49,.13);
+}
+.premium-guarantee-icon svg{width:43px;height:43px}
+.premium-guarantee-copy{position:relative;z-index:1}
+.premium-guarantee-copy h2{
+  margin:0 0 10px;
+  font-size:clamp(1.65rem,3vw,2.45rem);
+  letter-spacing:-.045em;
+}
+.premium-guarantee-copy>p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.7;
+  max-width:980px;
+}
+.premium-guarantee-points{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:17px;
+}
+.premium-guarantee-points span{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  min-height:34px;
+  padding:0 11px;
+  border-radius:999px;
+  border:1px solid rgba(156,255,49,.16);
+  background:rgba(156,255,49,.055);
+  color:#dfffc0;
+  font-size:.76rem;
+  font-weight:900;
+}
+.premium-guarantee-points span::before{
+  content:"✓";
+  color:var(--green);
+  font-weight:1000;
+}
+.premium-guarantee-scope{
+  margin-top:15px!important;
+  padding-top:14px;
+  border-top:1px solid rgba(255,255,255,.07);
+  font-size:.78rem;
+  color:#8f879f!important;
+}
+.order-guarantee-badge{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  width:fit-content;
+  max-width:100%;
+  margin:12px 0;
+  padding:8px 10px;
+  border-radius:12px;
+  border:1px solid rgba(156,255,49,.18);
+  background:rgba(156,255,49,.055);
+  color:var(--green);
+  font-size:.71rem;
+  font-weight:950;
+  line-height:1.25;
+}
+.order-guarantee-badge svg{
+  flex:0 0 auto;
+  width:18px;
+  height:18px;
+}
+.unit-global-guarantee{
+  margin:0 0 15px;
+}
+.guarantee-policy-card{
+  margin-top:18px;
+  border-color:rgba(156,255,49,.19)!important;
+}
+.guarantee-policy-card .service-icon{
+  color:var(--green);
+  background:rgba(156,255,49,.08);
+}
+@media (max-width:700px){
+  .premium-guarantee-card{
+    grid-template-columns:1fr;
+    padding:22px 18px;
+  }
+  .premium-guarantee-icon{
+    width:64px;
+    height:64px;
+    border-radius:19px;
+  }
+  .premium-guarantee-icon svg{width:35px;height:35px}
+}
 </style>
 <style>
 @media (max-width:1100px){.stage-primary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.legend-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.unit-price-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
@@ -203,8 +444,8 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
 <p class="hero-copy">Choose Cat Food packages, unlock specific units, explore exclusive VIP Deals, or order Stage Progression services. Pick your offer and order directly through WhatsApp with fast confirmation and worldwide support.</p>
 <div class="hero-actions">
 <a class="btn btn-primary" href="#catfood">View Offers ↓</a>
-<a class="btn btn-secondary" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20ask%20about%20your%20offers." rel="noopener noreferrer" target="_blank">Open WhatsApp</a>
-</div>
+<a class="btn btn-secondary" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20ask%20about%20your%20offers." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20ask%20about%20your%20offers.%0D%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank">Open WhatsApp</a>
+</div><div class="local-access"><button class="local-code-button" id="openLocalCode" type="button">🇮🇩 Local Customer Code</button><span class="local-pricing-badge" hidden="" id="localPricingBadge">Indonesia Local Pricing Active · 25% OFF</span><button class="local-exit-button" hidden="" id="exitLocalMode" type="button">Use Global Pricing</button></div>
 <div class="trust-row">
 <div class="trust-item"><span class="icon-svg"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.9"></path><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9"></path></svg></span><span><strong>Guaranteed 100%</strong><small>Handled directly</small></span></div>
 <div class="trust-item"><span class="icon-svg"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" fill="currentColor"></path></svg></span><span><strong>Fast Process</strong><small>Quick confirmation</small></span></div>
@@ -214,11 +455,45 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
 <div class="quick-links">
 <a class="quick-card" href="#catfood"><span class="icon-svg catfood-mini"><img alt="Cat Food icon" src="catfood-can.png"/></span><h3>Cat Food</h3><p>4 menu tiers, cumulative bonuses, and direct order buttons.</p></a>
 <a class="quick-card" href="#units"><span class="icon-svg"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3l2.1 4.3 4.7.7-3.4 3.3.8 4.7-4.2-2.2L7.8 16l.8-4.7L5.2 8l4.7-.7L12 3z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><path d="M18.5 15.5v5M16 18h5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path></svg></span><h3>Specific Units</h3><p>Request exact collab, Uber Rare, or Legend Rare units with quantity discounts.</p></a>
-<a class="quick-card" href="#vip"><span class="icon-svg"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 8l3 3 5-6 5 6 3-3-2 11H6L4 8z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><circle cx="12" cy="11" fill="currentColor" r="1.5"></circle></svg></span><h3>VIP Deals</h3><p>Four exclusive one-time bundles with premium account resources.</p></a>
+<a class="quick-card" href="#vip"><span class="icon-svg"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 8l3 3 5-6 5 6 3-3-2 11H6L4 8z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><circle cx="12" cy="11" fill="currentColor" r="1.5"></circle></svg></span><h3>VIP Deals</h3><p>One-time purchase offers like the sample VIP poster.</p></a>
 <a class="quick-card" href="#stage"><span class="icon-svg"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 18l5-5 3 3 6-8 2 2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path><path d="M14 8h6v6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></span><h3>Stage Progression</h3><p>EoC, ITF, CoTC, Aku Realms, SoL, Uncanny Legends, and Zero Legends.</p></a>
 </div>
 </div>
 </section>
+<section class="premium-guarantee-section" id="guarantee">
+<div class="container">
+<div class="premium-guarantee-card">
+<div aria-hidden="true" class="premium-guarantee-icon">
+<svg viewbox="0 0 24 24">
+<path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.9"></path>
+<path d="M8.8 12.1l2.1 2.1 4.5-4.6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9"></path>
+</svg>
+</div>
+<div class="premium-guarantee-copy">
+<p class="eyebrow left">Included With Every Purchase</p>
+<h2>100% Account Protection Guarantee</h2>
+<p>
+          Every order from The Battle Cats Market includes account protection throughout the service.
+          Important account details and the pre-service condition are documented before processing.
+          If a verified service-related account issue occurs, we will assist with restoration to the
+          documented pre-service condition.
+        </p>
+<div class="premium-guarantee-points">
+<span>Pre-service account documentation</span>
+<span>Service progress updates</span>
+<span>Post-service verification</span>
+<span>Support for verified service-related issues</span>
+</div>
+<p class="premium-guarantee-scope">
+          Coverage applies to verified issues caused during our service process. It does not cover
+          customer-side changes, lost credentials after handover, third-party actions, or game-policy
+          enforcement unrelated to our processing.
+        </p>
+</div>
+</div>
+</div>
+</section>
+
 <section class="section compact" id="catfood">
 <div class="container">
 <div class="section-heading">
@@ -249,18 +524,26 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
 </div>
 </div>
 <div class="option-list">
-<a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%201%0AQuantity%3A%201%C3%97%20package%0ATotal%20Cat%20Food%3A%2010%2C800%0APrice%3A%20%241.60%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x9%20%C2%B7%20Leadership%20Flag%20x3%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank">
-<div class="option-main"><span class="mult-pill">1×</span><div><strong>10,800</strong><small>Total Cat Food</small></div><span class="price-green">$1.60</span></div>
+<a class="option-card" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%201%0AQuantity%3A%201%C3%97%20package%0ATotal%20Cat%20Food%3A%2010%2C800%0APrice%3A%20%241.60%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x9%20%C2%B7%20Leadership%20Flag%20x3%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%201%0AQuantity%3A%201%C3%97%20package%0ATotal%20Cat%20Food%3A%2010%2C800%0APrice%3A%20%241.60%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x9%20%C2%B7%20Leadership%20Flag%20x3%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank">
+<div class="option-main"><span class="mult-pill">1×</span><div><strong>10,800</strong><small>Total Cat Food</small></div><span class="price-green" data-global-price="$1.60" data-usd-price="1.60">$1.60</span></div>
 <div class="micro-copy">Rare Ticket x9 · Leadership Flag x3</div>
 </a>
-<a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%201%0AQuantity%3A%202%C3%97%20package%0ATotal%20Cat%20Food%3A%2021%2C600%0APrice%3A%20%243.04%20USD%0AQuantity%20Discount%20Applied%3A%205%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x19%20%C2%B7%20Leadership%20Flag%20x6%20%C2%B7%20Platinum%20Ticket%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank">
-<div class="option-main"><span class="mult-pill">2×</span><div><strong>21,600</strong><small>Total Cat Food</small></div><span class="price-green">$3.04</span></div>
+<a class="option-card" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%201%0AQuantity%3A%202%C3%97%20package%0ATotal%20Cat%20Food%3A%2021%2C600%0APrice%3A%20%243.04%20USD%0AQuantity%20Discount%20Applied%3A%205%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x19%20%C2%B7%20Leadership%20Flag%20x6%20%C2%B7%20Platinum%20Ticket%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%201%0AQuantity%3A%202%C3%97%20package%0ATotal%20Cat%20Food%3A%2021%2C600%0APrice%3A%20%243.04%20USD%0AQuantity%20Discount%20Applied%3A%205%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x19%20%C2%B7%20Leadership%20Flag%20x6%20%C2%B7%20Platinum%20Ticket%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank">
+<div class="option-main"><span class="mult-pill">2×</span><div><strong>21,600</strong><small>Total Cat Food</small></div><span class="price-green" data-global-price="$3.04" data-usd-price="3.04">$3.04</span></div>
 <div class="micro-copy"><span class="quantity-save">5% OFF</span> Rare Ticket x19 · Leadership Flag x6 · Platinum Ticket x1</div>
 </a>
-<a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%201%0AQuantity%3A%203%C3%97%20package%0ATotal%20Cat%20Food%3A%2032%2C400%0APrice%3A%20%244.32%20USD%0AQuantity%20Discount%20Applied%3A%2010%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x29%20%C2%B7%20Leadership%20Flag%20x10%20%C2%B7%20Platinum%20Ticket%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank">
-<div class="option-main"><span class="mult-pill">3×</span><div><strong>32,400</strong><small>Total Cat Food</small></div><span class="price-green">$4.32</span></div>
+<a class="option-card" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%201%0AQuantity%3A%203%C3%97%20package%0ATotal%20Cat%20Food%3A%2032%2C400%0APrice%3A%20%244.32%20USD%0AQuantity%20Discount%20Applied%3A%2010%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x29%20%C2%B7%20Leadership%20Flag%20x10%20%C2%B7%20Platinum%20Ticket%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%201%0AQuantity%3A%203%C3%97%20package%0ATotal%20Cat%20Food%3A%2032%2C400%0APrice%3A%20%244.32%20USD%0AQuantity%20Discount%20Applied%3A%2010%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x29%20%C2%B7%20Leadership%20Flag%20x10%20%C2%B7%20Platinum%20Ticket%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank">
+<div class="option-main"><span class="mult-pill">3×</span><div><strong>32,400</strong><small>Total Cat Food</small></div><span class="price-green" data-global-price="$4.32" data-usd-price="4.32">$4.32</span></div>
 <div class="micro-copy"><span class="quantity-save">10% OFF</span> Rare Ticket x29 · Leadership Flag x10 · Platinum Ticket x1</div>
 </a></div>
+
+<div class="order-guarantee-badge" title="Included with every purchase">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
+<path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>100% Account Guarantee Included</span>
+</div>
 </article>
 <article class="offer-card">
 <div class="offer-top">
@@ -272,18 +555,26 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
 </div>
 </div>
 <div class="option-list">
-<a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%202%0AQuantity%3A%201%C3%97%20package%0ATotal%20Cat%20Food%3A%2018%2C600%0APrice%3A%20%242.60%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x16%20%C2%B7%20Leadership%20Flag%20x5%20%C2%B7%20Platinum%20Ticket%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank">
-<div class="option-main"><span class="mult-pill">1×</span><div><strong>18,600</strong><small>Total Cat Food</small></div><span class="price-green">$2.60</span></div>
+<a class="option-card" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%202%0AQuantity%3A%201%C3%97%20package%0ATotal%20Cat%20Food%3A%2018%2C600%0APrice%3A%20%242.60%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x16%20%C2%B7%20Leadership%20Flag%20x5%20%C2%B7%20Platinum%20Ticket%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%202%0AQuantity%3A%201%C3%97%20package%0ATotal%20Cat%20Food%3A%2018%2C600%0APrice%3A%20%242.60%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x16%20%C2%B7%20Leadership%20Flag%20x5%20%C2%B7%20Platinum%20Ticket%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank">
+<div class="option-main"><span class="mult-pill">1×</span><div><strong>18,600</strong><small>Total Cat Food</small></div><span class="price-green" data-global-price="$2.60" data-usd-price="2.60">$2.60</span></div>
 <div class="micro-copy">Rare Ticket x16 · Leadership Flag x5 · Platinum Ticket x1</div>
 </a>
-<a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%202%0AQuantity%3A%202%C3%97%20package%0ATotal%20Cat%20Food%3A%2037%2C200%0APrice%3A%20%244.94%20USD%0AQuantity%20Discount%20Applied%3A%205%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x33%20%C2%B7%20Leadership%20Flag%20x11%20%C2%B7%20Platinum%20Ticket%20x2%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank">
-<div class="option-main"><span class="mult-pill">2×</span><div><strong>37,200</strong><small>Total Cat Food</small></div><span class="price-green">$4.94</span></div>
+<a class="option-card" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%202%0AQuantity%3A%202%C3%97%20package%0ATotal%20Cat%20Food%3A%2037%2C200%0APrice%3A%20%244.94%20USD%0AQuantity%20Discount%20Applied%3A%205%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x33%20%C2%B7%20Leadership%20Flag%20x11%20%C2%B7%20Platinum%20Ticket%20x2%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%202%0AQuantity%3A%202%C3%97%20package%0ATotal%20Cat%20Food%3A%2037%2C200%0APrice%3A%20%244.94%20USD%0AQuantity%20Discount%20Applied%3A%205%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x33%20%C2%B7%20Leadership%20Flag%20x11%20%C2%B7%20Platinum%20Ticket%20x2%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank">
+<div class="option-main"><span class="mult-pill">2×</span><div><strong>37,200</strong><small>Total Cat Food</small></div><span class="price-green" data-global-price="$4.94" data-usd-price="4.94">$4.94</span></div>
 <div class="micro-copy"><span class="quantity-save">5% OFF</span> Rare Ticket x33 · Leadership Flag x11 · Platinum Ticket x2</div>
 </a>
-<a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%202%0AQuantity%3A%203%C3%97%20package%0ATotal%20Cat%20Food%3A%2055%2C800%0APrice%3A%20%247.02%20USD%0AQuantity%20Discount%20Applied%3A%2010%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x50%20%C2%B7%20Leadership%20Flag%20x17%20%C2%B7%20Platinum%20Ticket%20x3%20%C2%B7%20Legend%20Unlock%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank">
-<div class="option-main"><span class="mult-pill">3×</span><div><strong>55,800</strong><small>Total Cat Food</small></div><span class="price-green">$7.02</span></div>
+<a class="option-card" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%202%0AQuantity%3A%203%C3%97%20package%0ATotal%20Cat%20Food%3A%2055%2C800%0APrice%3A%20%247.02%20USD%0AQuantity%20Discount%20Applied%3A%2010%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x50%20%C2%B7%20Leadership%20Flag%20x17%20%C2%B7%20Platinum%20Ticket%20x3%20%C2%B7%20Legend%20Unlock%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%202%0AQuantity%3A%203%C3%97%20package%0ATotal%20Cat%20Food%3A%2055%2C800%0APrice%3A%20%247.02%20USD%0AQuantity%20Discount%20Applied%3A%2010%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x50%20%C2%B7%20Leadership%20Flag%20x17%20%C2%B7%20Platinum%20Ticket%20x3%20%C2%B7%20Legend%20Unlock%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank">
+<div class="option-main"><span class="mult-pill">3×</span><div><strong>55,800</strong><small>Total Cat Food</small></div><span class="price-green" data-global-price="$7.02" data-usd-price="7.02">$7.02</span></div>
 <div class="micro-copy"><span class="quantity-save">10% OFF</span> Rare Ticket x50 · Leadership Flag x17 · Platinum Ticket x3 · Legend Unlock x1</div>
 </a></div>
+
+<div class="order-guarantee-badge" title="Included with every purchase">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
+<path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>100% Account Guarantee Included</span>
+</div>
 </article>
 <article class="offer-card featured">
 <span class="featured-ribbon">Recommended</span>
@@ -296,18 +587,26 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
 </div>
 </div>
 <div class="option-list">
-<a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%203%0AQuantity%3A%201%C3%97%20package%0ATotal%20Cat%20Food%3A%2039%2C000%0APrice%3A%20%245.20%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x35%20%C2%B7%20Leadership%20Flag%20x12%20%C2%B7%20Platinum%20Ticket%20x2%20%C2%B7%20Legend%20Unlock%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank">
-<div class="option-main"><span class="mult-pill">1×</span><div><strong>39,000</strong><small>Total Cat Food</small></div><span class="price-green">$5.20</span></div>
+<a class="option-card" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%203%0AQuantity%3A%201%C3%97%20package%0ATotal%20Cat%20Food%3A%2039%2C000%0APrice%3A%20%245.20%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x35%20%C2%B7%20Leadership%20Flag%20x12%20%C2%B7%20Platinum%20Ticket%20x2%20%C2%B7%20Legend%20Unlock%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%203%0AQuantity%3A%201%C3%97%20package%0ATotal%20Cat%20Food%3A%2039%2C000%0APrice%3A%20%245.20%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x35%20%C2%B7%20Leadership%20Flag%20x12%20%C2%B7%20Platinum%20Ticket%20x2%20%C2%B7%20Legend%20Unlock%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank">
+<div class="option-main"><span class="mult-pill">1×</span><div><strong>39,000</strong><small>Total Cat Food</small></div><span class="price-green" data-global-price="$5.20" data-usd-price="5.20">$5.20</span></div>
 <div class="micro-copy">Rare Ticket x35 · Leadership Flag x12 · Platinum Ticket x2 · Legend Unlock x1</div>
 </a>
-<a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%203%0AQuantity%3A%202%C3%97%20package%0ATotal%20Cat%20Food%3A%2078%2C000%0APrice%3A%20%249.88%20USD%0AQuantity%20Discount%20Applied%3A%205%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x70%20%C2%B7%20Leadership%20Flag%20x24%20%C2%B7%20Platinum%20Ticket%20x4%20%C2%B7%20Legend%20Unlock%20x2%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank">
-<div class="option-main"><span class="mult-pill">2×</span><div><strong>78,000</strong><small>Total Cat Food</small></div><span class="price-green">$9.88</span></div>
+<a class="option-card" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%203%0AQuantity%3A%202%C3%97%20package%0ATotal%20Cat%20Food%3A%2078%2C000%0APrice%3A%20%249.88%20USD%0AQuantity%20Discount%20Applied%3A%205%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x70%20%C2%B7%20Leadership%20Flag%20x24%20%C2%B7%20Platinum%20Ticket%20x4%20%C2%B7%20Legend%20Unlock%20x2%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%203%0AQuantity%3A%202%C3%97%20package%0ATotal%20Cat%20Food%3A%2078%2C000%0APrice%3A%20%249.88%20USD%0AQuantity%20Discount%20Applied%3A%205%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x70%20%C2%B7%20Leadership%20Flag%20x24%20%C2%B7%20Platinum%20Ticket%20x4%20%C2%B7%20Legend%20Unlock%20x2%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank">
+<div class="option-main"><span class="mult-pill">2×</span><div><strong>78,000</strong><small>Total Cat Food</small></div><span class="price-green" data-global-price="$9.88" data-usd-price="9.88">$9.88</span></div>
 <div class="micro-copy"><span class="quantity-save">5% OFF</span> Rare Ticket x70 · Leadership Flag x24 · Platinum Ticket x4 · Legend Unlock x2</div>
 </a>
-<a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%203%0AQuantity%3A%203%C3%97%20package%0ATotal%20Cat%20Food%3A%20117%2C000%0APrice%3A%20%2414.04%20USD%0AQuantity%20Discount%20Applied%3A%2010%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x106%20%C2%B7%20Leadership%20Flag%20x36%20%C2%B7%20Platinum%20Ticket%20x6%20%C2%B7%20Legend%20Unlock%20x3%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank">
-<div class="option-main"><span class="mult-pill">3×</span><div><strong>117,000</strong><small>Total Cat Food</small></div><span class="price-green">$14.04</span></div>
+<a class="option-card" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%203%0AQuantity%3A%203%C3%97%20package%0ATotal%20Cat%20Food%3A%20117%2C000%0APrice%3A%20%2414.04%20USD%0AQuantity%20Discount%20Applied%3A%2010%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x106%20%C2%B7%20Leadership%20Flag%20x36%20%C2%B7%20Platinum%20Ticket%20x6%20%C2%B7%20Legend%20Unlock%20x3%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%203%0AQuantity%3A%203%C3%97%20package%0ATotal%20Cat%20Food%3A%20117%2C000%0APrice%3A%20%2414.04%20USD%0AQuantity%20Discount%20Applied%3A%2010%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x106%20%C2%B7%20Leadership%20Flag%20x36%20%C2%B7%20Platinum%20Ticket%20x6%20%C2%B7%20Legend%20Unlock%20x3%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank">
+<div class="option-main"><span class="mult-pill">3×</span><div><strong>117,000</strong><small>Total Cat Food</small></div><span class="price-green" data-global-price="$14.04" data-usd-price="14.04">$14.04</span></div>
 <div class="micro-copy"><span class="quantity-save">10% OFF</span> Rare Ticket x106 · Leadership Flag x36 · Platinum Ticket x6 · Legend Unlock x3</div>
 </a></div>
+
+<div class="order-guarantee-badge" title="Included with every purchase">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
+<path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>100% Account Guarantee Included</span>
+</div>
 </article>
 <article class="offer-card">
 <div class="offer-top">
@@ -319,18 +618,26 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
 </div>
 </div>
 <div class="option-list">
-<a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%204%0AQuantity%3A%201%C3%97%20package%0ATotal%20Cat%20Food%3A%2099%2C000%0APrice%3A%20%2413.20%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x90%20%C2%B7%20Leadership%20Flag%20x30%20%C2%B7%20Platinum%20Ticket%20x5%20%C2%B7%20Legend%20Unlock%20x2%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank">
-<div class="option-main"><span class="mult-pill">1×</span><div><strong>99,000</strong><small>Total Cat Food</small></div><span class="price-green">$13.20</span></div>
+<a class="option-card" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%204%0AQuantity%3A%201%C3%97%20package%0ATotal%20Cat%20Food%3A%2099%2C000%0APrice%3A%20%2413.20%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x90%20%C2%B7%20Leadership%20Flag%20x30%20%C2%B7%20Platinum%20Ticket%20x5%20%C2%B7%20Legend%20Unlock%20x2%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%204%0AQuantity%3A%201%C3%97%20package%0ATotal%20Cat%20Food%3A%2099%2C000%0APrice%3A%20%2413.20%20USD%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x90%20%C2%B7%20Leadership%20Flag%20x30%20%C2%B7%20Platinum%20Ticket%20x5%20%C2%B7%20Legend%20Unlock%20x2%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank">
+<div class="option-main"><span class="mult-pill">1×</span><div><strong>99,000</strong><small>Total Cat Food</small></div><span class="price-green" data-global-price="$13.20" data-usd-price="13.20">$13.20</span></div>
 <div class="micro-copy">Rare Ticket x90 · Leadership Flag x30 · Platinum Ticket x5 · Legend Unlock x2</div>
 </a>
-<a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%204%0AQuantity%3A%202%C3%97%20package%0ATotal%20Cat%20Food%3A%20198%2C000%0APrice%3A%20%2425.08%20USD%0AQuantity%20Discount%20Applied%3A%205%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x180%20%C2%B7%20Leadership%20Flag%20x61%20%C2%B7%20Platinum%20Ticket%20x10%20%C2%B7%20Legend%20Unlock%20x5%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank">
-<div class="option-main"><span class="mult-pill">2×</span><div><strong>198,000</strong><small>Total Cat Food</small></div><span class="price-green">$25.08</span></div>
+<a class="option-card" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%204%0AQuantity%3A%202%C3%97%20package%0ATotal%20Cat%20Food%3A%20198%2C000%0APrice%3A%20%2425.08%20USD%0AQuantity%20Discount%20Applied%3A%205%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x180%20%C2%B7%20Leadership%20Flag%20x61%20%C2%B7%20Platinum%20Ticket%20x10%20%C2%B7%20Legend%20Unlock%20x5%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%204%0AQuantity%3A%202%C3%97%20package%0ATotal%20Cat%20Food%3A%20198%2C000%0APrice%3A%20%2425.08%20USD%0AQuantity%20Discount%20Applied%3A%205%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x180%20%C2%B7%20Leadership%20Flag%20x61%20%C2%B7%20Platinum%20Ticket%20x10%20%C2%B7%20Legend%20Unlock%20x5%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank">
+<div class="option-main"><span class="mult-pill">2×</span><div><strong>198,000</strong><small>Total Cat Food</small></div><span class="price-green" data-global-price="$25.08" data-usd-price="25.08">$25.08</span></div>
 <div class="micro-copy"><span class="quantity-save">5% OFF</span> Rare Ticket x180 · Leadership Flag x61 · Platinum Ticket x10 · Legend Unlock x5</div>
 </a>
-<a class="option-card" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%204%0AQuantity%3A%203%C3%97%20package%0ATotal%20Cat%20Food%3A%20297%2C000%0APrice%3A%20%2435.64%20USD%0AQuantity%20Discount%20Applied%3A%2010%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x270%20%C2%B7%20Leadership%20Flag%20x92%20%C2%B7%20Platinum%20Ticket%20x15%20%C2%B7%20Legend%20Unlock%20x7%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank">
-<div class="option-main"><span class="mult-pill">3×</span><div><strong>297,000</strong><small>Total Cat Food</small></div><span class="price-green">$35.64</span></div>
+<a class="option-card" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%204%0AQuantity%3A%203%C3%97%20package%0ATotal%20Cat%20Food%3A%20297%2C000%0APrice%3A%20%2435.64%20USD%0AQuantity%20Discount%20Applied%3A%2010%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x270%20%C2%B7%20Leadership%20Flag%20x92%20%C2%B7%20Platinum%20Ticket%20x15%20%C2%B7%20Legend%20Unlock%20x7%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20Cat%20Food.%0A%0ASelected%20package%3A%20Menu%204%0AQuantity%3A%203%C3%97%20package%0ATotal%20Cat%20Food%3A%20297%2C000%0APrice%3A%20%2435.64%20USD%0AQuantity%20Discount%20Applied%3A%2010%25%20OFF%0AExpected%20Bonuses%3A%20Rare%20Ticket%20x270%20%C2%B7%20Leadership%20Flag%20x92%20%C2%B7%20Platinum%20Ticket%20x15%20%C2%B7%20Legend%20Unlock%20x7%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank">
+<div class="option-main"><span class="mult-pill">3×</span><div><strong>297,000</strong><small>Total Cat Food</small></div><span class="price-green" data-global-price="$35.64" data-usd-price="35.64">$35.64</span></div>
 <div class="micro-copy"><span class="quantity-save">10% OFF</span> Rare Ticket x270 · Leadership Flag x92 · Platinum Ticket x15 · Legend Unlock x7</div>
 </a></div>
+
+<div class="order-guarantee-badge" title="Included with every purchase">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
+<path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>100% Account Guarantee Included</span>
+</div>
 </article></div>
 </div>
 </section>
@@ -342,12 +649,20 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
 <p>Choose the rarity, quantity, and requested unit. Uber Rare, Uber Rare Collab, and Legend Rare quantities can also be applied as enhancement levels instead of separate unit unlocks.</p>
 </div>
 <div aria-label="Starting prices per specific unit" class="unit-price-grid">
-<article class="unit-price-card"><div class="unit-rarity-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3l2.1 4.3 4.7.7-3.4 3.3.8 4.7-4.2-2.2L7.8 16l.8-4.7L5.2 8l4.7-.7L12 3z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path></svg></div><strong>Special Collab</strong><small>1 specific unit</small><span class="price-green">$0.13</span></article>
-<article class="unit-price-card"><div class="unit-rarity-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3l2.1 4.3 4.7.7-3.4 3.3.8 4.7-4.2-2.2L7.8 16l.8-4.7L5.2 8l4.7-.7L12 3z" fill="currentColor"></path></svg></div><strong>Rare Collab</strong><small>1 specific unit</small><span class="price-green">$0.21</span></article>
-<article class="unit-price-card"><div class="unit-rarity-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2l3 6 6.5.9-4.7 4.6 1.1 6.5-5.9-3.1L6.1 20l1.1-6.5-4.7-4.6L9 8l3-6z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.7"></path><circle cx="12" cy="12" fill="currentColor" r="2.2"></circle></svg></div><strong>Super Rare Collab</strong><small>1 specific unit</small><span class="price-green">$0.30</span></article>
-<article class="unit-price-card featured"><div class="unit-rarity-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2l2.4 6.1L21 9l-5 4.2 1.5 6.4L12 16.2l-5.5 3.4L8 13.2 3 9l6.6-.9L12 2z" fill="currentColor"></path></svg></div><strong>Uber Rare</strong><small>Starting price</small><span class="price-green">$0.36</span></article>
-<article class="unit-price-card"><div class="unit-rarity-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2l2.4 6.1L21 9l-5 4.2 1.5 6.4L12 16.2l-5.5 3.4L8 13.2 3 9l6.6-.9L12 2z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><path d="M8 4l1.3 2.2M16 4l-1.3 2.2" stroke="currentColor" stroke-linecap="round" stroke-width="1.6"></path></svg></div><strong>Uber Rare Collab</strong><small>Starting price</small><span class="price-green">$0.40</span></article>
-<article class="unit-price-card legend-tier"><div class="unit-rarity-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 8l3 3 5-6 5 6 3-3-2 11H6L4 8z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><circle cx="12" cy="11" fill="currentColor" r="1.5"></circle></svg></div><strong>Legend Rare</strong><small>Limited quantity discounts</small><span class="price-green">$0.56</span></article>
+<article class="unit-price-card"><div class="unit-rarity-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3l2.1 4.3 4.7.7-3.4 3.3.8 4.7-4.2-2.2L7.8 16l.8-4.7L5.2 8l4.7-.7L12 3z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path></svg></div><strong>Special Collab</strong><small>1 specific unit</small><span class="price-green" data-global-price="$0.13" data-usd-price="0.13">$0.13</span></article>
+<article class="unit-price-card"><div class="unit-rarity-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3l2.1 4.3 4.7.7-3.4 3.3.8 4.7-4.2-2.2L7.8 16l.8-4.7L5.2 8l4.7-.7L12 3z" fill="currentColor"></path></svg></div><strong>Rare Collab</strong><small>1 specific unit</small><span class="price-green" data-global-price="$0.21" data-usd-price="0.21">$0.21</span></article>
+<article class="unit-price-card"><div class="unit-rarity-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2l3 6 6.5.9-4.7 4.6 1.1 6.5-5.9-3.1L6.1 20l1.1-6.5-4.7-4.6L9 8l3-6z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.7"></path><circle cx="12" cy="12" fill="currentColor" r="2.2"></circle></svg></div><strong>Super Rare Collab</strong><small>1 specific unit</small><span class="price-green" data-global-price="$0.30" data-usd-price="0.30">$0.30</span></article>
+<article class="unit-price-card featured"><div class="unit-rarity-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2l2.4 6.1L21 9l-5 4.2 1.5 6.4L12 16.2l-5.5 3.4L8 13.2 3 9l6.6-.9L12 2z" fill="currentColor"></path></svg></div><strong>Uber Rare</strong><small>Starting price</small><span class="price-green" data-global-price="$0.36" data-usd-price="0.36">$0.36</span></article>
+<article class="unit-price-card"><div class="unit-rarity-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2l2.4 6.1L21 9l-5 4.2 1.5 6.4L12 16.2l-5.5 3.4L8 13.2 3 9l6.6-.9L12 2z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><path d="M8 4l1.3 2.2M16 4l-1.3 2.2" stroke="currentColor" stroke-linecap="round" stroke-width="1.6"></path></svg></div><strong>Uber Rare Collab</strong><small>Starting price</small><span class="price-green" data-global-price="$0.40" data-usd-price="0.40">$0.40</span></article>
+<article class="unit-price-card legend-tier"><div class="unit-rarity-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 8l3 3 5-6 5 6 3-3-2 11H6L4 8z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><circle cx="12" cy="11" fill="currentColor" r="1.5"></circle></svg></div><strong>Legend Rare</strong><small>Limited quantity discounts</small><span class="price-green" data-global-price="$0.56" data-usd-price="0.56">$0.56</span></article>
+</div>
+
+<div class="unit-global-guarantee order-guarantee-badge">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
+<path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>100% Account Guarantee Included</span>
 </div>
 <div class="unit-builder">
 <div class="unit-form">
@@ -374,7 +689,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
 <p class="unit-rule" id="unitRule">Quantity may unlock different requested Uber Rare units or be applied to one specific Uber Rare as enhancement, up to +60.</p>
 </aside>
 </div>
-<div class="restore-guarantee"><div class="service-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.9"></path><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9"></path></svg></div><div><h3>Pre-Service Account Restore Guarantee</h3><p>Your account condition and important in-game items are documented before processing. If an unexpected service-related issue occurs during processing, the account will be returned to its documented pre-service condition.</p></div></div>
+<div class="restore-guarantee"><div class="service-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.9"></path><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9"></path></svg></div><div><h3>100% Account Protection Guarantee</h3><p>This protection is included with every order—not only Specific Unit services. Your account condition and important in-game details are documented before processing. If a verified service-related issue occurs, we will assist with restoration to the documented pre-service condition.</p></div></div>
 </div>
 </section>
 <section class="section" id="vip">
@@ -382,81 +697,74 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
 <div class="section-heading">
 <p class="eyebrow">VIP Deals</p>
 <h2>One-time purchase offers</h2>
-<p>Four exclusive bundles with Cat Food, NP, requestable Talent Orbs, upgrade resources, and more. Each offer is available once per customer.</p>
+<p>Added a dedicated VIP Deals section based on your example poster. Customers can review each offer and tap to order directly in WhatsApp.</p>
 </div>
+<div class="poster-preview"><img alt="VIP Deals poster preview" src="vip-poster.png"/></div>
 <div class="offer-grid four">
-<article class="offer-card vip-card" data-tier="essential">
-<div class="tag-badge">First VIP Deal</div>
-<div class="vip-menu-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3l2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5-3.6-3.5 5-.7L12 3z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><circle cx="12" cy="11" fill="currentColor" r="1.4"></circle></svg></div>
-<h3>VIP Essential</h3>
-<ul class="feature-list">
-<li><strong>5,900 Cat Food</strong></li>
-<li><strong>2,222 NP</strong></li>
-<li><strong>5×</strong> Requestable Talent Orbs</li>
-<li><strong>15× Each</strong> Standard Catfruit</li>
-<li><strong>5× Each</strong> Premium Catfruit</li>
-<li><strong>20× Each</strong> Battle Item</li>
-</ul>
-<div class="big-price">US$ 1.99</div>
-<a class="btn btn-primary full" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20a%20VIP%20Deal.%0A%0ASelected%20offer%3A%20VIP%20Essential%0APrice%3A%20US%24%201.99%0AIncluded%20items%3A%205%2C900%20Cat%20Food%2C%202%2C222%20NP%2C%205x%20Requestable%20Talent%20Orbs%2C%2015x%20Each%20Standard%20Catfruit%2C%205x%20Each%20Premium%20Catfruit%2C%2020x%20Each%20Battle%20Item%0AOne-time%20purchase%3A%20Yes%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg>Order Essential</a>
-</article>
-<article class="offer-card vip-card" data-tier="elite">
-<div class="tag-badge">Most Popular</div>
-<div class="vip-menu-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3l7 6-7 12L5 9l7-6zM5 9h14M9 3l-2 6 5 12 5-12-2-6" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.7"></path></svg></div>
-<h3>VIP Elite</h3>
-<ul class="feature-list">
-<li><strong>10,800 Cat Food</strong></li>
-<li><strong>3,333 NP</strong></li>
-<li><strong>10×</strong> Requestable Talent Orbs</li>
-<li><strong>20× Each</strong> Standard Catfruit</li>
-<li><strong>30× Each</strong> Battle Item</li>
-<li><strong>20×</strong> Special Tickets</li>
-</ul>
-<div class="big-price">US$ 3.49</div>
-<a class="btn btn-primary full" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20a%20VIP%20Deal.%0A%0ASelected%20offer%3A%20VIP%20Elite%0APrice%3A%20US%24%203.49%0AIncluded%20items%3A%2010%2C800%20Cat%20Food%2C%203%2C333%20NP%2C%2010x%20Requestable%20Talent%20Orbs%2C%2020x%20Each%20Standard%20Catfruit%2C%2030x%20Each%20Battle%20Item%2C%2020x%20Special%20Tickets%0AOne-time%20purchase%3A%20Yes%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg>Order Elite</a>
-</article>
-<article class="offer-card vip-card" data-tier="ultimate">
-<div class="tag-badge">Best Value</div>
-<div class="vip-menu-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 8l3 3 5-6 5 6 3-3-2 11H6L4 8z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><path d="M13 9l-3 5h3l-1 4 4-6h-3V9z" fill="currentColor"></path></svg></div>
-<h3>VIP Ultimate</h3>
-<ul class="feature-list">
-<li><strong>18,600 Cat Food</strong></li>
-<li><strong>4,444 NP</strong></li>
-<li><strong>15×</strong> Requestable Talent Orbs</li>
-<li><strong>30× Each</strong> Standard Catfruit</li>
-<li><strong>15× Each</strong> Premium Catfruit</li>
-<li><strong>10× Each</strong> Behemoth Stone</li>
-<li><strong>50× Each</strong> Battle Item</li>
-<li><strong>50× Each</strong> Ototo Material</li>
-<li><strong>30×</strong> Special Tickets</li>
-<li><strong>+3</strong> GAMATOTO Levels</li>
-</ul>
-<div class="big-price">US$ 4.99</div>
-<a class="btn btn-primary full" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20a%20VIP%20Deal.%0A%0ASelected%20offer%3A%20VIP%20Ultimate%0APrice%3A%20US%24%204.99%0AIncluded%20items%3A%2018%2C600%20Cat%20Food%2C%204%2C444%20NP%2C%2015x%20Requestable%20Talent%20Orbs%2C%2030x%20Each%20Standard%20Catfruit%2C%2015x%20Each%20Premium%20Catfruit%2C%2010x%20Each%20Behemoth%20Stone%2C%2050x%20Each%20Battle%20Item%2C%2050x%20Each%20Ototo%20Material%2C%2030x%20Special%20Tickets%2C%20%2B3%20GAMATOTO%20Levels%0AOne-time%20purchase%3A%20Yes%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg>Order Ultimate</a>
-</article>
-<article class="offer-card vip-card" data-tier="collector">
-<div class="tag-badge">Most Complete</div>
-<div class="vip-menu-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 8h16v11H4V8zm-1 0l2-4h14l2 4H3z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><path d="M9 8v4h6V8M10 15h4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path><path d="M12 9l.7 1.4 1.6.2-1.2 1.1.3 1.6-1.4-.8-1.4.8.3-1.6-1.2-1.1 1.6-.2L12 9z" fill="currentColor"></path></svg></div>
-<h3>Collector Bundle</h3>
-<ul class="feature-list">
-<li><strong>23,600 Cat Food</strong></li>
-<li><strong>5,555 NP</strong></li>
-<li><strong>25×</strong> Requestable Talent Orbs</li>
-<li><strong>50× Each</strong> Standard Catfruit</li>
-<li><strong>Epic Catfruit ×50</strong></li>
-<li><strong>Aku &amp; Relic Catfruit ×30 Each</strong></li>
-<li><strong>Golden Catfruit ×20</strong></li>
-<li><strong>25× Each</strong> Behemoth Stone</li>
-<li><strong>75× Each</strong> Battle Item</li>
-<li><strong>100× Each</strong> Ototo Material</li>
-<li><strong>50×</strong> Special Tickets</li>
-<li><strong>+5</strong> GAMATOTO Levels</li>
-</ul>
-<div class="big-price">US$ 6.99</div>
-<a class="btn btn-primary full" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20a%20VIP%20Deal.%0A%0ASelected%20offer%3A%20VIP%20Collector%20Bundle%0APrice%3A%20US%24%206.99%0AIncluded%20items%3A%2023%2C600%20Cat%20Food%2C%205%2C555%20NP%2C%2025x%20Requestable%20Talent%20Orbs%2C%2050x%20Each%20Standard%20Catfruit%2C%20Epic%20Catfruit%20x50%2C%20Aku%20%26%20Relic%20Catfruit%20x30%20each%2C%20Golden%20Catfruit%20x20%2C%2025x%20Each%20Behemoth%20Stone%2C%2075x%20Each%20Battle%20Item%2C%20100x%20Each%20Ototo%20Material%2C%2050x%20Special%20Tickets%2C%20%2B5%20GAMATOTO%20Levels%0AOne-time%20purchase%3A%20Yes%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg>Order Collector</a>
-</article>
+<article class="offer-card vip-card">
+<div class="tag-badge">Entry VIP Deal</div>
+<div class="service-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 8l3 3 5-6 5 6 3-3-2 11H6L4 8z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><circle cx="12" cy="11" fill="currentColor" r="1.5"></circle></svg></div>
+<h3>VIP Plus</h3>
+<ul class="feature-list"><li>18,600 Cat Food</li><li>Rare Ticket x20</li><li>Platinum Ticket x1</li></ul>
+<div class="big-price" data-global-price="US$ 2.99" data-usd-price="2.99">US$ 2.99</div>
+
+<div class="order-guarantee-badge" title="Included with every purchase">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
+<path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>100% Account Guarantee Included</span>
 </div>
-<div class="vip-note"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3l7 3v5c0 4.8-3.2 8.1-7 10-3.8-1.9-7-5.2-7-10V6l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg><span><strong>One-time purchase:</strong> each VIP offer may only be claimed once per customer. Talent Orb types are fully requestable. Premium Catfruit includes Epic, Aku, Relic, and Golden Catfruit. Special Tickets are used for the Li’l Cats Capsule.</span></div>
+<a aria-label="Order via WhatsApp" class="btn btn-primary full btn-icon-only" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20VIP%20Plus%0APrice%3A%20US%24%202.99%0AIncluded%20items%3A%2018%2C600%20Cat%20Food%2C%20Rare%20Ticket%20x20%2C%20Platinum%20Ticket%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20VIP%20Plus%0APrice%3A%20US%24%202.99%0AIncluded%20items%3A%2018%2C600%20Cat%20Food%2C%20Rare%20Ticket%20x20%2C%20Platinum%20Ticket%20x1%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Order via WhatsApp</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg></a>
+</article>
+<article class="offer-card vip-card">
+<div class="tag-badge">Most Popular</div>
+<div class="service-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 8l3 3 5-6 5 6 3-3-2 11H6L4 8z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><circle cx="12" cy="11" fill="currentColor" r="1.5"></circle></svg></div>
+<h3>VIP Elite</h3>
+<ul class="feature-list"><li>39,000 Cat Food</li><li>Rare Ticket x50</li><li>Platinum Ticket x1</li><li>Dark Catseye x20</li></ul>
+<div class="big-price" data-global-price="US$ 5.99" data-usd-price="5.99">US$ 5.99</div>
+
+<div class="order-guarantee-badge" title="Included with every purchase">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
+<path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>100% Account Guarantee Included</span>
+</div>
+<a aria-label="Order via WhatsApp" class="btn btn-primary full btn-icon-only" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20VIP%20Elite%0APrice%3A%20US%24%205.99%0AIncluded%20items%3A%2039%2C000%20Cat%20Food%2C%20Rare%20Ticket%20x50%2C%20Platinum%20Ticket%20x1%2C%20Dark%20Catseye%20x20%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20VIP%20Elite%0APrice%3A%20US%24%205.99%0AIncluded%20items%3A%2039%2C000%20Cat%20Food%2C%20Rare%20Ticket%20x50%2C%20Platinum%20Ticket%20x1%2C%20Dark%20Catseye%20x20%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Order via WhatsApp</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg></a>
+</article>
+<article class="offer-card vip-card">
+<div class="tag-badge">Ultimate Value</div>
+<div class="service-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 8l3 3 5-6 5 6 3-3-2 11H6L4 8z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><circle cx="12" cy="11" fill="currentColor" r="1.5"></circle></svg></div>
+<h3>VIP Ultimate</h3>
+<ul class="feature-list"><li>54,000 Cat Food</li><li>Rare Ticket x100</li><li>Platinum Ticket x2</li><li>Dark Catseye x40</li><li>11,000,000 XP</li></ul>
+<div class="big-price" data-global-price="US$ 8.99" data-usd-price="8.99">US$ 8.99</div>
+
+<div class="order-guarantee-badge" title="Included with every purchase">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
+<path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>100% Account Guarantee Included</span>
+</div>
+<a aria-label="Order via WhatsApp" class="btn btn-primary full btn-icon-only" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20VIP%20Ultimate%0APrice%3A%20US%24%208.99%0AIncluded%20items%3A%2054%2C000%20Cat%20Food%2C%20Rare%20Ticket%20x100%2C%20Platinum%20Ticket%20x2%2C%20Dark%20Catseye%20x40%2C%2011%2C000%2C000%20XP%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20VIP%20Ultimate%0APrice%3A%20US%24%208.99%0AIncluded%20items%3A%2054%2C000%20Cat%20Food%2C%20Rare%20Ticket%20x100%2C%20Platinum%20Ticket%20x2%2C%20Dark%20Catseye%20x40%2C%2011%2C000%2C000%20XP%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Order via WhatsApp</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg></a>
+</article>
+<article class="offer-card vip-card">
+<div class="tag-badge">For Advanced Players</div>
+<div class="service-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 8l3 3 5-6 5 6 3-3-2 11H6L4 8z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><circle cx="12" cy="11" fill="currentColor" r="1.5"></circle></svg></div>
+<h3>Collector Bundle</h3>
+<ul class="feature-list"><li>Epic Catfruit x50</li><li>Aku Catfruit x30</li><li>Relic Catfruit x30</li><li>Golden Catfruit x30</li><li>Catfruit x30</li><li>Dark Catseye x30</li><li>NP x1111</li></ul>
+<div class="big-price" data-global-price="US$ 11.9" data-usd-price="11.9">US$ 11.9</div>
+
+<div class="order-guarantee-badge" title="Included with every purchase">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
+<path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>100% Account Guarantee Included</span>
+</div>
+<a aria-label="Order via WhatsApp" class="btn btn-primary full btn-icon-only" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20Collector%20Bundle%0APrice%3A%20US%24%2011.9%0AIncluded%20items%3A%20Epic%20Catfruit%20x50%2C%20Aku%20Catfruit%20x30%2C%20Relic%20Catfruit%20x30%2C%20Golden%20Catfruit%20x30%2C%20Catfruit%20x30%2C%20Dark%20Catseye%20x30%2C%20NP%20x1111%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20am%20interested%20in%20the%20VIP%20Deals%20offer.%0A%0ASelected%20offer%3A%20Collector%20Bundle%0APrice%3A%20US%24%2011.9%0AIncluded%20items%3A%20Epic%20Catfruit%20x50%2C%20Aku%20Catfruit%20x30%2C%20Relic%20Catfruit%20x30%2C%20Golden%20Catfruit%20x30%2C%20Catfruit%20x30%2C%20Dark%20Catseye%20x30%2C%20NP%20x1111%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Order via WhatsApp</span><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg></a>
+</article></div>
 </div>
 </section>
 <section class="section compact" id="stage">
@@ -474,9 +782,17 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
 <h3>Empire of Cats</h3>
 <p class="stage-benefit">Complete the main chapters at the lowest starting price.</p>
 <div class="stage-meta"><span>All Chapters</span><span>Treasures Included</span></div>
+
+<div class="order-guarantee-badge" title="Included with every purchase">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
+<path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>100% Account Guarantee Included</span>
+</div>
 <div class="stage-footer">
-<div class="stage-price"><small>Starting price</small><strong>$0.99</strong></div>
-<a aria-label="Order Empire of Cats via WhatsApp" class="cart-button" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Stage%20Progression%20service.%0A%0ASelected%20service%3A%20Empire%20of%20Cats%0ACompletion%3A%20Standard%20campaign%20completion%0APrice%3A%20%240.99%20USD%0AIncluded%3A%20All%20Chapters%2C%20Treasures%20Included%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg></a>
+<div class="stage-price"><small>Starting price</small><strong data-global-price="$0.99" data-usd-price="0.99">$0.99</strong></div>
+<a aria-label="Order Empire of Cats via WhatsApp" class="cart-button" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Stage%20Progression%20service.%0A%0ASelected%20service%3A%20Empire%20of%20Cats%0ACompletion%3A%20Standard%20campaign%20completion%0APrice%3A%20%240.99%20USD%0AIncluded%3A%20All%20Chapters%2C%20Treasures%20Included%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Stage%20Progression%20service.%0A%0ASelected%20service%3A%20Empire%20of%20Cats%0ACompletion%3A%20Standard%20campaign%20completion%0APrice%3A%20%240.99%20USD%0AIncluded%3A%20All%20Chapters%2C%20Treasures%20Included%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg></a>
 </div>
 </div>
 </article>
@@ -487,9 +803,17 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
 <h3>Into The Future</h3>
 <p class="stage-benefit">Continue the story progression with treasure collection included.</p>
 <div class="stage-meta"><span>All Chapters</span><span>Treasures Included</span></div>
+
+<div class="order-guarantee-badge" title="Included with every purchase">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
+<path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>100% Account Guarantee Included</span>
+</div>
 <div class="stage-footer">
-<div class="stage-price"><small>Starting price</small><strong>$1.79</strong></div>
-<a aria-label="Order Into The Future via WhatsApp" class="cart-button" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Stage%20Progression%20service.%0A%0ASelected%20service%3A%20Into%20The%20Future%0ACompletion%3A%20Standard%20campaign%20completion%0APrice%3A%20%241.79%20USD%0AIncluded%3A%20All%20Chapters%2C%20Treasures%20Included%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg></a>
+<div class="stage-price"><small>Starting price</small><strong data-global-price="$1.79" data-usd-price="1.79">$1.79</strong></div>
+<a aria-label="Order Into The Future via WhatsApp" class="cart-button" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Stage%20Progression%20service.%0A%0ASelected%20service%3A%20Into%20The%20Future%0ACompletion%3A%20Standard%20campaign%20completion%0APrice%3A%20%241.79%20USD%0AIncluded%3A%20All%20Chapters%2C%20Treasures%20Included%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Stage%20Progression%20service.%0A%0ASelected%20service%3A%20Into%20The%20Future%0ACompletion%3A%20Standard%20campaign%20completion%0APrice%3A%20%241.79%20USD%0AIncluded%3A%20All%20Chapters%2C%20Treasures%20Included%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg></a>
 </div>
 </div>
 </article>
@@ -500,9 +824,17 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
 <h3>Cats of the Cosmos</h3>
 <p class="stage-benefit">Complete the cosmic campaign with a clear, fixed order scope.</p>
 <div class="stage-meta"><span>All Chapters</span><span>Treasures Included</span></div>
+
+<div class="order-guarantee-badge" title="Included with every purchase">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
+<path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>100% Account Guarantee Included</span>
+</div>
 <div class="stage-footer">
-<div class="stage-price"><small>Starting price</small><strong>$2.49</strong></div>
-<a aria-label="Order Cats of the Cosmos via WhatsApp" class="cart-button" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Stage%20Progression%20service.%0A%0ASelected%20service%3A%20Cats%20of%20the%20Cosmos%0ACompletion%3A%20Standard%20campaign%20completion%0APrice%3A%20%242.49%20USD%0AIncluded%3A%20All%20Chapters%2C%20Treasures%20Included%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg></a>
+<div class="stage-price"><small>Starting price</small><strong data-global-price="$2.49" data-usd-price="2.49">$2.49</strong></div>
+<a aria-label="Order Cats of the Cosmos via WhatsApp" class="cart-button" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Stage%20Progression%20service.%0A%0ASelected%20service%3A%20Cats%20of%20the%20Cosmos%0ACompletion%3A%20Standard%20campaign%20completion%0APrice%3A%20%242.49%20USD%0AIncluded%3A%20All%20Chapters%2C%20Treasures%20Included%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Stage%20Progression%20service.%0A%0ASelected%20service%3A%20Cats%20of%20the%20Cosmos%0ACompletion%3A%20Standard%20campaign%20completion%0APrice%3A%20%242.49%20USD%0AIncluded%3A%20All%20Chapters%2C%20Treasures%20Included%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg></a>
 </div>
 </div>
 </article>
@@ -513,9 +845,17 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
 <h3>The Aku Realms</h3>
 <p class="stage-benefit">Progress through The Aku Realms with manual handling and updates.</p>
 <div class="stage-meta"><span>Full Progression</span><span>Manual Service</span></div>
+
+<div class="order-guarantee-badge" title="Included with every purchase">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
+<path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>100% Account Guarantee Included</span>
+</div>
 <div class="stage-footer">
-<div class="stage-price"><small>Starting price</small><strong>$2.99</strong></div>
-<a aria-label="Order The Aku Realms via WhatsApp" class="cart-button" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Stage%20Progression%20service.%0A%0ASelected%20service%3A%20The%20Aku%20Realms%0ACompletion%3A%20Standard%20campaign%20completion%0APrice%3A%20%242.99%20USD%0AIncluded%3A%20Full%20Progression%2C%20Manual%20Service%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg></a>
+<div class="stage-price"><small>Starting price</small><strong data-global-price="$2.99" data-usd-price="2.99">$2.99</strong></div>
+<a aria-label="Order The Aku Realms via WhatsApp" class="cart-button" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Stage%20Progression%20service.%0A%0ASelected%20service%3A%20The%20Aku%20Realms%0ACompletion%3A%20Standard%20campaign%20completion%0APrice%3A%20%242.99%20USD%0AIncluded%3A%20Full%20Progression%2C%20Manual%20Service%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Stage%20Progression%20service.%0A%0ASelected%20service%3A%20The%20Aku%20Realms%0ACompletion%3A%20Standard%20campaign%20completion%0APrice%3A%20%242.99%20USD%0AIncluded%3A%20Full%20Progression%2C%20Manual%20Service%0A%0APlease%20confirm%20availability%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5h2l2.2 9.2a1 1 0 001 .8h8.9a1 1 0 001-.8L21 8H7.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><circle cx="10" cy="19" fill="currentColor" r="1.7"></circle><circle cx="18" cy="19" fill="currentColor" r="1.7"></circle></svg></a>
 </div>
 </div>
 </article>
@@ -527,15 +867,39 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
 <div class="legend-grid">
 <article class="legend-campaign-card" data-tone="sol">
 <div class="legend-header"><h3>Stories of Legend</h3><p>UNLOCKS: UNCANNY LEGENDS</p></div>
-<div class="crown-list"><a class="crown-option" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Stories%20of%20Legend%0ASelected%20completion%3A%201-Crown%0ABundle%20discount%3A%20Standard%20price%0ATotal%20price%3A%20%243.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>1-Crown</strong><small>Standard completion</small></span><span class="crown-price">$3.99</span></a><a class="crown-option" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Stories%20of%20Legend%0ASelected%20completion%3A%20Up%20to%202-Crown%0ABundle%20discount%3A%2020%25%20OFF%0ATotal%20price%3A%20%246.39%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Up to 2-Crown<span class="discount-badge">20% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price">$6.39</span></a><a class="crown-option" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Stories%20of%20Legend%0ASelected%20completion%3A%20Up%20to%203-Crown%0ABundle%20discount%3A%2025%25%20OFF%0ATotal%20price%3A%20%248.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Up to 3-Crown<span class="discount-badge">25% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price">$8.99</span></a><a class="crown-option" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Stories%20of%20Legend%0ASelected%20completion%3A%20Full%204-Crown%0ABundle%20discount%3A%2030%25%20OFF%0ATotal%20price%3A%20%2411.19%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Full 4-Crown<span class="discount-badge">30% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price">$11.19</span></a></div>
+
+<div class="order-guarantee-badge" title="Included with every purchase">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
+<path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>100% Account Guarantee Included</span>
+</div>
+<div class="crown-list"><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Stories%20of%20Legend%0ASelected%20completion%3A%201-Crown%0ABundle%20discount%3A%20Standard%20price%0ATotal%20price%3A%20%243.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Stories%20of%20Legend%0ASelected%20completion%3A%201-Crown%0ABundle%20discount%3A%20Standard%20price%0ATotal%20price%3A%20%243.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>1-Crown</strong><small>Standard completion</small></span><span class="crown-price" data-global-price="$3.99" data-usd-price="3.99">$3.99</span></a><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Stories%20of%20Legend%0ASelected%20completion%3A%20Up%20to%202-Crown%0ABundle%20discount%3A%2020%25%20OFF%0ATotal%20price%3A%20%246.39%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Stories%20of%20Legend%0ASelected%20completion%3A%20Up%20to%202-Crown%0ABundle%20discount%3A%2020%25%20OFF%0ATotal%20price%3A%20%246.39%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Up to 2-Crown<span class="discount-badge">20% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price" data-global-price="$6.39" data-usd-price="6.39">$6.39</span></a><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Stories%20of%20Legend%0ASelected%20completion%3A%20Up%20to%203-Crown%0ABundle%20discount%3A%2025%25%20OFF%0ATotal%20price%3A%20%248.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Stories%20of%20Legend%0ASelected%20completion%3A%20Up%20to%203-Crown%0ABundle%20discount%3A%2025%25%20OFF%0ATotal%20price%3A%20%248.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Up to 3-Crown<span class="discount-badge">25% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price" data-global-price="$8.99" data-usd-price="8.99">$8.99</span></a><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Stories%20of%20Legend%0ASelected%20completion%3A%20Full%204-Crown%0ABundle%20discount%3A%2030%25%20OFF%0ATotal%20price%3A%20%2411.19%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Stories%20of%20Legend%0ASelected%20completion%3A%20Full%204-Crown%0ABundle%20discount%3A%2030%25%20OFF%0ATotal%20price%3A%20%2411.19%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Full 4-Crown<span class="discount-badge">30% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price" data-global-price="$11.19" data-usd-price="11.19">$11.19</span></a></div>
 </article>
 <article class="legend-campaign-card" data-tone="ul">
 <div class="legend-header"><h3>Uncanny Legends</h3><p>UNLOCKS: ZERO LEGENDS</p></div>
-<div class="crown-list"><a class="crown-option" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Uncanny%20Legends%0ASelected%20completion%3A%201-Crown%0ABundle%20discount%3A%20Standard%20price%0ATotal%20price%3A%20%244.49%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>1-Crown</strong><small>Standard completion</small></span><span class="crown-price">$4.49</span></a><a class="crown-option" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Uncanny%20Legends%0ASelected%20completion%3A%20Up%20to%202-Crown%0ABundle%20discount%3A%2020%25%20OFF%0ATotal%20price%3A%20%247.19%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Up to 2-Crown<span class="discount-badge">20% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price">$7.19</span></a><a class="crown-option" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Uncanny%20Legends%0ASelected%20completion%3A%20Up%20to%203-Crown%0ABundle%20discount%3A%2025%25%20OFF%0ATotal%20price%3A%20%2410.09%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Up to 3-Crown<span class="discount-badge">25% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price">$10.09</span></a><a class="crown-option" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Uncanny%20Legends%0ASelected%20completion%3A%20Full%204-Crown%0ABundle%20discount%3A%2030%25%20OFF%0ATotal%20price%3A%20%2412.59%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Full 4-Crown<span class="discount-badge">30% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price">$12.59</span></a></div>
+
+<div class="order-guarantee-badge" title="Included with every purchase">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
+<path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>100% Account Guarantee Included</span>
+</div>
+<div class="crown-list"><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Uncanny%20Legends%0ASelected%20completion%3A%201-Crown%0ABundle%20discount%3A%20Standard%20price%0ATotal%20price%3A%20%244.49%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Uncanny%20Legends%0ASelected%20completion%3A%201-Crown%0ABundle%20discount%3A%20Standard%20price%0ATotal%20price%3A%20%244.49%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>1-Crown</strong><small>Standard completion</small></span><span class="crown-price" data-global-price="$4.49" data-usd-price="4.49">$4.49</span></a><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Uncanny%20Legends%0ASelected%20completion%3A%20Up%20to%202-Crown%0ABundle%20discount%3A%2020%25%20OFF%0ATotal%20price%3A%20%247.19%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Uncanny%20Legends%0ASelected%20completion%3A%20Up%20to%202-Crown%0ABundle%20discount%3A%2020%25%20OFF%0ATotal%20price%3A%20%247.19%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Up to 2-Crown<span class="discount-badge">20% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price" data-global-price="$7.19" data-usd-price="7.19">$7.19</span></a><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Uncanny%20Legends%0ASelected%20completion%3A%20Up%20to%203-Crown%0ABundle%20discount%3A%2025%25%20OFF%0ATotal%20price%3A%20%2410.09%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Uncanny%20Legends%0ASelected%20completion%3A%20Up%20to%203-Crown%0ABundle%20discount%3A%2025%25%20OFF%0ATotal%20price%3A%20%2410.09%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Up to 3-Crown<span class="discount-badge">25% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price" data-global-price="$10.09" data-usd-price="10.09">$10.09</span></a><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Uncanny%20Legends%0ASelected%20completion%3A%20Full%204-Crown%0ABundle%20discount%3A%2030%25%20OFF%0ATotal%20price%3A%20%2412.59%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Uncanny%20Legends%0ASelected%20completion%3A%20Full%204-Crown%0ABundle%20discount%3A%2030%25%20OFF%0ATotal%20price%3A%20%2412.59%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Full 4-Crown<span class="discount-badge">30% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price" data-global-price="$12.59" data-usd-price="12.59">$12.59</span></a></div>
 </article>
 <article class="legend-campaign-card" data-tone="zl">
 <div class="legend-header"><h3>Zero Legends</h3><p>ADVANCED LEGEND PROGRESSION</p></div>
-<div class="crown-list"><a class="crown-option" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Zero%20Legends%0ASelected%20completion%3A%201-Crown%0ABundle%20discount%3A%20Standard%20price%0ATotal%20price%3A%20%244.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>1-Crown</strong><small>Standard completion</small></span><span class="crown-price">$4.99</span></a><a class="crown-option" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Zero%20Legends%0ASelected%20completion%3A%20Up%20to%202-Crown%0ABundle%20discount%3A%2020%25%20OFF%0ATotal%20price%3A%20%247.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Up to 2-Crown<span class="discount-badge">20% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price">$7.99</span></a><a class="crown-option" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Zero%20Legends%0ASelected%20completion%3A%20Up%20to%203-Crown%0ABundle%20discount%3A%2025%25%20OFF%0ATotal%20price%3A%20%2411.19%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Up to 3-Crown<span class="discount-badge">25% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price">$11.19</span></a><a class="crown-option" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Zero%20Legends%0ASelected%20completion%3A%20Full%204-Crown%0ABundle%20discount%3A%2030%25%20OFF%0ATotal%20price%3A%20%2413.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Full 4-Crown<span class="discount-badge">30% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price">$13.99</span></a></div>
+
+<div class="order-guarantee-badge" title="Included with every purchase">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" fill="none" stroke="currentColor" stroke-width="1.8"></path>
+<path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>100% Account Guarantee Included</span>
+</div>
+<div class="crown-list"><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Zero%20Legends%0ASelected%20completion%3A%201-Crown%0ABundle%20discount%3A%20Standard%20price%0ATotal%20price%3A%20%244.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Zero%20Legends%0ASelected%20completion%3A%201-Crown%0ABundle%20discount%3A%20Standard%20price%0ATotal%20price%3A%20%244.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>1-Crown</strong><small>Standard completion</small></span><span class="crown-price" data-global-price="$4.99" data-usd-price="4.99">$4.99</span></a><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Zero%20Legends%0ASelected%20completion%3A%20Up%20to%202-Crown%0ABundle%20discount%3A%2020%25%20OFF%0ATotal%20price%3A%20%247.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Zero%20Legends%0ASelected%20completion%3A%20Up%20to%202-Crown%0ABundle%20discount%3A%2020%25%20OFF%0ATotal%20price%3A%20%247.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Up to 2-Crown<span class="discount-badge">20% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price" data-global-price="$7.99" data-usd-price="7.99">$7.99</span></a><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Zero%20Legends%0ASelected%20completion%3A%20Up%20to%203-Crown%0ABundle%20discount%3A%2025%25%20OFF%0ATotal%20price%3A%20%2411.19%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Zero%20Legends%0ASelected%20completion%3A%20Up%20to%203-Crown%0ABundle%20discount%3A%2025%25%20OFF%0ATotal%20price%3A%20%2411.19%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Up to 3-Crown<span class="discount-badge">25% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price" data-global-price="$11.19" data-usd-price="11.19">$11.19</span></a><a class="crown-option" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Zero%20Legends%0ASelected%20completion%3A%20Full%204-Crown%0ABundle%20discount%3A%2030%25%20OFF%0ATotal%20price%3A%20%2413.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20the%20Crown%20Completion%20service.%0A%0ASelected%20campaign%3A%20Zero%20Legends%0ASelected%20completion%3A%20Full%204-Crown%0ABundle%20discount%3A%2030%25%20OFF%0ATotal%20price%3A%20%2413.99%20USD%0A%0APlease%20confirm%20campaign%20availability%2C%20completion%20scope%2C%20and%20payment%20instructions.%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="crown-name"><strong>Full 4-Crown<span class="discount-badge">30% OFF</span></strong><small>Discounted total package</small></span><span class="crown-price" data-global-price="$13.99" data-usd-price="13.99">$13.99</span></a></div>
 </article></div>
 <p class="stage-note">Crown bundle prices are the total price from 1-Crown up to the selected completion level. Exact stage availability and completion scope are confirmed in WhatsApp before payment.</p>
 </div>
@@ -555,7 +919,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
 <span class="pay-pill"><span class="icon-svg"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="18" rx="2" stroke="currentColor" stroke-width="1.7" width="18" x="3" y="3"></rect><path d="M7 7h4v4H7zM13 7h4v4h-4zM7 13h4v4H7z" fill="none" stroke="currentColor" stroke-width="1.5"></path><path d="M13 13h1v1h-1zm3 0h1v1h-1zm-2 2h3v2h-1v-1h-2z" fill="currentColor"></path></svg></span>QRIS</span>
 </div>
 <div class="social-row">
-<a class="social-pill" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20ask%20about%20your%20services." rel="noopener noreferrer" target="_blank"><span class="icon-svg"><svg aria-hidden="true" viewbox="0 0 32 32"><path d="M19.11 17.35c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.13-.18.27-.69.87-.85 1.05-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.3-.79-.7-1.33-1.56-1.48-1.82-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.44-.82-1.98-.21-.5-.42-.43-.58-.44h-.49c-.18 0-.47.07-.71.34-.24.27-.93.91-.93 2.22 0 1.3.95 2.57 1.08 2.75.13.18 1.86 2.84 4.5 3.98.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.08 1.58-.64 1.8-1.26.22-.61.22-1.14.16-1.26-.07-.11-.24-.18-.51-.31z" fill="currentColor"></path><path d="M16.03 3.2c-6.97 0-12.63 5.62-12.63 12.55 0 2.22.59 4.39 1.71 6.29L3.2 28.8l6.96-1.82a12.67 12.67 0 005.87 1.49h.01c6.97 0 12.63-5.62 12.63-12.55S23 3.2 16.03 3.2zm0 22.98h-.01a10.5 10.5 0 01-5.35-1.47l-.38-.23-4.13 1.08 1.1-4.01-.25-.41a10.22 10.22 0 01-1.57-5.42c0-5.65 4.64-10.25 10.35-10.25 2.77 0 5.37 1.07 7.33 3.01a10.16 10.16 0 013.03 7.24c0 5.65-4.64 10.26-10.35 10.26z" fill="currentColor"></path></svg></span>WhatsApp</a>
+<a class="social-pill" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20ask%20about%20your%20services." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20ask%20about%20your%20services.%0D%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="icon-svg"><svg aria-hidden="true" viewbox="0 0 32 32"><path d="M19.11 17.35c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.13-.18.27-.69.87-.85 1.05-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.3-.79-.7-1.33-1.56-1.48-1.82-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.44-.82-1.98-.21-.5-.42-.43-.58-.44h-.49c-.18 0-.47.07-.71.34-.24.27-.93.91-.93 2.22 0 1.3.95 2.57 1.08 2.75.13.18 1.86 2.84 4.5 3.98.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.08 1.58-.64 1.8-1.26.22-.61.22-1.14.16-1.26-.07-.11-.24-.18-.51-.31z" fill="currentColor"></path><path d="M16.03 3.2c-6.97 0-12.63 5.62-12.63 12.55 0 2.22.59 4.39 1.71 6.29L3.2 28.8l6.96-1.82a12.67 12.67 0 005.87 1.49h.01c6.97 0 12.63-5.62 12.63-12.55S23 3.2 16.03 3.2zm0 22.98h-.01a10.5 10.5 0 01-5.35-1.47l-.38-.23-4.13 1.08 1.1-4.01-.25-.41a10.22 10.22 0 01-1.57-5.42c0-5.65 4.64-10.25 10.35-10.25 2.77 0 5.37 1.07 7.33 3.01a10.16 10.16 0 013.03 7.24c0 5.65-4.64 10.26-10.35 10.26z" fill="currentColor"></path></svg></span>WhatsApp</a>
 <a class="social-pill" href="https://www.instagram.com/thebattlecats.market/" rel="noopener noreferrer" target="_blank"><span class="icon-svg"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="18" rx="5" stroke="currentColor" stroke-width="1.8" width="18" x="3" y="3"></rect><circle cx="12" cy="12" fill="none" r="4" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17.4" cy="6.6" fill="currentColor" r="1.2"></circle></svg></span>Instagram</a>
 <a class="social-pill" href="https://www.facebook.com/people/The-Battle-Cats-Market/61577816481801/" rel="noopener noreferrer" target="_blank"><span class="icon-svg"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.5-1.5h1.7V4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.4V10H7v3h3v8h3.5z" fill="currentColor"></path></svg></span>Facebook</a>
 </div>
@@ -565,6 +929,16 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
 <div class="container">
 <div class="section-heading"><p class="eyebrow">Frequently Asked Questions</p><h2>Before you order</h2></div>
 <div class="faq">
+<details>
+<summary>Does every order include the 100% Account Protection Guarantee?</summary>
+<p>
+            Yes. The guarantee is included with Cat Food, Specific Units, VIP Deals, and Stage
+            Progression orders. We document the account before processing, provide service updates,
+            and verify the result after completion. Coverage applies to verified issues caused
+            during our service process.
+          </p>
+</details>
+
 <details open=""><summary>How do customers order from the website?</summary><p>Every Cat Food, Specific Unit, VIP Deal, and Stage Progression offer includes a direct WhatsApp order button. The selected package information is already written automatically in the message.</p></details>
 <details><summary>What payments are shown on the website now?</summary><p>The website now shows crypto icons for BTC, ETH, SOL, and USDT, plus QRIS as an additional payment icon for offers that support it.</p></details>
 <details><summary>How do Crown Completion discounts work?</summary><p>Stories of Legend, Uncanny Legends, and Zero Legends offer discounted total bundles: 20% off up to 2-Crown, 25% off up to 3-Crown, and 30% off for full 4-Crown completion. Availability and scope are confirmed before payment.</p></details>
@@ -590,15 +964,254 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(
 <div class="container">
 <div class="section-heading"><p class="eyebrow">Official Contact</p><h2>Order and support channels</h2><p>Please verify that you are communicating with your official accounts before making any payment.</p></div>
 <div class="contact-grid">
-<article class="contact-card"><span class="icon-svg"><svg aria-hidden="true" viewbox="0 0 32 32"><path d="M19.11 17.35c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.13-.18.27-.69.87-.85 1.05-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.3-.79-.7-1.33-1.56-1.48-1.82-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.44-.82-1.98-.21-.5-.42-.43-.58-.44h-.49c-.18 0-.47.07-.71.34-.24.27-.93.91-.93 2.22 0 1.3.95 2.57 1.08 2.75.13.18 1.86 2.84 4.5 3.98.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.08 1.58-.64 1.8-1.26.22-.61.22-1.14.16-1.26-.07-.11-.24-.18-.51-.31z" fill="currentColor"></path><path d="M16.03 3.2c-6.97 0-12.63 5.62-12.63 12.55 0 2.22.59 4.39 1.71 6.29L3.2 28.8l6.96-1.82a12.67 12.67 0 005.87 1.49h.01c6.97 0 12.63-5.62 12.63-12.55S23 3.2 16.03 3.2zm0 22.98h-.01a10.5 10.5 0 01-5.35-1.47l-.38-.23-4.13 1.08 1.1-4.01-.25-.41a10.22 10.22 0 01-1.57-5.42c0-5.65 4.64-10.25 10.35-10.25 2.77 0 5.37 1.07 7.33 3.01a10.16 10.16 0 013.03 7.24c0 5.65-4.64 10.26-10.35 10.26z" fill="currentColor"></path></svg></span><h3>WhatsApp</h3><p>Fastest channel for orders, package confirmation, bonuses, and direct support.</p><a class="btn btn-primary" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20place%20an%20order." rel="noopener noreferrer" target="_blank">Open WhatsApp</a></article>
+<article class="contact-card"><span class="icon-svg"><svg aria-hidden="true" viewbox="0 0 32 32"><path d="M19.11 17.35c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.13-.18.27-.69.87-.85 1.05-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.3-.79-.7-1.33-1.56-1.48-1.82-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.44-.82-1.98-.21-.5-.42-.43-.58-.44h-.49c-.18 0-.47.07-.71.34-.24.27-.93.91-.93 2.22 0 1.3.95 2.57 1.08 2.75.13.18 1.86 2.84 4.5 3.98.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.08 1.58-.64 1.8-1.26.22-.61.22-1.14.16-1.26-.07-.11-.24-.18-.51-.31z" fill="currentColor"></path><path d="M16.03 3.2c-6.97 0-12.63 5.62-12.63 12.55 0 2.22.59 4.39 1.71 6.29L3.2 28.8l6.96-1.82a12.67 12.67 0 005.87 1.49h.01c6.97 0 12.63-5.62 12.63-12.55S23 3.2 16.03 3.2zm0 22.98h-.01a10.5 10.5 0 01-5.35-1.47l-.38-.23-4.13 1.08 1.1-4.01-.25-.41a10.22 10.22 0 01-1.57-5.42c0-5.65 4.64-10.25 10.35-10.25 2.77 0 5.37 1.07 7.33 3.01a10.16 10.16 0 013.03 7.24c0 5.65-4.64 10.26-10.35 10.26z" fill="currentColor"></path></svg></span><h3>WhatsApp</h3><p>Fastest channel for orders, package confirmation, bonuses, and direct support.</p><a class="btn btn-primary" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20place%20an%20order." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20place%20an%20order.%0D%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank">Open WhatsApp</a></article>
 <article class="contact-card"><span class="icon-svg"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="18" rx="5" stroke="currentColor" stroke-width="1.8" width="18" x="3" y="3"></rect><circle cx="12" cy="12" fill="none" r="4" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17.4" cy="6.6" fill="currentColor" r="1.2"></circle></svg></span><h3>Instagram</h3><p>@thebattlecats.market — offers, testimonials, announcements, and updates.</p><a class="btn btn-secondary" href="https://www.instagram.com/thebattlecats.market/" rel="noopener noreferrer" target="_blank">Open Instagram</a></article>
 <article class="contact-card"><span class="icon-svg"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.5-1.5h1.7V4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.4V10H7v3h3v8h3.5z" fill="currentColor"></path></svg></span><h3>Facebook</h3><p>Official TheBattleCats.Market page and community updates.</p><a class="btn btn-secondary" href="https://www.facebook.com/people/The-Battle-Cats-Market/61577816481801/" rel="noopener noreferrer" target="_blank">Open Facebook</a></article>
 </div>
 </div>
 </section>
 </main>
-<a aria-label="Chat on WhatsApp" class="floating-wa" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20place%20an%20order." rel="noopener noreferrer" target="_blank"><span class="icon-svg"><svg aria-hidden="true" viewbox="0 0 32 32"><path d="M19.11 17.35c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.13-.18.27-.69.87-.85 1.05-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.3-.79-.7-1.33-1.56-1.48-1.82-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.44-.82-1.98-.21-.5-.42-.43-.58-.44h-.49c-.18 0-.47.07-.71.34-.24.27-.93.91-.93 2.22 0 1.3.95 2.57 1.08 2.75.13.18 1.86 2.84 4.5 3.98.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.08 1.58-.64 1.8-1.26.22-.61.22-1.14.16-1.26-.07-.11-.24-.18-.51-.31z" fill="currentColor"></path><path d="M16.03 3.2c-6.97 0-12.63 5.62-12.63 12.55 0 2.22.59 4.39 1.71 6.29L3.2 28.8l6.96-1.82a12.67 12.67 0 005.87 1.49h.01c6.97 0 12.63-5.62 12.63-12.55S23 3.2 16.03 3.2zm0 22.98h-.01a10.5 10.5 0 01-5.35-1.47l-.38-.23-4.13 1.08 1.1-4.01-.25-.41a10.22 10.22 0 01-1.57-5.42c0-5.65 4.64-10.25 10.35-10.25 2.77 0 5.37 1.07 7.33 3.01a10.16 10.16 0 013.03 7.24c0 5.65-4.64 10.26-10.35 10.26z" fill="currentColor"></path></svg></span></a>
+<div class="local-modal" hidden="" id="localCodeModal">
+<div class="local-modal-backdrop" data-close-local-modal=""></div>
+<section aria-labelledby="localModalTitle" aria-modal="true" class="local-modal-card" role="dialog">
+<button aria-label="Close" class="local-modal-close" data-close-local-modal="" type="button">×</button>
+<p class="eyebrow left">Indonesia Customer Access</p>
+<h2 id="localModalTitle">Unlock local prices</h2>
+<p class="local-modal-copy">Enter the customer code to switch the website to special Indonesian pricing and local payment methods.</p>
+<form id="localCodeForm">
+<label for="localCodeInput">Special customer code</label>
+<input autocomplete="off" id="localCodeInput" placeholder="Enter code" required="" type="password"/>
+<p class="local-code-error" hidden="" id="localCodeError">Invalid customer code. Please check it and try again.</p>
+<button class="btn btn-primary full" type="submit">Activate Local Pricing</button>
+</form>
+<p class="local-modal-note">Local payments: QRIS · DANA · Mandiri Transfer</p>
+</section>
+</div>
+<a aria-label="Chat on WhatsApp" class="floating-wa" data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20place%20an%20order." href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20place%20an%20order.%0D%0AIncluded protection: 100%25 Account Protection Guarantee" rel="noopener noreferrer" target="_blank"><span class="icon-svg"><svg aria-hidden="true" viewbox="0 0 32 32"><path d="M19.11 17.35c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.13-.18.27-.69.87-.85 1.05-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.14-1.3-.79-.7-1.33-1.56-1.48-1.82-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.44-.82-1.98-.21-.5-.42-.43-.58-.44h-.49c-.18 0-.47.07-.71.34-.24.27-.93.91-.93 2.22 0 1.3.95 2.57 1.08 2.75.13.18 1.86 2.84 4.5 3.98.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.08 1.58-.64 1.8-1.26.22-.61.22-1.14.16-1.26-.07-.11-.24-.18-.51-.31z" fill="currentColor"></path><path d="M16.03 3.2c-6.97 0-12.63 5.62-12.63 12.55 0 2.22.59 4.39 1.71 6.29L3.2 28.8l6.96-1.82a12.67 12.67 0 005.87 1.49h.01c6.97 0 12.63-5.62 12.63-12.55S23 3.2 16.03 3.2zm0 22.98h-.01a10.5 10.5 0 01-5.35-1.47l-.38-.23-4.13 1.08 1.1-4.01-.25-.41a10.22 10.22 0 01-1.57-5.42c0-5.65 4.64-10.25 10.35-10.25 2.77 0 5.37 1.07 7.33 3.01a10.16 10.16 0 013.03 7.24c0 5.65-4.64 10.26-10.35 10.26z" fill="currentColor"></path></svg></span></a>
 <footer><div class="container">© 2026 TheBattleCats.Market. All rights reserved. Independent service; not affiliated with or endorsed by PONOS Corporation.</div></footer>
+<script>
+window.tbcLocalPricing = {
+  active: false,
+  discount: 25,
+  idrPerUsd: 16000,
+  formatIDR(value) {
+    return new Intl.NumberFormat('id-ID', {
+      style: 'currency',
+      currency: 'IDR',
+      maximumFractionDigits: 0
+    }).format(value).replace('Rp', 'Rp ');
+  },
+  localAmountFromUSD(usd) {
+    const discounted = Number(usd) * this.idrPerUsd * (1 - this.discount / 100);
+    return Math.max(1000, Math.round(discounted / 500) * 500);
+  },
+  formatFromUSD(usd) {
+    return this.formatIDR(this.localAmountFromUSD(usd));
+  }
+};
+
+const LOCAL_CODE_HASH = 'e7e189e74d94726b468f2fbb9b914eee8def2576df40f6c94be6cd8deebe83ab';
+const LOCAL_STORAGE_KEY = 'tbc-indonesia-local-pricing';
+
+async function sha256Hex(value) {
+  const data = new TextEncoder().encode(value);
+  const digest = await crypto.subtle.digest('SHA-256', data);
+  return Array.from(new Uint8Array(digest))
+    .map(byte => byte.toString(16).padStart(2, '0'))
+    .join('');
+}
+
+function localPaymentHTML() {
+  return `
+    <span class="pay-pill">
+      <span class="local-payment-logo">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7 7h4v4H7zM13 7h4v4h-4zM7 13h4v4H7zM14 14h1v1h-1zm2 0h1v3h-3v-1" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+      </span>QRIS
+    </span>
+    <span class="pay-pill">
+      <span class="local-payment-logo">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h11a5 5 0 010 10H4V7z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 10v4M11 10v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </span>DANA
+    </span>
+    <span class="pay-pill">
+      <span class="local-payment-logo">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-5 9 5M5 10v7M9 10v7M15 10v7M19 10v7M3 19h18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>Mandiri Transfer
+    </span>
+  `;
+}
+
+function convertMessageToLocal(globalHref) {
+  try {
+    const url = new URL(globalHref);
+    let message = url.searchParams.get('text') || '';
+    if (!message) return globalHref;
+
+    message = message.replace(/(?:US\$|\$)\s*([0-9]+(?:\.[0-9]+)?)/g, (_, number) => {
+      return window.tbcLocalPricing.formatFromUSD(Number(number));
+    });
+    message = message.replace(/\bUSD\b/g, 'IDR');
+    message = message.replace(/crypto payment instructions/gi, 'local payment instructions');
+    message = message.replace(/payment availability must be confirmed/gi, 'local payment availability must be confirmed');
+
+    if (!message.includes('Local Customer Pricing:')) {
+      message += `\nLocal Customer Pricing: 25% OFF applied`;
+    }
+    if (!message.includes('Local Payment Methods:')) {
+      message += '\nLocal Payment Methods: QRIS / DANA / Mandiri Transfer';
+    }
+
+    url.searchParams.set('text', message);
+    return url.toString();
+  } catch (error) {
+    return globalHref;
+  }
+}
+
+function updateStaticPrices(localActive) {
+  document.querySelectorAll('[data-usd-price]').forEach(element => {
+    if (localActive) {
+      element.textContent = window.tbcLocalPricing.formatFromUSD(Number(element.dataset.usdPrice));
+      element.setAttribute('title', `25% local customer discount applied`);
+      if (!element.nextElementSibling || !element.nextElementSibling.classList.contains('local-price-note')) {
+        const note = document.createElement('span');
+        note.className = 'local-price-note';
+        note.textContent = 'Local customer price';
+        element.insertAdjacentElement('afterend', note);
+      }
+    } else {
+      element.textContent = element.dataset.globalPrice;
+      element.removeAttribute('title');
+      const note = element.nextElementSibling;
+      if (note && note.classList.contains('local-price-note')) note.remove();
+    }
+  });
+}
+
+function updateWhatsAppLinks(localActive) {
+  document.querySelectorAll('a[data-global-href]').forEach(anchor => {
+    anchor.href = localActive
+      ? convertMessageToLocal(anchor.dataset.globalHref)
+      : anchor.dataset.globalHref;
+  });
+}
+
+function updatePaymentRows(localActive) {
+  document.querySelectorAll('.payment-row').forEach(row => {
+    if (!row.dataset.globalPaymentHtml) row.dataset.globalPaymentHtml = row.innerHTML;
+    row.innerHTML = localActive ? localPaymentHTML() : row.dataset.globalPaymentHtml;
+  });
+
+  const heading = document.querySelector('#payments-social .section-heading');
+  if (!heading) return;
+
+  const eyebrow = heading.querySelector('.eyebrow');
+  const title = heading.querySelector('h2');
+  const copy = heading.querySelector('p:not(.eyebrow)');
+
+  if (eyebrow && !eyebrow.dataset.globalText) eyebrow.dataset.globalText = eyebrow.textContent;
+  if (title && !title.dataset.globalText) title.dataset.globalText = title.textContent;
+  if (copy && !copy.dataset.globalText) copy.dataset.globalText = copy.textContent;
+
+  if (localActive) {
+    if (eyebrow) eyebrow.textContent = 'Indonesia Local Payments';
+    if (title) title.textContent = 'QRIS, DANA & Mandiri Transfer';
+    if (copy) copy.textContent = 'Special Indonesian pricing is active. Choose your preferred local payment method when confirming the order through WhatsApp.';
+  } else {
+    if (eyebrow) eyebrow.textContent = eyebrow.dataset.globalText || eyebrow.textContent;
+    if (title) title.textContent = title.dataset.globalText || title.textContent;
+    if (copy) copy.textContent = copy.dataset.globalText || copy.textContent;
+  }
+}
+
+function updateUnitRarityLabels(localActive) {
+  const select = document.getElementById('unitRarity');
+  if (!select || typeof unitPricing === 'undefined') return;
+  Array.from(select.options).forEach(option => {
+    const pricing = unitPricing[option.value];
+    if (!pricing) return;
+    option.textContent = localActive
+      ? `${pricing.name} — ${window.tbcLocalPricing.formatFromUSD(pricing.base)}`
+      : `${pricing.name} — $${pricing.base.toFixed(2)}`;
+  });
+}
+
+function applyLocalPricing(active, persist = true) {
+  window.tbcLocalPricing.active = active;
+  document.body.classList.toggle('local-pricing-active', active);
+
+  const badge = document.getElementById('localPricingBadge');
+  const exitButton = document.getElementById('exitLocalMode');
+  const openButton = document.getElementById('openLocalCode');
+
+  if (badge) badge.hidden = !active;
+  if (exitButton) exitButton.hidden = !active;
+  if (openButton) openButton.hidden = active;
+
+  updateStaticPrices(active);
+  updatePaymentRows(active);
+  updateUnitRarityLabels(active);
+
+  if (typeof rebuildUnitOptions === 'function') rebuildUnitOptions();
+  updateWhatsAppLinks(active);
+
+  if (persist) {
+    if (active) localStorage.setItem(LOCAL_STORAGE_KEY, 'active');
+    else localStorage.removeItem(LOCAL_STORAGE_KEY);
+  }
+}
+
+function openLocalModal() {
+  const modal = document.getElementById('localCodeModal');
+  if (!modal) return;
+  modal.hidden = false;
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => document.getElementById('localCodeInput')?.focus(), 50);
+}
+
+function closeLocalModal() {
+  const modal = document.getElementById('localCodeModal');
+  if (!modal) return;
+  modal.hidden = true;
+  document.body.style.overflow = '';
+  const error = document.getElementById('localCodeError');
+  if (error) error.hidden = true;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('openLocalCode')?.addEventListener('click', openLocalModal);
+  document.getElementById('exitLocalMode')?.addEventListener('click', () => applyLocalPricing(false));
+
+  document.querySelectorAll('[data-close-local-modal]').forEach(element => {
+    element.addEventListener('click', closeLocalModal);
+  });
+
+  document.getElementById('localCodeForm')?.addEventListener('submit', async event => {
+    event.preventDefault();
+    const input = document.getElementById('localCodeInput');
+    const error = document.getElementById('localCodeError');
+    const normalized = (input?.value || '').trim().toUpperCase();
+    const hash = await sha256Hex(normalized);
+
+    if (hash === LOCAL_CODE_HASH) {
+      applyLocalPricing(true);
+      if (input) input.value = '';
+      closeLocalModal();
+    } else {
+      if (error) error.hidden = false;
+      input?.select();
+    }
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeLocalModal();
+  });
+
+  if (localStorage.getItem(LOCAL_STORAGE_KEY) === 'active') {
+    applyLocalPricing(true, false);
+  }
+});
+</script>
 <script>
 const menuButton = document.getElementById('menuButton');
 const navLinks = document.getElementById('navLinks');
@@ -640,7 +1253,15 @@ const summaryPrice = document.getElementById('summaryPrice');
 const unitRule = document.getElementById('unitRule');
 const unitOrderButton = document.getElementById('unitOrderButton');
 
-function money(value) { return `$${value.toFixed(2)}`; }
+function money(value) {
+  if (window.tbcLocalPricing && window.tbcLocalPricing.active) {
+    return window.tbcLocalPricing.formatFromUSD(value);
+  }
+  return `$${value.toFixed(2)}`;
+}
+function activeCurrencyLabel() {
+  return window.tbcLocalPricing && window.tbcLocalPricing.active ? 'IDR' : 'USD';
+}
 function quantityOptionsFor(key) { return key === 'legend' ? legendQuantities : standardQuantities; }
 function totalFor(key, item) {
   if (key === 'legend') return item.total;
@@ -697,10 +1318,12 @@ function updateUnitSummary() {
     `Quantity: ${qty}x`,
     `Requested unit(s): ${typedUnit || 'To be confirmed'}`,
     `Quantity discount: ${item.discount ? `${item.discount}% OFF` : 'None'}`,
-    `Total price: ${money(total)} USD`,
-    'Included protection: Pre-Service Account Restore Guarantee',
+    `Total price: ${money(total)} ${activeCurrencyLabel()}`,
+    'Included protection: 100% Account Protection Guarantee',
     '',
-    'Please confirm unit availability and payment instructions.'
+    window.tbcLocalPricing && window.tbcLocalPricing.active
+      ? 'Local payment methods: QRIS / DANA / Mandiri Transfer. Please confirm availability and payment instructions.'
+      : 'Please confirm unit availability and payment instructions.'
   ].join('\n');
   unitOrderButton.href = `https://wa.me/6281355696447?text=${encodeURIComponent(message)}`;
 }
