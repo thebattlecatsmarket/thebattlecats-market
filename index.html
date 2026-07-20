@@ -675,6 +675,31 @@ body.local-pricing-active #summaryPrice{
 }
 </style>
 
+
+<style>
+/* Fix hidden accessibility text inside VIP cart buttons */
+.sr-only{
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  padding:0!important;
+  margin:-1px!important;
+  overflow:hidden!important;
+  clip:rect(0,0,0,0)!important;
+  clip-path:inset(50%)!important;
+  white-space:nowrap!important;
+  border:0!important;
+}
+#vip .vip-cart-button{
+  overflow:hidden;
+  color:#fff;
+}
+#vip .vip-cart-button svg{
+  display:block;
+  flex:0 0 auto;
+}
+</style>
+
 </head>
 <body>
 <header class="site-header">
@@ -1052,7 +1077,7 @@ body.local-pricing-active #summaryPrice{
     
       <div class="vip-category">
         <span class="vip-category-label">Catseyes</span>
-        <strong>Special ×20 · Rare ×30 · Super Rare ×20 · Uber Rare ×10</strong>
+        <strong>Special ×20 · Rare ×30 · Super Rare ×20 · Uber Rare ×10 · Legend ×5</strong>
         
       </div>
     
@@ -1077,7 +1102,7 @@ body.local-pricing-active #summaryPrice{
       </div>
 
       <div class="vip-summary" aria-label="VIP Elite totals">
-        <span>115 Tickets</span><span>80 Catseyes</span><span>285 Catfruit Items</span><span>3 Requestable Orbs</span>
+        <span>115 Tickets</span><span>85 Catseyes</span><span>285 Catfruit Items</span><span>3 Requestable Orbs</span>
       </div>
 
       <div class="vip-deal-footer">
@@ -1086,7 +1111,7 @@ body.local-pricing-active #summaryPrice{
           <strong class="big-price" data-global-price="US$ 5.99"
                   data-usd-price="5.99">US$ 5.99</strong>
         </div>
-        <a class="vip-cart-button" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20a%20VIP%20Deal.%0A%0ASelected%20offer%3A%20VIP%20Elite%0APrice%3A%20US%24%205.99%0ACat%20Food%3A%2039%2C000%0A%0AMain%20Resources%3A%20NP%20%C3%973%2C333%20%C2%B7%20XP%20%C3%9719%2C000%2C000%20%C2%B7%20Talent%20Orbs%20%28Requestable%29%20%C3%973%0ACatseyes%3A%20Special%20%C3%9720%20%C2%B7%20Rare%20%C3%9730%20%C2%B7%20Super%20Rare%20%C3%9720%20%C2%B7%20Uber%20Rare%20%C3%9710%0AStandard%20Catfruit%20Set%3A%20Seeds%20%C3%9720%20each%20%C2%B7%20Catfruit%20%C3%9725%20each%20%28Purple%20/%20Red%20/%20Blue%20/%20Green%20/%20Yellow%29%0APremium%20Catfruit%20Set%3A%20Seeds%20%C3%9710%20each%20%C2%B7%20Catfruit%20%C3%975%20each%20%28Epic%20/%20Relic%20/%20Aku%20/%20Gold%29%0ABonus%20Tickets%3A%20Special%20Cat%20%C3%9730%20%C2%B7%20Cat%20%C3%9750%20%C2%B7%20Rare%20%C3%9730%20%C2%B7%20Platinum%20%C3%975%0AIncluded%20protection%3A%20100%25%20Account%20Protection%20Guarantee%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20a%20VIP%20Deal.%0A%0ASelected%20offer%3A%20VIP%20Elite%0APrice%3A%20US%24%205.99%0ACat%20Food%3A%2039%2C000%0A%0AMain%20Resources%3A%20NP%20%C3%973%2C333%20%C2%B7%20XP%20%C3%9719%2C000%2C000%20%C2%B7%20Talent%20Orbs%20%28Requestable%29%20%C3%973%0ACatseyes%3A%20Special%20%C3%9720%20%C2%B7%20Rare%20%C3%9730%20%C2%B7%20Super%20Rare%20%C3%9720%20%C2%B7%20Uber%20Rare%20%C3%9710%0AStandard%20Catfruit%20Set%3A%20Seeds%20%C3%9720%20each%20%C2%B7%20Catfruit%20%C3%9725%20each%20%28Purple%20/%20Red%20/%20Blue%20/%20Green%20/%20Yellow%29%0APremium%20Catfruit%20Set%3A%20Seeds%20%C3%9710%20each%20%C2%B7%20Catfruit%20%C3%975%20each%20%28Epic%20/%20Relic%20/%20Aku%20/%20Gold%29%0ABonus%20Tickets%3A%20Special%20Cat%20%C3%9730%20%C2%B7%20Cat%20%C3%9750%20%C2%B7%20Rare%20%C3%9730%20%C2%B7%20Platinum%20%C3%975%0AIncluded%20protection%3A%20100%25%20Account%20Protection%20Guarantee%0A%0APlease%20confirm%20availability%20and%20payment%20instructions."
+        <a class="vip-cart-button" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20a%20VIP%20Deal.%0A%0ASelected%20offer%3A%20VIP%20Elite%0APrice%3A%20US%24%205.99%0ACat%20Food%3A%2039%2C000%0A%0AMain%20Resources%3A%20NP%20%C3%973%2C333%20%C2%B7%20XP%20%C3%9719%2C000%2C000%20%C2%B7%20Talent%20Orbs%20%28Requestable%29%20%C3%973%0ACatseyes%3A%20Special%20%C3%9720%20%C2%B7%20Rare%20%C3%9730%20%C2%B7%20Super%20Rare%20%C3%9720%20%C2%B7%20Uber%20Rare%20%C3%9710%20%C2%B7%20Legend%20%C3%975%0AStandard%20Catfruit%20Set%3A%20Seeds%20%C3%9720%20each%20%C2%B7%20Catfruit%20%C3%9725%20each%20%28Purple%20/%20Red%20/%20Blue%20/%20Green%20/%20Yellow%29%0APremium%20Catfruit%20Set%3A%20Seeds%20%C3%9710%20each%20%C2%B7%20Catfruit%20%C3%975%20each%20%28Epic%20/%20Relic%20/%20Aku%20/%20Gold%29%0ABonus%20Tickets%3A%20Special%20Cat%20%C3%9730%20%C2%B7%20Cat%20%C3%9750%20%C2%B7%20Rare%20%C3%9730%20%C2%B7%20Platinum%20%C3%975%0AIncluded%20protection%3A%20100%25%20Account%20Protection%20Guarantee%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20a%20VIP%20Deal.%0A%0ASelected%20offer%3A%20VIP%20Elite%0APrice%3A%20US%24%205.99%0ACat%20Food%3A%2039%2C000%0A%0AMain%20Resources%3A%20NP%20%C3%973%2C333%20%C2%B7%20XP%20%C3%9719%2C000%2C000%20%C2%B7%20Talent%20Orbs%20%28Requestable%29%20%C3%973%0ACatseyes%3A%20Special%20%C3%9720%20%C2%B7%20Rare%20%C3%9730%20%C2%B7%20Super%20Rare%20%C3%9720%20%C2%B7%20Uber%20Rare%20%C3%9710%20%C2%B7%20Legend%20%C3%975%0AStandard%20Catfruit%20Set%3A%20Seeds%20%C3%9720%20each%20%C2%B7%20Catfruit%20%C3%9725%20each%20%28Purple%20/%20Red%20/%20Blue%20/%20Green%20/%20Yellow%29%0APremium%20Catfruit%20Set%3A%20Seeds%20%C3%9710%20each%20%C2%B7%20Catfruit%20%C3%975%20each%20%28Epic%20/%20Relic%20/%20Aku%20/%20Gold%29%0ABonus%20Tickets%3A%20Special%20Cat%20%C3%9730%20%C2%B7%20Cat%20%C3%9750%20%C2%B7%20Rare%20%C3%9730%20%C2%B7%20Platinum%20%C3%975%0AIncluded%20protection%3A%20100%25%20Account%20Protection%20Guarantee%0A%0APlease%20confirm%20availability%20and%20payment%20instructions."
            target="_blank" rel="noopener noreferrer"
            aria-label="Order VIP Elite via WhatsApp">
           <span class="sr-only">Order VIP Elite via WhatsApp</span>
@@ -1136,7 +1161,7 @@ body.local-pricing-active #summaryPrice{
     
       <div class="vip-category">
         <span class="vip-category-label">Catseyes</span>
-        <strong>Special ×35 · Rare ×50 · Super Rare ×35 · Uber Rare ×20</strong>
+        <strong>Special ×35 · Rare ×50 · Super Rare ×35 · Uber Rare ×20 · Legend ×15</strong>
         
       </div>
     
@@ -1167,7 +1192,7 @@ body.local-pricing-active #summaryPrice{
       </div>
 
       <div class="vip-summary" aria-label="VIP Ultimate totals">
-        <span>205 Tickets</span><span>140 Catseyes</span><span>535 Catfruit Items</span><span>6 Requestable Orbs</span>
+        <span>205 Tickets</span><span>155 Catseyes</span><span>535 Catfruit Items</span><span>6 Requestable Orbs</span>
       </div>
 
       <div class="vip-deal-footer">
@@ -1176,7 +1201,7 @@ body.local-pricing-active #summaryPrice{
           <strong class="big-price" data-global-price="US$ 8.99"
                   data-usd-price="8.99">US$ 8.99</strong>
         </div>
-        <a class="vip-cart-button" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20a%20VIP%20Deal.%0A%0ASelected%20offer%3A%20VIP%20Ultimate%0APrice%3A%20US%24%208.99%0ACat%20Food%3A%2054%2C000%0A%0AMain%20Resources%3A%20NP%20%C3%974%2C444%20%C2%B7%20XP%20%C3%9735%2C000%2C000%20%C2%B7%20Talent%20Orbs%20%28Requestable%29%20%C3%976%0ACatseyes%3A%20Special%20%C3%9735%20%C2%B7%20Rare%20%C3%9750%20%C2%B7%20Super%20Rare%20%C3%9735%20%C2%B7%20Uber%20Rare%20%C3%9720%0AStandard%20Catfruit%20Set%3A%20Seeds%20%C3%9735%20each%20%C2%B7%20Catfruit%20%C3%9740%20each%20%28Purple%20/%20Red%20/%20Blue%20/%20Green%20/%20Yellow%29%0APremium%20Catfruit%20Set%3A%20Seeds%20%C3%9725%20each%20%C2%B7%20Catfruit%20%C3%9715%20each%20%28Epic%20/%20Relic%20/%20Aku%20/%20Gold%29%0ABehemoth%20Stones%3A%20All%20Behemoth%20Stones%20%C3%9710%20each%0ABonus%20Tickets%3A%20Special%20Cat%20%C3%9755%20%C2%B7%20Cat%20%C3%9780%20%C2%B7%20Rare%20%C3%9755%20%C2%B7%20Platinum%20%C3%9715%0AIncluded%20protection%3A%20100%25%20Account%20Protection%20Guarantee%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20a%20VIP%20Deal.%0A%0ASelected%20offer%3A%20VIP%20Ultimate%0APrice%3A%20US%24%208.99%0ACat%20Food%3A%2054%2C000%0A%0AMain%20Resources%3A%20NP%20%C3%974%2C444%20%C2%B7%20XP%20%C3%9735%2C000%2C000%20%C2%B7%20Talent%20Orbs%20%28Requestable%29%20%C3%976%0ACatseyes%3A%20Special%20%C3%9735%20%C2%B7%20Rare%20%C3%9750%20%C2%B7%20Super%20Rare%20%C3%9735%20%C2%B7%20Uber%20Rare%20%C3%9720%0AStandard%20Catfruit%20Set%3A%20Seeds%20%C3%9735%20each%20%C2%B7%20Catfruit%20%C3%9740%20each%20%28Purple%20/%20Red%20/%20Blue%20/%20Green%20/%20Yellow%29%0APremium%20Catfruit%20Set%3A%20Seeds%20%C3%9725%20each%20%C2%B7%20Catfruit%20%C3%9715%20each%20%28Epic%20/%20Relic%20/%20Aku%20/%20Gold%29%0ABehemoth%20Stones%3A%20All%20Behemoth%20Stones%20%C3%9710%20each%0ABonus%20Tickets%3A%20Special%20Cat%20%C3%9755%20%C2%B7%20Cat%20%C3%9780%20%C2%B7%20Rare%20%C3%9755%20%C2%B7%20Platinum%20%C3%9715%0AIncluded%20protection%3A%20100%25%20Account%20Protection%20Guarantee%0A%0APlease%20confirm%20availability%20and%20payment%20instructions."
+        <a class="vip-cart-button" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20a%20VIP%20Deal.%0A%0ASelected%20offer%3A%20VIP%20Ultimate%0APrice%3A%20US%24%208.99%0ACat%20Food%3A%2054%2C000%0A%0AMain%20Resources%3A%20NP%20%C3%974%2C444%20%C2%B7%20XP%20%C3%9735%2C000%2C000%20%C2%B7%20Talent%20Orbs%20%28Requestable%29%20%C3%976%0ACatseyes%3A%20Special%20%C3%9735%20%C2%B7%20Rare%20%C3%9750%20%C2%B7%20Super%20Rare%20%C3%9735%20%C2%B7%20Uber%20Rare%20%C3%9720%20%C2%B7%20Legend%20%C3%9715%0AStandard%20Catfruit%20Set%3A%20Seeds%20%C3%9735%20each%20%C2%B7%20Catfruit%20%C3%9740%20each%20%28Purple%20/%20Red%20/%20Blue%20/%20Green%20/%20Yellow%29%0APremium%20Catfruit%20Set%3A%20Seeds%20%C3%9725%20each%20%C2%B7%20Catfruit%20%C3%9715%20each%20%28Epic%20/%20Relic%20/%20Aku%20/%20Gold%29%0ABehemoth%20Stones%3A%20All%20Behemoth%20Stones%20%C3%9710%20each%0ABonus%20Tickets%3A%20Special%20Cat%20%C3%9755%20%C2%B7%20Cat%20%C3%9780%20%C2%B7%20Rare%20%C3%9755%20%C2%B7%20Platinum%20%C3%9715%0AIncluded%20protection%3A%20100%25%20Account%20Protection%20Guarantee%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20a%20VIP%20Deal.%0A%0ASelected%20offer%3A%20VIP%20Ultimate%0APrice%3A%20US%24%208.99%0ACat%20Food%3A%2054%2C000%0A%0AMain%20Resources%3A%20NP%20%C3%974%2C444%20%C2%B7%20XP%20%C3%9735%2C000%2C000%20%C2%B7%20Talent%20Orbs%20%28Requestable%29%20%C3%976%0ACatseyes%3A%20Special%20%C3%9735%20%C2%B7%20Rare%20%C3%9750%20%C2%B7%20Super%20Rare%20%C3%9735%20%C2%B7%20Uber%20Rare%20%C3%9720%20%C2%B7%20Legend%20%C3%9715%0AStandard%20Catfruit%20Set%3A%20Seeds%20%C3%9735%20each%20%C2%B7%20Catfruit%20%C3%9740%20each%20%28Purple%20/%20Red%20/%20Blue%20/%20Green%20/%20Yellow%29%0APremium%20Catfruit%20Set%3A%20Seeds%20%C3%9725%20each%20%C2%B7%20Catfruit%20%C3%9715%20each%20%28Epic%20/%20Relic%20/%20Aku%20/%20Gold%29%0ABehemoth%20Stones%3A%20All%20Behemoth%20Stones%20%C3%9710%20each%0ABonus%20Tickets%3A%20Special%20Cat%20%C3%9755%20%C2%B7%20Cat%20%C3%9780%20%C2%B7%20Rare%20%C3%9755%20%C2%B7%20Platinum%20%C3%9715%0AIncluded%20protection%3A%20100%25%20Account%20Protection%20Guarantee%0A%0APlease%20confirm%20availability%20and%20payment%20instructions."
            target="_blank" rel="noopener noreferrer"
            aria-label="Order VIP Ultimate via WhatsApp">
           <span class="sr-only">Order VIP Ultimate via WhatsApp</span>
@@ -1226,7 +1251,7 @@ body.local-pricing-active #summaryPrice{
     
       <div class="vip-category">
         <span class="vip-category-label">Catseyes</span>
-        <strong>Special ×60 · Rare ×80 · Super Rare ×60 · Uber Rare ×35 · Dark ×30</strong>
+        <strong>Special ×60 · Rare ×80 · Super Rare ×60 · Uber Rare ×35 · Legend ×30 · Dark ×30</strong>
         
       </div>
     
@@ -1257,7 +1282,7 @@ body.local-pricing-active #summaryPrice{
       </div>
 
       <div class="vip-summary" aria-label="Collector Bundle totals">
-        <span>330 Tickets</span><span>265 Catseyes</span><span>930 Catfruit Items</span><span>9 Requestable Orbs</span>
+        <span>330 Tickets</span><span>295 Catseyes</span><span>930 Catfruit Items</span><span>9 Requestable Orbs</span>
       </div>
 
       <div class="vip-deal-footer">
@@ -1266,7 +1291,7 @@ body.local-pricing-active #summaryPrice{
           <strong class="big-price" data-global-price="US$ 11.90"
                   data-usd-price="11.90">US$ 11.90</strong>
         </div>
-        <a class="vip-cart-button" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20a%20VIP%20Deal.%0A%0ASelected%20offer%3A%20Collector%20Bundle%0APrice%3A%20US%24%2011.90%0ACat%20Food%3A%2099%2C000%0A%0AMain%20Resources%3A%20NP%20%C3%976%2C666%20%C2%B7%20XP%20%C3%9759%2C000%2C000%20%C2%B7%20Talent%20Orbs%20%28Requestable%29%20%C3%979%0ACatseyes%3A%20Special%20%C3%9760%20%C2%B7%20Rare%20%C3%9780%20%C2%B7%20Super%20Rare%20%C3%9760%20%C2%B7%20Uber%20Rare%20%C3%9735%20%C2%B7%20Dark%20%C3%9730%0AStandard%20Catfruit%20Set%3A%20Seeds%20%C3%9760%20each%20%C2%B7%20Catfruit%20%C3%9770%20each%20%28Purple%20/%20Red%20/%20Blue%20/%20Green%20/%20Yellow%29%0APremium%20Catfruit%20Set%3A%20Seeds%20%C3%9740%20each%20%C2%B7%20Catfruit%20%C3%9730%20each%20%28Epic%20/%20Relic%20/%20Aku%20/%20Gold%29%0ABehemoth%20Stones%3A%20All%20Behemoth%20Stones%20%C3%9725%20each%0ABonus%20Tickets%3A%20Special%20Cat%20%C3%9790%20%C2%B7%20Cat%20%C3%97120%20%C2%B7%20Rare%20%C3%9790%20%C2%B7%20Platinum%20%C3%9730%0AIncluded%20protection%3A%20100%25%20Account%20Protection%20Guarantee%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20a%20VIP%20Deal.%0A%0ASelected%20offer%3A%20Collector%20Bundle%0APrice%3A%20US%24%2011.90%0ACat%20Food%3A%2099%2C000%0A%0AMain%20Resources%3A%20NP%20%C3%976%2C666%20%C2%B7%20XP%20%C3%9759%2C000%2C000%20%C2%B7%20Talent%20Orbs%20%28Requestable%29%20%C3%979%0ACatseyes%3A%20Special%20%C3%9760%20%C2%B7%20Rare%20%C3%9780%20%C2%B7%20Super%20Rare%20%C3%9760%20%C2%B7%20Uber%20Rare%20%C3%9735%20%C2%B7%20Dark%20%C3%9730%0AStandard%20Catfruit%20Set%3A%20Seeds%20%C3%9760%20each%20%C2%B7%20Catfruit%20%C3%9770%20each%20%28Purple%20/%20Red%20/%20Blue%20/%20Green%20/%20Yellow%29%0APremium%20Catfruit%20Set%3A%20Seeds%20%C3%9740%20each%20%C2%B7%20Catfruit%20%C3%9730%20each%20%28Epic%20/%20Relic%20/%20Aku%20/%20Gold%29%0ABehemoth%20Stones%3A%20All%20Behemoth%20Stones%20%C3%9725%20each%0ABonus%20Tickets%3A%20Special%20Cat%20%C3%9790%20%C2%B7%20Cat%20%C3%97120%20%C2%B7%20Rare%20%C3%9790%20%C2%B7%20Platinum%20%C3%9730%0AIncluded%20protection%3A%20100%25%20Account%20Protection%20Guarantee%0A%0APlease%20confirm%20availability%20and%20payment%20instructions."
+        <a class="vip-cart-button" href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20a%20VIP%20Deal.%0A%0ASelected%20offer%3A%20Collector%20Bundle%0APrice%3A%20US%24%2011.90%0ACat%20Food%3A%2099%2C000%0A%0AMain%20Resources%3A%20NP%20%C3%976%2C666%20%C2%B7%20XP%20%C3%9759%2C000%2C000%20%C2%B7%20Talent%20Orbs%20%28Requestable%29%20%C3%979%0ACatseyes%3A%20Special%20%C3%9760%20%C2%B7%20Rare%20%C3%9780%20%C2%B7%20Super%20Rare%20%C3%9760%20%C2%B7%20Uber%20Rare%20%C3%9735%20%C2%B7%20Legend%20%C3%9730%20%C2%B7%20Dark%20%C3%9730%0AStandard%20Catfruit%20Set%3A%20Seeds%20%C3%9760%20each%20%C2%B7%20Catfruit%20%C3%9770%20each%20%28Purple%20/%20Red%20/%20Blue%20/%20Green%20/%20Yellow%29%0APremium%20Catfruit%20Set%3A%20Seeds%20%C3%9740%20each%20%C2%B7%20Catfruit%20%C3%9730%20each%20%28Epic%20/%20Relic%20/%20Aku%20/%20Gold%29%0ABehemoth%20Stones%3A%20All%20Behemoth%20Stones%20%C3%9725%20each%0ABonus%20Tickets%3A%20Special%20Cat%20%C3%9790%20%C2%B7%20Cat%20%C3%97120%20%C2%B7%20Rare%20%C3%9790%20%C2%B7%20Platinum%20%C3%9730%0AIncluded%20protection%3A%20100%25%20Account%20Protection%20Guarantee%0A%0APlease%20confirm%20availability%20and%20payment%20instructions." data-global-href="https://wa.me/6281355696447?text=Hello%20TheBattleCats.Market%2C%20I%20would%20like%20to%20order%20a%20VIP%20Deal.%0A%0ASelected%20offer%3A%20Collector%20Bundle%0APrice%3A%20US%24%2011.90%0ACat%20Food%3A%2099%2C000%0A%0AMain%20Resources%3A%20NP%20%C3%976%2C666%20%C2%B7%20XP%20%C3%9759%2C000%2C000%20%C2%B7%20Talent%20Orbs%20%28Requestable%29%20%C3%979%0ACatseyes%3A%20Special%20%C3%9760%20%C2%B7%20Rare%20%C3%9780%20%C2%B7%20Super%20Rare%20%C3%9760%20%C2%B7%20Uber%20Rare%20%C3%9735%20%C2%B7%20Legend%20%C3%9730%20%C2%B7%20Dark%20%C3%9730%0AStandard%20Catfruit%20Set%3A%20Seeds%20%C3%9760%20each%20%C2%B7%20Catfruit%20%C3%9770%20each%20%28Purple%20/%20Red%20/%20Blue%20/%20Green%20/%20Yellow%29%0APremium%20Catfruit%20Set%3A%20Seeds%20%C3%9740%20each%20%C2%B7%20Catfruit%20%C3%9730%20each%20%28Epic%20/%20Relic%20/%20Aku%20/%20Gold%29%0ABehemoth%20Stones%3A%20All%20Behemoth%20Stones%20%C3%9725%20each%0ABonus%20Tickets%3A%20Special%20Cat%20%C3%9790%20%C2%B7%20Cat%20%C3%97120%20%C2%B7%20Rare%20%C3%9790%20%C2%B7%20Platinum%20%C3%9730%0AIncluded%20protection%3A%20100%25%20Account%20Protection%20Guarantee%0A%0APlease%20confirm%20availability%20and%20payment%20instructions."
            target="_blank" rel="noopener noreferrer"
            aria-label="Order Collector Bundle via WhatsApp">
           <span class="sr-only">Order Collector Bundle via WhatsApp</span>
