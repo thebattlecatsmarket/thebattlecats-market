@@ -3,6 +3,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
+<meta content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-EJHKngY26fWdr1TBrAXMl789YksIwZFxUjPKfPN80oc=' 'sha256-v2/kIICrsW1AJJlSaJbwxCLJflC28PxQ1Lztxrj2VIo='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; frame-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; form-action 'self'; upgrade-insecure-requests" http-equiv="Content-Security-Policy"/>
+<meta content="strict-origin-when-cross-origin" name="referrer"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="TheBattleCats.Market — Cat Food, Specific Unit Unlocks, VIP Deals, and Stage Progression with direct WhatsApp ordering." name="description"/>
 <meta content="TheBattleCats.Market" property="og:title"/>
@@ -1440,8 +1442,8 @@ body.local-pricing-active #summaryPrice{
 <p class="local-modal-copy">Enter the customer code to switch the website to special Indonesian pricing and local payment methods.</p>
 <form id="localCodeForm">
 <label for="localCodeInput">Special customer code</label>
-<input autocomplete="off" id="localCodeInput" placeholder="Enter code" required="" type="password"/>
-<p class="local-code-error" hidden="" id="localCodeError">Invalid customer code. Please check it and try again.</p>
+<input autocomplete="one-time-code" autocapitalize="characters" id="localCodeInput" maxlength="64" placeholder="Enter code" required="" spellcheck="false" type="password"/>
+<p aria-live="polite" class="local-code-error" hidden="" id="localCodeError">Access could not be verified. Please check the code and try again.</p>
 <button class="btn btn-primary full" type="submit">Activate Local Pricing</button>
 </form>
 <p class="local-modal-note">Local payments: QRIS · DANA · Mandiri Transfer</p>
@@ -1471,7 +1473,137 @@ window.tbcLocalPricing = {
 };
 
 const LOCAL_CODE_HASH = 'e7e189e74d94726b468f2fbb9b914eee8def2576df40f6c94be6cd8deebe83ab';
-const LOCAL_STORAGE_KEY = 'tbc-indonesia-local-pricing';
+const LOCAL_SESSION_KEY = 'tbc-indonesia-local-pricing-v2';
+const LOCAL_ATTEMPT_KEY = 'tbc-indonesia-local-attempts-v2';
+const LOCAL_ACCESS_TTL_MS = 8 * 60 * 60 * 1000;
+const LOCAL_ATTEMPT_WINDOW_MS = 10 * 60 * 1000;
+const LOCAL_LOCKOUT_MS = 15 * 60 * 1000;
+const LOCAL_MAX_ATTEMPTS = 5;
+const TRUSTED_EXTERNAL_HOSTS = new Set([
+  'wa.me',
+  'www.instagram.com',
+  'instagram.com',
+  'www.facebook.com',
+  'facebook.com'
+]);
+
+function readSessionValue(key) {
+  try {
+    const raw = sessionStorage.getItem(key);
+    return raw ? JSON.parse(raw) : null;
+  } catch (error) {
+    return null;
+  }
+}
+
+function writeSessionValue(key, value) {
+  try {
+    sessionStorage.setItem(key, JSON.stringify(value));
+  } catch (error) {
+    // The website continues safely when storage is blocked by the browser.
+  }
+}
+
+function removeSessionValue(key) {
+  try {
+    sessionStorage.removeItem(key);
+  } catch (error) {
+    // Nothing else is required when storage is unavailable.
+  }
+}
+
+function trustedExternalURL(candidate, requiredHost = '') {
+  try {
+    const url = new URL(candidate, window.location.href);
+    const sameOrigin = ['http:', 'https:'].includes(url.protocol) && url.origin === window.location.origin;
+    const allowedExternal = url.protocol === 'https:' && TRUSTED_EXTERNAL_HOSTS.has(url.hostname);
+    if (!sameOrigin && !allowedExternal) return null;
+    if (requiredHost && url.hostname !== requiredHost) return null;
+    return url;
+  } catch (error) {
+    return null;
+  }
+}
+
+function setTrustedExternalHref(anchor, candidate, requiredHost = '') {
+  if (!anchor) return false;
+  const url = trustedExternalURL(candidate, requiredHost);
+  if (!url) {
+    anchor.removeAttribute('href');
+    anchor.setAttribute('aria-disabled', 'true');
+    return false;
+  }
+  anchor.href = url.toString();
+  anchor.removeAttribute('aria-disabled');
+  if (anchor.target === '_blank') anchor.rel = 'noopener noreferrer';
+  return true;
+}
+
+function sanitizeSingleLine(value, maxLength = 120) {
+  return String(value || '')
+    .normalize('NFKC')
+    .replace(/[\u0000-\u001f\u007f-\u009f]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, maxLength);
+}
+
+function secureWhatsAppHref(candidate) {
+  const url = trustedExternalURL(candidate, 'wa.me');
+  if (!url) return '';
+  let message = url.searchParams.get('text') || '';
+  const securityNote = 'Security note: Confirm the final price and payment details in this official WhatsApp chat before paying.';
+  if (message && !message.includes(securityNote)) message += `\n${securityNote}`;
+  url.searchParams.set('text', message);
+  return url.toString();
+}
+
+function hashesMatch(left, right) {
+  if (left.length !== right.length) return false;
+  let difference = 0;
+  for (let index = 0; index < left.length; index += 1) {
+    difference |= left.charCodeAt(index) ^ right.charCodeAt(index);
+  }
+  return difference === 0;
+}
+
+function getLocalAttemptState() {
+  const now = Date.now();
+  const state = readSessionValue(LOCAL_ATTEMPT_KEY);
+  if (!state || typeof state !== 'object') return { count: 0, windowStartedAt: now, lockedUntil: 0 };
+  if (Number(state.lockedUntil) > now) return state;
+  if (now - Number(state.windowStartedAt || 0) > LOCAL_ATTEMPT_WINDOW_MS) {
+    return { count: 0, windowStartedAt: now, lockedUntil: 0 };
+  }
+  return {
+    count: Math.max(0, Number(state.count) || 0),
+    windowStartedAt: Number(state.windowStartedAt) || now,
+    lockedUntil: 0
+  };
+}
+
+function registerFailedLocalAttempt() {
+  const now = Date.now();
+  const state = getLocalAttemptState();
+  state.count += 1;
+  if (state.count >= LOCAL_MAX_ATTEMPTS) state.lockedUntil = now + LOCAL_LOCKOUT_MS;
+  writeSessionValue(LOCAL_ATTEMPT_KEY, state);
+  return state;
+}
+
+function localLockSecondsRemaining() {
+  const lockedUntil = Number(getLocalAttemptState().lockedUntil) || 0;
+  return Math.max(0, Math.ceil((lockedUntil - Date.now()) / 1000));
+}
+
+function hasActiveLocalSession() {
+  const session = readSessionValue(LOCAL_SESSION_KEY);
+  if (!session || Number(session.expiresAt) <= Date.now()) {
+    removeSessionValue(LOCAL_SESSION_KEY);
+    return false;
+  }
+  return true;
+}
 
 async function sha256Hex(value) {
   const data = new TextEncoder().encode(value);
@@ -1503,9 +1635,10 @@ function localPaymentHTML() {
 
 function convertMessageToLocal(globalHref) {
   try {
-    const url = new URL(globalHref);
+    const url = trustedExternalURL(globalHref, 'wa.me');
+    if (!url) return '';
     let message = url.searchParams.get('text') || '';
-    if (!message) return globalHref;
+    if (!message) return secureWhatsAppHref(url.toString());
 
     message = message.replace(/(?:US\$|\$)\s*([0-9]+(?:\.[0-9]+)?)/g, (_, number) => {
       return window.tbcLocalPricing.formatFromUSD(Number(number));
@@ -1522,9 +1655,9 @@ function convertMessageToLocal(globalHref) {
     }
 
     url.searchParams.set('text', message);
-    return url.toString();
+    return secureWhatsAppHref(url.toString());
   } catch (error) {
-    return globalHref;
+    return '';
   }
 }
 
@@ -1545,9 +1678,10 @@ function updateStaticPrices(localActive) {
 
 function updateWhatsAppLinks(localActive) {
   document.querySelectorAll('a[data-global-href]').forEach(anchor => {
-    anchor.href = localActive
+    const href = localActive
       ? convertMessageToLocal(anchor.dataset.globalHref)
-      : anchor.dataset.globalHref;
+      : secureWhatsAppHref(anchor.dataset.globalHref);
+    setTrustedExternalHref(anchor, href, 'wa.me');
   });
 }
 
@@ -1615,8 +1749,8 @@ function initializeCollectorBundle() {
   ].join('\n');
 
   const href = `https://wa.me/6281355696447?text=${encodeURIComponent(message)}`;
-  anchor.dataset.globalHref = href;
-  anchor.href = href;
+  anchor.dataset.globalHref = secureWhatsAppHref(href);
+  setTrustedExternalHref(anchor, anchor.dataset.globalHref, 'wa.me');
 }
 
 function initializeLegendPricing() {
@@ -1689,8 +1823,8 @@ function initializeLegendPricing() {
         'Please confirm campaign availability, completion scope, and payment instructions.'
       ].join('\n');
       const href = `https://wa.me/6281355696447?text=${encodeURIComponent(message)}`;
-      anchor.dataset.globalHref = href;
-      anchor.href = href;
+      anchor.dataset.globalHref = secureWhatsAppHref(href);
+      setTrustedExternalHref(anchor, anchor.dataset.globalHref, 'wa.me');
       anchor.setAttribute('aria-label', `Order ${campaignName} ${crown}-Crown completion via WhatsApp`);
     });
   });
@@ -1716,8 +1850,8 @@ function applyLocalPricing(active, persist = true) {
   updateWhatsAppLinks(active);
 
   if (persist) {
-    if (active) localStorage.setItem(LOCAL_STORAGE_KEY, 'active');
-    else localStorage.removeItem(LOCAL_STORAGE_KEY);
+    if (active) writeSessionValue(LOCAL_SESSION_KEY, { expiresAt: Date.now() + LOCAL_ACCESS_TTL_MS });
+    else removeSessionValue(LOCAL_SESSION_KEY);
   }
 }
 
@@ -1726,6 +1860,12 @@ function openLocalModal() {
   if (!modal) return;
   modal.hidden = false;
   document.body.style.overflow = 'hidden';
+  const remainingSeconds = localLockSecondsRemaining();
+  const error = document.getElementById('localCodeError');
+  if (error && remainingSeconds > 0) {
+    error.textContent = `Too many attempts. Try again in ${Math.ceil(remainingSeconds / 60)} minute(s).`;
+    error.hidden = false;
+  }
   setTimeout(() => document.getElementById('localCodeInput')?.focus(), 50);
 }
 
@@ -1742,6 +1882,11 @@ initializeCollectorBundle();
 initializeLegendPricing();
 
 document.addEventListener('DOMContentLoaded', () => {
+  updateWhatsAppLinks(false);
+  document.querySelectorAll('a[target="_blank"]').forEach(anchor => {
+    setTrustedExternalHref(anchor, anchor.href);
+  });
+
   document.getElementById('openLocalCode')?.addEventListener('click', openLocalModal);
   document.getElementById('exitLocalMode')?.addEventListener('click', () => applyLocalPricing(false));
 
@@ -1753,15 +1898,40 @@ document.addEventListener('DOMContentLoaded', () => {
     event.preventDefault();
     const input = document.getElementById('localCodeInput');
     const error = document.getElementById('localCodeError');
-    const normalized = (input?.value || '').trim().toUpperCase();
-    const hash = await sha256Hex(normalized);
+    const remainingSeconds = localLockSecondsRemaining();
+    if (remainingSeconds > 0) {
+      if (error) {
+        error.textContent = `Too many attempts. Try again in ${Math.ceil(remainingSeconds / 60)} minute(s).`;
+        error.hidden = false;
+      }
+      return;
+    }
 
-    if (hash === LOCAL_CODE_HASH) {
+    const normalized = sanitizeSingleLine(input?.value || '', 64).toUpperCase();
+    let hash = '';
+    try {
+      hash = await sha256Hex(normalized);
+    } catch (cryptoError) {
+      if (error) {
+        error.textContent = 'Secure verification is unavailable. Open the website through HTTPS and try again.';
+        error.hidden = false;
+      }
+      return;
+    }
+
+    if (hashesMatch(hash, LOCAL_CODE_HASH)) {
+      removeSessionValue(LOCAL_ATTEMPT_KEY);
       applyLocalPricing(true);
       if (input) input.value = '';
       closeLocalModal();
     } else {
-      if (error) error.hidden = false;
+      const state = registerFailedLocalAttempt();
+      if (error) {
+        error.textContent = state.lockedUntil > Date.now()
+          ? 'Too many attempts. Access is temporarily locked for 15 minutes.'
+          : 'Access could not be verified. Please check the code and try again.';
+        error.hidden = false;
+      }
       input?.select();
     }
   });
@@ -1770,7 +1940,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (event.key === 'Escape') closeLocalModal();
   });
 
-  if (localStorage.getItem(LOCAL_STORAGE_KEY) === 'active') {
+  try {
+    localStorage.removeItem('tbc-indonesia-local-pricing');
+  } catch (error) {
+    // Older persistent access is ignored when browser storage is unavailable.
+  }
+
+  if (hasActiveLocalSession()) {
     applyLocalPricing(true, false);
   }
 });
@@ -1834,14 +2010,17 @@ function rebuildUnitOptions() {
   if (!unitRarity) return;
   const key = unitRarity.value;
   const pricing = unitPricing[key];
-  unitQuantity.innerHTML = '';
+  unitQuantity.replaceChildren();
   quantityOptionsFor(key).forEach(item => {
     const option = document.createElement('option');
     option.value = String(item.qty);
     option.textContent = `${item.qty}×${item.discount ? ` — ${item.discount}% OFF` : ''} (${money(totalFor(key, item))})`;
     unitQuantity.appendChild(option);
   });
-  unitPurpose.innerHTML = '<option value="unlock">Unlock requested unit(s)</option>';
+  const unlockOption = document.createElement('option');
+  unlockOption.value = 'unlock';
+  unlockOption.textContent = 'Unlock requested unit(s)';
+  unitPurpose.replaceChildren(unlockOption);
   if (pricing.enhance) {
     const option = document.createElement('option');
     option.value = 'enhance';
@@ -1859,7 +2038,7 @@ function updateUnitSummary() {
   const total = totalFor(key, item);
   const isEnhancement = unitPurpose.value === 'enhance' && pricing.enhance;
   const orderType = isEnhancement ? `Specific unit enhancement up to +${qty}` : (qty === 1 ? 'Specific unit unlock' : `Unlock ${qty} requested units`);
-  const typedUnit = specificUnitName.value.trim();
+  const typedUnit = sanitizeSingleLine(specificUnitName.value, 120);
   summaryRarity.textContent = pricing.name;
   summaryQuantity.textContent = `${qty}×`;
   summaryDiscount.textContent = item.discount ? `${item.discount}% OFF` : '—';
@@ -1883,12 +2062,17 @@ function updateUnitSummary() {
     `Quantity discount: ${item.discount ? `${item.discount}% OFF` : 'None'}`,
     `Total price: ${money(total)} ${activeCurrencyLabel()}`,
     'Included protection: 100% Account Protection Guarantee',
+    'Order verification: The final price and payment destination must be confirmed by TheBattleCats.Market before payment.',
     '',
     window.tbcLocalPricing && window.tbcLocalPricing.active
       ? 'Local payment methods: QRIS / DANA / Mandiri Transfer. Please confirm availability and payment instructions.'
       : 'Please confirm unit availability and payment instructions.'
   ].join('\n');
-  unitOrderButton.href = `https://wa.me/6281355696447?text=${encodeURIComponent(message)}`;
+  setTrustedExternalHref(
+    unitOrderButton,
+    secureWhatsAppHref(`https://wa.me/6281355696447?text=${encodeURIComponent(message)}`),
+    'wa.me'
+  );
 }
 if (unitRarity) {
   unitRarity.addEventListener('change', rebuildUnitOptions);
